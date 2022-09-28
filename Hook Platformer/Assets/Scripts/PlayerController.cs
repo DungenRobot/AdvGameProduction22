@@ -37,7 +37,6 @@ public class PlayerController : MonoBehaviour
         }
 
         controller.Move(velocity * Time.deltaTime);
-        print(velocity * Time.deltaTime);
     }
 
 }
