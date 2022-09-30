@@ -15,8 +15,11 @@ public class RaycastCollisionTest : MonoBehaviour
     void FixedUpdate()
     {
 
-        
-        LayerMask mask = LayerMask.GetMask("Wall");
+
+        //LayerMask mask = LayerMask.GetMask("Wall");
+
+        int layerMask = 1 << 6;
+        layerMask = ~layerMask;
         /*
         
         
@@ -25,8 +28,8 @@ public class RaycastCollisionTest : MonoBehaviour
             Destroy(gameObject);
         } */
         
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, raycastDistrance, mask);
-        if (hit.collider != null)
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, raycastDistrance, layerMask);
+        if (hit.collider.gameObject.layer == 3)
         {
             Destroy(gameObject);
         }
