@@ -35,8 +35,8 @@ public class Grapple : MonoBehaviour
 
         if(currentTarget != null){
             float angle = Mathf.Atan2(currentTarget.position.y - this.transform.position.y, currentTarget.position.x - this.transform.position.x);
-           // Kinemetic rb.velocity = rb.velocity + new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * grappleStrength
-           // Dyamic rb.AddForce(new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * grappleStrength);
+            //rb.velocity = rb.velocity + new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * grappleStrength;
+            rb.AddForce(new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * grappleStrength);
         }
     }
 
