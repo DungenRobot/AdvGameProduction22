@@ -6,11 +6,19 @@ public class PlayerController : MonoBehaviour
 {
     private CharacterController controller;
     private Vector3 velocity;
-    private bool is_on_ground;
+
+    private enum State { ON_GROUND, JUMPING, FALL_UP, FALLING}
+    private State playerstate;
+
 
     public float speed = 70.0f;
-    public float gravity = 130.0f;
     public float jump_velocity = 30f;
+
+    //gravity things
+    public float gravity = 130.0f;
+    public float jump_gravity = 50f;
+    public float up_gravity = 80f;
+
 
 
     // Grapple Stuff
@@ -35,11 +43,39 @@ public class PlayerController : MonoBehaviour
 
         is_on_ground = controller.isGrounded;
 
+        switch (playerstate)
+        {
+            case State.ON_GROUND:
+                if (Input.GetButton("Jump")) {
+                    velocity.y = jump_velocity;
+                    playerstate = State.JUMPING;
+                }
+                if (!controller.isGrounded) {
+                    playerstate = State.FALLING;
+                }
+                break;
+
+            case State.JUMPING;
+                velocity.y -= jump_gravity * Time.deltaTime;
+                if (!Input.GetButton("Jump")) {
+
+                }
+                break;
+
+            case State.FALL_UP;
+                break;
+
+            case State.FALLING:
+                if (controller.isGrounded)
+                {
+                    playerstate = State.ON_GROUND;
+                }
+                break;
+        }
+
+
         if(is_on_ground) velocity.x = Mathf.Lerp(velocity.x, speed, Time.deltaTime * 0.5f);
 
-        if (is_on_ground && Input.GetButton("Jump")){
-            velocity.y = 5f;
-        }
 
         if (!is_on_ground){
             velocity.y -= gravity * Time.deltaTime;
@@ -47,6 +83,11 @@ public class PlayerController : MonoBehaviour
 
         velocity = velocity + Grapple();
         controller.Move((velocity) * Time.deltaTime);
+    }
+
+    void Detect_State()
+    {
+        if 
     }
 
     Vector3 Grapple()
