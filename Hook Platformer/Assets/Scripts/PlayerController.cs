@@ -39,14 +39,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        jumpInput = Input.GetButton("Jump")
 
         is_on_ground = controller.isGrounded;
 
         switch (playerstate)
         {
             case State.ON_GROUND:
-                if (Input.GetButton("Jump")) {
+                if (jumpInput) {
                     velocity.y = jump_velocity;
                     playerstate = State.JUMPING;
                 }
@@ -55,14 +55,14 @@ public class PlayerController : MonoBehaviour
                 }
                 break;
 
-            case State.JUMPING;
+            case State.JUMPING:
                 velocity.y -= jump_gravity * Time.deltaTime;
-                if (!Input.GetButton("Jump")) {
+                if (!jumpInput) {
 
                 }
                 break;
 
-            case State.FALL_UP;
+            case State.FALL_UP:
                 break;
 
             case State.FALLING:
@@ -85,9 +85,13 @@ public class PlayerController : MonoBehaviour
         controller.Move((velocity) * Time.deltaTime);
     }
 
-    void Detect_State()
+    State Detect_State()
     {
-        if 
+        if (controller.isGrounded)
+        {
+            return(State.ON_GROUND)
+        }
+        if (velocity.y > 0 && !Input.)
     }
 
     Vector3 Grapple()
