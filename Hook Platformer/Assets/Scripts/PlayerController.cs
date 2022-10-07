@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private enum State { ON_GROUND, JUMPING, FALL_UP, FALLING}
     private State playerstate;
 
+    private bool jumpInput = false;
+    private bool is_on_ground = false;
 
     public float speed = 70.0f;
     public float jump_velocity = 30f;
@@ -39,7 +41,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        jumpInput = Input.GetButton("Jump")
+        jumpInput = Input.GetButton("Jump");
 
         is_on_ground = controller.isGrounded;
 
@@ -57,12 +59,12 @@ public class PlayerController : MonoBehaviour
 
             case State.JUMPING:
                 velocity.y -= jump_gravity * Time.deltaTime;
-                if (!jumpInput) {
-
-                }
+                playerstate = Detect_State();
                 break;
 
             case State.FALL_UP:
+                velocity.y -= up_gravity * Time.deltaTime;
+                playerstate = Detect_State();
                 break;
 
             case State.FALLING:
@@ -87,11 +89,28 @@ public class PlayerController : MonoBehaviour
 
     State Detect_State()
     {
+
         if (controller.isGrounded)
         {
-            return(State.ON_GROUND)
+            return (State.ON_GROUND);
         }
-        if (velocity.y > 0 && !Input.)
+
+        if (velocity.y > 0)
+        {
+            if (jumpInput)
+            {
+                return (State.FALL_UP);
+            }
+            else
+            {
+                return (State.FALLING);
+            }
+            
+        }
+        else
+        {
+            return (State.FALLING);
+        }
     }
 
     Vector3 Grapple()
