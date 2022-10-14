@@ -179,7 +179,7 @@ MonoBehaviour:
   gravity: 10
   jump_gravity: 5
   up_gravity: 5
-  raycastDistrance: 2
+  raycastDistrance: 1
   slowOnHit: 0.33
   grappleStrength: 0.05
   maxGrappleLength: Infinity
