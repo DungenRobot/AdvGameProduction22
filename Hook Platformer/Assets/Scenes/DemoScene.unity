@@ -308,8 +308,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 25
-  gravity: 10
   jump_velocity: 7
+  gravity: 10
+  jump_gravity: 5
+  up_gravity: 5
   grappleStrength: 0.05
   maxGrappleLength: Infinity
   grappleables: []
