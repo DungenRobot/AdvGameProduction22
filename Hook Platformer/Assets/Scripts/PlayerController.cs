@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private CharacterController controller;
-    private Vector3 velocity;
+    public Vector3 velocity;
 
     private enum State { ON_GROUND, JUMPING, FALL_UP, FALLING}
     private State playerstate;
@@ -21,7 +21,9 @@ public class PlayerController : MonoBehaviour
     public float jump_gravity = 50f;
     public float up_gravity = 80f;
 
-
+    //CollisionStuff
+    public float raycastDistrance = 4.0f;
+    public float slowOnHit = 0.33f;
 
     // Grapple Stuff
     public float grappleStrength = 1;
@@ -82,6 +84,16 @@ public class PlayerController : MonoBehaviour
 
         velocity = velocity + Grapple();
         controller.Move((velocity) * Time.deltaTime);
+
+        int layerMask = 1 << 6;
+        layerMask = ~layerMask;
+        
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, raycastDistrance, layerMask);
+        if (hit.collider.gameObject.layer == 7)
+        {
+            velocity.x = velocity.x * slowOnHit;
+            Destroy(hit.collider.gameObject);
+        }
     }
 
     State Detect_State()

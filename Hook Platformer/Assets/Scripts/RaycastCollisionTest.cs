@@ -5,6 +5,7 @@ using UnityEngine;
 public class RaycastCollisionTest : MonoBehaviour
 {
     public float raycastDistrance = 4.0f;
+    public float slowOnHit = 0.33f;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +19,7 @@ public class RaycastCollisionTest : MonoBehaviour
 
         //LayerMask mask = LayerMask.GetMask("Wall");
 
-        int layerMask = 1 << 6;
-        layerMask = ~layerMask;
+        
         /*
         
         
@@ -27,11 +27,15 @@ public class RaycastCollisionTest : MonoBehaviour
         {
             Destroy(gameObject);
         } */
-        
+
+        int layerMask = 1 << 6;
+        layerMask = ~layerMask;
+
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, raycastDistrance, layerMask);
-        if (hit.collider.gameObject.layer == 3)
+        if (hit.collider.gameObject.layer == 7)
         {
-            Destroy(gameObject);
+            //velocity.x = velocity.x * slowOnHit;
+            Destroy(hit.collider.gameObject);
         }
     }
 }
