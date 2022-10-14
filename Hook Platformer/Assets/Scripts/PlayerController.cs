@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
         switch (playerstate)
         {
             case State.ON_GROUND:
+                velocity.x = Mathf.Lerp(velocity.x, speed, Time.deltaTime * 0.5f);
                 if (jumpInput) {
                     velocity.y = jump_velocity;
                     playerstate = State.JUMPING;
@@ -63,7 +64,7 @@ public class PlayerController : MonoBehaviour
                 break;
 
             case State.FALL_UP:
-                velocity.y -= up_gravity * Time.deltaTime;
+                velocity.y -= up_gravity * Time.deltaTime ;
                 playerstate = Detect_State();
                 break;
 
@@ -74,10 +75,6 @@ public class PlayerController : MonoBehaviour
                 }
                 break;
         }
-
-
-        if(is_on_ground) velocity.x = Mathf.Lerp(velocity.x, speed, Time.deltaTime * 0.5f);
-
 
         if (!is_on_ground){
             velocity.y -= gravity * Time.deltaTime;
@@ -116,7 +113,6 @@ public class PlayerController : MonoBehaviour
     Vector3 Grapple()
     {
         if(Input.GetKeyDown(KeyCode.Q)){
-            Debug.Log("Q Down");
             float cd = Vector2.Distance(grappleables[0].position, this.transform.position);
             Transform co = grappleables[0];
 
@@ -126,13 +122,14 @@ public class PlayerController : MonoBehaviour
                 if(dist < cd){ co = grappleable; cd = dist;} 
             }
 
-            if(cd <= maxGrappleLength) currentGrappleTarget = co;
+            if(cd <= maxGrappleLength){
+                currentGrappleTarget = co;
+            }
         }
 
         if(Input.GetKeyUp(KeyCode.Q)) currentGrappleTarget = null;
 
         if(currentGrappleTarget != null){
-
             float angle = Mathf.Atan2(currentGrappleTarget.position.y - this.transform.position.y, currentGrappleTarget.position.x - this.transform.position.x);
             return new Vector3(Mathf.Cos(angle), Mathf.Sin(angle),0) * grappleStrength;
         }
