@@ -104,7 +104,7 @@ public class RopeControllerRealistic : MonoBehaviour
             positions[i] = allRopeSections[i].pos;
         }
 
-        lineRenderer.numPositions = positions.Length;
+        lineRenderer.positionCount = positions.Length;
 
         lineRenderer.SetPositions(positions);
     }
@@ -153,7 +153,7 @@ public class RopeControllerRealistic : MonoBehaviour
         //Calculate acceleration in each rope section which is what is needed to get the next pos and vel
         List<Vector3> accelerationFromEuler = CalculateAccelerations(nextPosVelForwardEuler);
 
-        List<RopeSection> nextPosVelHeunsMethod = new List<RopeSection>>();
+        List<RopeSection> nextPosVelHeunsMethod = new List<RopeSection>();
 
         //Loop through all line segments (except the last because it's always connected to something)
         for (int i = 0; i < allRopeSections.Count - 1; i++)
