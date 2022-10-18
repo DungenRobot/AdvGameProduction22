@@ -22,7 +22,8 @@ public class PlayerController : MonoBehaviour
     public float up_gravity = 80f;
 
     //CollisionStuff
-    public float raycastDistrance = 4.0f;
+    public float raycastRightDistrance = 4.0f;
+    public float raycastDownDistrance = 4.0f;
     public float slowOnHit = 0.33f;
 
     // Grapple Stuff
@@ -80,6 +81,7 @@ public class PlayerController : MonoBehaviour
 
         if (!is_on_ground){
             velocity.y -= gravity * Time.deltaTime;
+            
         }
 
         velocity = velocity + Grapple();
@@ -88,12 +90,23 @@ public class PlayerController : MonoBehaviour
         int layerMask = 1 << 6;
         layerMask = ~layerMask;
         
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, raycastDistrance, layerMask);
-        if (hit.collider.gameObject.layer == 7)
+        RaycastHit2D hitRight = Physics2D.Raycast(transform.position, Vector2.right, raycastRightDistrance, layerMask);
+        
+        
+        if (hitRight.collider.gameObject.layer == 7)
         {
             velocity.x = velocity.x * slowOnHit;
-            Destroy(hit.collider.gameObject);
+            Destroy(hitRight.collider.gameObject);
         }
+
+        /*RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector2.down, raycastDownDistrance, layerMask);
+        if (hitDown.collider.gameObject.layer == 7)
+        {
+            Destroy(hitDown.collider.gameObject);
+
+        }*/
+        
+
     }
 
     State Detect_State()

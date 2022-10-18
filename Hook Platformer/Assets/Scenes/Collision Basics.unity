@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 3396458}
   - component: {fileID: 3396457}
   - component: {fileID: 3396456}
+  - component: {fileID: 3396461}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -179,7 +180,8 @@ MonoBehaviour:
   gravity: 10
   jump_gravity: 5
   up_gravity: 5
-  raycastDistrance: 1
+  raycastRightDistrance: 4
+  raycastDownDistrance: 5
   slowOnHit: 0.33
   grappleStrength: 0.05
   maxGrappleLength: Infinity
@@ -267,6 +269,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3396461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3396455}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f71260c32764cdeb3c3f20857263b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raycastDistrance: 0
+  slowOnHit: 0.33
 --- !u!1 &17372636
 GameObject:
   m_ObjectHideFlags: 0
@@ -1311,8 +1327,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1485601122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.4, y: -2, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalPosition: {x: 30.7958, y: -2, z: 0}
+  m_LocalScale: {x: 10.2084, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

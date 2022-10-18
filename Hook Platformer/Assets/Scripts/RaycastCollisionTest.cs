@@ -31,7 +31,10 @@ public class RaycastCollisionTest : MonoBehaviour
         int layerMask = 1 << 6;
         layerMask = ~layerMask;
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, raycastDistrance, layerMask);
+       //RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, raycastDistrance, layerMask);
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 5, Vector2.right, layerMask);
+        
+        
         if (hit.collider.gameObject.layer == 7)
         {
             //velocity.x = velocity.x * slowOnHit;
