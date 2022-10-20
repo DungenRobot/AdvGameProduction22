@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private bool is_on_ground = false;
 
     public float speed = 70.0f;
-    private float jump_velocity = 10f;
+    public float jump_velocity = 10f;
 
     //gravity things
     public float gravity = 130.0f;
