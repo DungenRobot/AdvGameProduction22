@@ -1187,6 +1187,7 @@ GameObject:
   - component: {fileID: 2018165282}
   - component: {fileID: 2018165281}
   - component: {fileID: 2018165280}
+  - component: {fileID: 2018165286}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1206,13 +1207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f51d6ab38aecf46848813e2e8d4fb490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Line: {fileID: 2018165281}
-  InitialState:
-  - {x: 0, y: 0, z: 0}
-  - {x: 10, y: 1, z: 0}
-  - {x: 10, y: 5, z: 0}
-  SmoothingLength: 2
-  SmoothingSections: 4
 --- !u!120 &2018165281
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1343,9 +1337,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b9550c1a272c408f8c76f7c2704be5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocity: {x: 0, y: 0, z: 0}
   speed: 25
+  jump_velocity: 10
   gravity: 10
-  jump_velocity: 7
+  jump_gravity: 50
+  up_gravity: 80
+  raycastRightDistrance: 4
+  raycastDownDistrance: 4
+  slowOnHit: 0.33
   grappleStrength: 0.05
   maxGrappleLength: Infinity
   grappleables: []
@@ -1390,8 +1390,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.51998043, g: 0.6660975, b: 0.8962264, a: 1}
+  m_Sprite: {fileID: -1027106423, guid: d765c14c008a149eabc0939b1e837d52, type: 3}
+  m_Color: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1409,14 +1409,34 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2018165279}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.14, y: -0.17, z: -5}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalPosition: {x: -1.05, y: 0.22, z: -5}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2138781341}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2018165286
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018165279}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 62bb62456c8424cbe998be3f9a4a2106, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2138781340
 GameObject:
   m_ObjectHideFlags: 0
