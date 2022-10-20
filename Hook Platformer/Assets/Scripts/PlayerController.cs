@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private bool is_on_ground = false;
 
     public float speed = 70.0f;
-    public float jump_velocity = 30f;
+    private float jump_velocity = 10f;
 
     //gravity things
     public float gravity = 130.0f;
@@ -48,6 +48,8 @@ public class PlayerController : MonoBehaviour
 
         is_on_ground = controller.isGrounded;
 
+        //Debug.Log(playerstate);
+
         switch (playerstate)
         {
             case State.ON_GROUND:
@@ -56,7 +58,7 @@ public class PlayerController : MonoBehaviour
                     velocity.y = jump_velocity;
                     playerstate = State.JUMPING;
                 }
-                if (!controller.isGrounded) {
+                else if (!controller.isGrounded) {
                     playerstate = State.FALLING;
                 }
                 break;
@@ -127,11 +129,11 @@ public class PlayerController : MonoBehaviour
         {
             if (jumpInput)
             {
-                return (State.FALL_UP);
+                return (State.JUMPING);
             }
             else
             {
-                return (State.FALLING);
+                return (State.FALL_UP);
             }
             
         }
