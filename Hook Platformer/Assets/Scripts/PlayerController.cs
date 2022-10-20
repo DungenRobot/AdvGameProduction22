@@ -89,23 +89,29 @@ public class PlayerController : MonoBehaviour
 
         int layerMask = 1 << 6;
         layerMask = ~layerMask;
+
         
-        RaycastHit2D hitRight = Physics2D.Raycast(transform.position, Vector2.right, raycastRightDistrance, layerMask);
-        
-        
-        if (hitRight.collider.gameObject.layer == 7)
+
+        if (Physics2D.Raycast(transform.position, Vector2.right, raycastRightDistrance, layerMask))
         {
-            velocity.x = velocity.x * slowOnHit;
-            Destroy(hitRight.collider.gameObject);
+            RaycastHit2D hitRight = Physics2D.Raycast(transform.position, Vector2.right, raycastRightDistrance, layerMask);
+            if (hitRight.collider.gameObject.layer == 7)
+            {
+                velocity.x = velocity.x * slowOnHit;
+                Destroy(hitRight.collider.gameObject);
+            }
         }
 
-        /*RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector2.down, raycastDownDistrance, layerMask);
-        if (hitDown.collider.gameObject.layer == 7)
+        if (Physics2D.Raycast(transform.position, Vector2.down, raycastDownDistrance, layerMask))
         {
-            Destroy(hitDown.collider.gameObject);
+            RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector2.down, raycastDownDistrance, layerMask);
+            if (hitDown.collider.gameObject.layer == 7)
+            {
+                
+                Destroy(hitDown.collider.gameObject);
+            }
+        }
 
-        }*/
-        
 
     }
 
