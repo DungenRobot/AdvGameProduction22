@@ -180,8 +180,8 @@ MonoBehaviour:
   gravity: 10
   jump_gravity: 5
   up_gravity: 5
-  raycastRightDistrance: 4
-  raycastDownDistrance: 5
+  raycastRightDistrance: 0.5
+  raycastDownDistrance: 1
   slowOnHit: 0.33
   grappleStrength: 0.05
   maxGrappleLength: Infinity
@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f71260c32764cdeb3c3f20857263b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raycastDistrance: 0
+  raycastDistrance: 1
   slowOnHit: 0.33
 --- !u!1 &17372636
 GameObject:
