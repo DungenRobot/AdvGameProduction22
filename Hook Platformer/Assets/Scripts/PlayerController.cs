@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private bool is_on_ground = false;
 
     public float speed = 70.0f;
-    public float jump_velocity = 30f;
+    private float jump_velocity = 10f;
 
     //gravity things
     public float gravity = 130.0f;
@@ -48,6 +48,8 @@ public class PlayerController : MonoBehaviour
 
         is_on_ground = controller.isGrounded;
 
+        //Debug.Log(playerstate);
+
         switch (playerstate)
         {
             case State.ON_GROUND:
@@ -56,7 +58,7 @@ public class PlayerController : MonoBehaviour
                     velocity.y = jump_velocity;
                     playerstate = State.JUMPING;
                 }
-                if (!controller.isGrounded) {
+                else if (!controller.isGrounded) {
                     playerstate = State.FALLING;
                 }
                 break;
@@ -93,11 +95,11 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D hitRight = Physics2D.Raycast(transform.position, Vector2.right, raycastRightDistrance, layerMask);
         
         
-        if (hitRight.collider.gameObject.layer == 7)
-        {
-            velocity.x = velocity.x * slowOnHit;
-            Destroy(hitRight.collider.gameObject);
-        }
+        //if (hitRight.collider.gameObject.layer == 7)
+        //{
+        //    velocity.x = velocity.x * slowOnHit;
+        //    Destroy(hitRight.collider.gameObject);
+        //}
 
         /*RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector2.down, raycastDownDistrance, layerMask);
         if (hitDown.collider.gameObject.layer == 7)
@@ -121,11 +123,11 @@ public class PlayerController : MonoBehaviour
         {
             if (jumpInput)
             {
-                return (State.FALL_UP);
+                return (State.JUMPING);
             }
             else
             {
-                return (State.FALLING);
+                return (State.FALL_UP);
             }
             
         }
