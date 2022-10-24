@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RaycastCollisionTest : MonoBehaviour
 {
-    public float raycastDistrance = 4.0f;
+    public float raycastDistrance = 1.0f;
     public float slowOnHit = 0.33f;
     // Start is called before the first frame update
     void Start()
@@ -28,17 +28,43 @@ public class RaycastCollisionTest : MonoBehaviour
             Destroy(gameObject);
         } */
 
-        int layerMask = 1 << 6;
-        layerMask = ~layerMask;
+        int layerMask = 1 << 7;
+        //layerMask = ~layerMask;
+        //RaycastHit hit = Physics.Raycast(transform.position, Vector3.right, raycastDistrance, layerMask);
 
-       //RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, raycastDistrance, layerMask);
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 5, Vector2.right, layerMask);
-        
-        
+        //RaycastHit hit = Physics.Raycast(transform.position, Vector3.right, raycastDistrance, layerMask);
+
+
+        /*
+        if (Physics.Raycast(transform.position, Vector3.right, raycastDistrance, layerMask))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, raycastDistrance, layerMask);
+            Destroy(hit.collider.gameObject);
+        }
+        */
+
+        if (Physics2D.Raycast(transform.position, Vector2.right, raycastDistrance, layerMask))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, raycastDistrance, layerMask);
+            Destroy(hit.collider.gameObject);
+        }
+
+        if (Physics2D.Raycast(transform.position, Vector2.down, raycastDistrance, layerMask))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, raycastDistrance, layerMask);
+            Destroy(hit.collider.gameObject);
+        }
+
+
+        //Used to test distance of the rays
+        Vector2 down = transform.TransformDirection(Vector2.down) * raycastDistrance;
+        Debug.DrawRay(transform.position, down, Color.blue);
+
+        /*
         if (hit.collider.gameObject.layer == 7)
         {
             //velocity.x = velocity.x * slowOnHit;
             Destroy(hit.collider.gameObject);
-        }
+        }*/
     }
 }

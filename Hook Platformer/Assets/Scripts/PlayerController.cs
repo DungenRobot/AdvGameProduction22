@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private bool is_on_ground = false;
 
     public float speed = 70.0f;
-    private float jump_velocity = 10f;
+    public float jump_velocity = 10f;
 
     //gravity things
     public float gravity = 130.0f;
@@ -91,23 +91,29 @@ public class PlayerController : MonoBehaviour
 
         int layerMask = 1 << 6;
         layerMask = ~layerMask;
-        
-        RaycastHit2D hitRight = Physics2D.Raycast(transform.position, Vector2.right, raycastRightDistrance, layerMask);
-        
-        
-        //if (hitRight.collider.gameObject.layer == 7)
-        //{
-        //    velocity.x = velocity.x * slowOnHit;
-        //    Destroy(hitRight.collider.gameObject);
-        //}
 
-        /*RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector2.down, raycastDownDistrance, layerMask);
-        if (hitDown.collider.gameObject.layer == 7)
+        
+
+        if (Physics2D.Raycast(transform.position, Vector2.right, raycastRightDistrance, layerMask))
         {
-            Destroy(hitDown.collider.gameObject);
+            RaycastHit2D hitRight = Physics2D.Raycast(transform.position, Vector2.right, raycastRightDistrance, layerMask);
+            if (hitRight.collider.gameObject.layer == 7)
+            {
+                velocity.x = velocity.x * slowOnHit;
+                Destroy(hitRight.collider.gameObject);
+            }
+        }
 
-        }*/
-        
+        if (Physics2D.Raycast(transform.position, Vector2.down, raycastDownDistrance, layerMask))
+        {
+            RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector2.down, raycastDownDistrance, layerMask);
+            if (hitDown.collider.gameObject.layer == 7)
+            {
+                
+                Destroy(hitDown.collider.gameObject);
+            }
+        }
+
 
     }
 
