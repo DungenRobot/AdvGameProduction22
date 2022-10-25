@@ -64,10 +64,10 @@ public class RopeControllerRealistic : MonoBehaviour
         DebugRopeLength();
 
         //Move what is hanging from the rope to the end of the rope
-        whatIsHangingFromTheRope.position = allRopeSections[0].pos;
+//        whatIsHangingFromTheRope.position = allRopeSections[0].pos;
 
         //Make what's hanging from the rope look at the next to last rope position to make it rotate with the rope
-        whatIsHangingFromTheRope.LookAt(allRopeSections[1].pos);
+   //     whatIsHangingFromTheRope.LookAt(allRopeSections[1].pos);
     }
 
     void FixedUpdate()
@@ -271,7 +271,7 @@ public class RopeControllerRealistic : MonoBehaviour
             //end of the rope is attached to a box with a mass
             if (i == 0)
             {
-                springMass += whatIsHangingFromTheRope.GetComponent<Rigidbody>().mass;
+          //      springMass += whatIsHangingFromTheRope.GetComponent<Rigidbody>().mass;
             }
 
             //Force from gravity
