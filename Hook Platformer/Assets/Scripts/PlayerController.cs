@@ -31,6 +31,11 @@ public class PlayerController : MonoBehaviour
     public float maxGrappleLength = 10000;
     public Transform[] grappleables;
     private Transform currentGrappleTarget = null;
+
+    //Audio
+    public AudioClip jumpAudio;
+    public AudioClip crashAudio;
+    private AudioSource audioSource;
     
 
 
@@ -39,6 +44,7 @@ public class PlayerController : MonoBehaviour
     {
         controller = gameObject.GetComponent<CharacterController>();
         grappleables = GetGrappleables();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -57,6 +63,8 @@ public class PlayerController : MonoBehaviour
                 if (jumpInput) {
                     velocity.y = jump_velocity;
                     playerstate = State.JUMPING;
+                    audioSource.clip = jumpAudio;
+                    audioSource.Play();
                 }
                 else if (!controller.isGrounded) {
                     playerstate = State.FALLING;
@@ -101,6 +109,8 @@ public class PlayerController : MonoBehaviour
             {
                 velocity.x = velocity.x * slowOnHit;
                 Destroy(hitRight.collider.gameObject);
+                audioSource.clip = crashAudio;
+                audioSource.Play();
             }
         }
 
@@ -109,7 +119,8 @@ public class PlayerController : MonoBehaviour
             RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector2.down, raycastDownDistrance, layerMask);
             if (hitDown.collider.gameObject.layer == 7)
             {
-                
+                velocity.y = jump_velocity;
+                playerstate = State.FALL_UP;
                 Destroy(hitDown.collider.gameObject);
             }
         }
