@@ -108,7 +108,8 @@ public class PlayerController : MonoBehaviour
             if (hitRight.collider.gameObject.layer == 7)
             {
                 velocity.x = velocity.x * slowOnHit;
-                Destroy(hitRight.collider.gameObject);
+                hitRight.collider.gameObject.layer = 8;
+                
                 audioSource.clip = crashAudio;
                 audioSource.Play();
             }
@@ -121,7 +122,7 @@ public class PlayerController : MonoBehaviour
             {
                 velocity.y = jump_velocity;
                 playerstate = State.FALL_UP;
-                Destroy(hitDown.collider.gameObject);
+                hitDown.collider.gameObject.layer = 8;
             }
         }
 
