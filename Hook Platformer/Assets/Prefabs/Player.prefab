@@ -123,7 +123,7 @@ MonoBehaviour:
   gravity: 15
   jump_gravity: 10
   up_gravity: 30
-  raycastRightDistrance: 0.5
+  raycastRightDistrance: 1
   raycastDownDistrance: 1
   slowOnHit: 0.33
   grappleStrength: 0.05
