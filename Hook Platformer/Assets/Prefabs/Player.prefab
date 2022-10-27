@@ -122,12 +122,14 @@ MonoBehaviour:
   gravity: 15
   jump_gravity: 10
   up_gravity: 30
-  raycastRightDistrance: 4
-  raycastDownDistrance: 4
+  raycastRightDistrance: 0.5
+  raycastDownDistrance: 1
   slowOnHit: 0.33
   grappleStrength: 0.05
   maxGrappleLength: Infinity
   grappleables: []
+  jumpAudio: {fileID: 8300000, guid: d89fdcbf071ee460f866738237a4bd99, type: 3}
+  crashAudio: {fileID: 8300000, guid: f0f3e12ade89d40f3a1772bfb53ebf29, type: 3}
 --- !u!143 &3556132627368546090
 CharacterController:
   m_ObjectHideFlags: 0
