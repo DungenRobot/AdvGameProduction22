@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public float raycastRightDistrance = 4.0f;
     public float raycastDownDistrance = 4.0f;
     public float slowOnHit = 0.33f;
+    private Vector3 shiftUD = new Vector3(0, 0.75f, 0);
 
     // Grapple Stuff
     public float grappleStrength = 1;
@@ -36,7 +37,10 @@ public class PlayerController : MonoBehaviour
     public AudioClip jumpAudio;
     public AudioClip crashAudio;
     private AudioSource audioSource;
+
+    //Tricks
     
+
 
 
     // Start is called before the first frame update
@@ -117,7 +121,7 @@ public class PlayerController : MonoBehaviour
 
         if (Physics2D.Raycast(transform.position + Vector3.up, Vector2.right, raycastRightDistrance, layerMask))
         {
-            RaycastHit2D hitRight = Physics2D.Raycast(transform.position + Vector3.up, Vector2.right, raycastRightDistrance, layerMask);
+            RaycastHit2D hitRight = Physics2D.Raycast(transform.position + shiftUD, Vector2.right, raycastRightDistrance, layerMask);
             if (hitRight.collider.gameObject.layer == 7)
             {
                 velocity.x = velocity.x * slowOnHit;
@@ -130,7 +134,7 @@ public class PlayerController : MonoBehaviour
 
         if (Physics2D.Raycast(transform.position + Vector3.down, Vector2.right, raycastRightDistrance, layerMask))
         {
-            RaycastHit2D hitRight = Physics2D.Raycast(transform.position + Vector3.down, Vector2.right, raycastRightDistrance, layerMask);
+            RaycastHit2D hitRight = Physics2D.Raycast(transform.position - shiftUD, Vector2.right, raycastRightDistrance, layerMask);
             if (hitRight.collider.gameObject.layer == 7)
             {
                 velocity.x = velocity.x * slowOnHit;
@@ -152,7 +156,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-
+        
     }
 
     State Detect_State()
