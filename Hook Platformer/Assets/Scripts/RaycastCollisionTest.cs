@@ -58,7 +58,7 @@ public class RaycastCollisionTest : MonoBehaviour
 
         //Used to test distance of the rays
         Vector2 down = transform.TransformDirection(Vector2.down) * raycastDistrance;
-        Debug.DrawRay(transform.position, down, Color.blue);
+        Debug.DrawRay(transform.position + Vector3.down, down, Color.blue);
 
         /*
         if (hit.collider.gameObject.layer == 7)

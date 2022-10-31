@@ -115,6 +115,32 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (Physics2D.Raycast(transform.position + Vector3.up, Vector2.right, raycastRightDistrance, layerMask))
+        {
+            RaycastHit2D hitRight = Physics2D.Raycast(transform.position + Vector3.up, Vector2.right, raycastRightDistrance, layerMask);
+            if (hitRight.collider.gameObject.layer == 7)
+            {
+                velocity.x = velocity.x * slowOnHit;
+                hitRight.collider.gameObject.layer = 8;
+
+                audioSource.clip = crashAudio;
+                audioSource.Play();
+            }
+        }
+
+        if (Physics2D.Raycast(transform.position + Vector3.down, Vector2.right, raycastRightDistrance, layerMask))
+        {
+            RaycastHit2D hitRight = Physics2D.Raycast(transform.position + Vector3.down, Vector2.right, raycastRightDistrance, layerMask);
+            if (hitRight.collider.gameObject.layer == 7)
+            {
+                velocity.x = velocity.x * slowOnHit;
+                hitRight.collider.gameObject.layer = 8;
+
+                audioSource.clip = crashAudio;
+                audioSource.Play();
+            }
+        }
+
         if (Physics2D.Raycast(transform.position, Vector2.down, raycastDownDistrance, layerMask))
         {
             RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector2.down, raycastDownDistrance, layerMask);
