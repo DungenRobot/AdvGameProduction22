@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     public float maxGrappleLength = 10000;
     public Transform[] grappleables;
     private Transform currentGrappleTarget = null;
+<<<<<<< Updated upstream
 
     //Audio
     public AudioClip jumpAudio;
@@ -39,6 +40,9 @@ public class PlayerController : MonoBehaviour
     private AudioSource audioSource;
 
     //Tricks
+=======
+    public GrappleRope grappleRope;
+>>>>>>> Stashed changes
     
 
 
@@ -199,10 +203,14 @@ public class PlayerController : MonoBehaviour
 
             if(cd <= maxGrappleLength){
                 currentGrappleTarget = co;
+                grappleRope.Grapple(co);
             }
         }
 
-        if(Input.GetKeyUp(KeyCode.Q)) currentGrappleTarget = null;
+        if(Input.GetKeyUp(KeyCode.Q)){
+            currentGrappleTarget = null; 
+            grappleRope.UnGrapple();
+        }
 
         if(currentGrappleTarget != null){
             float angle = Mathf.Atan2(currentGrappleTarget.position.y - this.transform.position.y, currentGrappleTarget.position.x - this.transform.position.x);
