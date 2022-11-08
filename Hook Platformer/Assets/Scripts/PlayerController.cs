@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     public float maxGrappleLength = 10000;
     public Transform[] grappleables;
     private Transform currentGrappleTarget = null;
-<<<<<<< Updated upstream
+    public GrappleRope grappleRope;
 
     //Audio
     public AudioClip jumpAudio;
@@ -40,11 +40,6 @@ public class PlayerController : MonoBehaviour
     private AudioSource audioSource;
 
     //Tricks
-=======
-    public GrappleRope grappleRope;
->>>>>>> Stashed changes
-    
-
 
 
     // Start is called before the first frame update
