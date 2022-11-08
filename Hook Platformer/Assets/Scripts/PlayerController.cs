@@ -25,13 +25,26 @@ public class PlayerController : MonoBehaviour
     public float raycastRightDistrance = 4.0f;
     public float raycastDownDistrance = 4.0f;
     public float slowOnHit = 0.33f;
+    private Vector3 shiftUD = new Vector3(0, 0.75f, 0);
 
     // Grapple Stuff
     public float grappleStrength = 1;
     public float maxGrappleLength = 10000;
     public Transform[] grappleables;
     private Transform currentGrappleTarget = null;
+<<<<<<< Updated upstream
+
+    //Audio
+    public AudioClip jumpAudio;
+    public AudioClip crashAudio;
+    private AudioSource audioSource;
+
+    //Tricks
+=======
+    public GrappleRope grappleRope;
+>>>>>>> Stashed changes
     
+
 
 
     // Start is called before the first frame update
@@ -39,6 +52,7 @@ public class PlayerController : MonoBehaviour
     {
         controller = gameObject.GetComponent<CharacterController>();
         grappleables = GetGrappleables();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -57,6 +71,8 @@ public class PlayerController : MonoBehaviour
                 if (jumpInput) {
                     velocity.y = jump_velocity;
                     playerstate = State.JUMPING;
+                    audioSource.clip = jumpAudio;
+                    audioSource.Play();
                 }
                 else if (!controller.isGrounded) {
                     playerstate = State.FALLING;
@@ -100,7 +116,36 @@ public class PlayerController : MonoBehaviour
             if (hitRight.collider.gameObject.layer == 7)
             {
                 velocity.x = velocity.x * slowOnHit;
-                Destroy(hitRight.collider.gameObject);
+                hitRight.collider.gameObject.layer = 8;
+                
+                audioSource.clip = crashAudio;
+                audioSource.Play();
+            }
+        }
+
+        if (Physics2D.Raycast(transform.position + Vector3.up, Vector2.right, raycastRightDistrance, layerMask))
+        {
+            RaycastHit2D hitRight = Physics2D.Raycast(transform.position + shiftUD, Vector2.right, raycastRightDistrance, layerMask);
+            if (hitRight.collider.gameObject.layer == 7)
+            {
+                velocity.x = velocity.x * slowOnHit;
+                hitRight.collider.gameObject.layer = 8;
+
+                audioSource.clip = crashAudio;
+                audioSource.Play();
+            }
+        }
+
+        if (Physics2D.Raycast(transform.position + Vector3.down, Vector2.right, raycastRightDistrance, layerMask))
+        {
+            RaycastHit2D hitRight = Physics2D.Raycast(transform.position - shiftUD, Vector2.right, raycastRightDistrance, layerMask);
+            if (hitRight.collider.gameObject.layer == 7)
+            {
+                velocity.x = velocity.x * slowOnHit;
+                hitRight.collider.gameObject.layer = 8;
+
+                audioSource.clip = crashAudio;
+                audioSource.Play();
             }
         }
 
@@ -109,12 +154,13 @@ public class PlayerController : MonoBehaviour
             RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector2.down, raycastDownDistrance, layerMask);
             if (hitDown.collider.gameObject.layer == 7)
             {
-                
-                Destroy(hitDown.collider.gameObject);
+                velocity.y = jump_velocity;
+                playerstate = State.FALL_UP;
+                hitDown.collider.gameObject.layer = 8;
             }
         }
 
-
+        
     }
 
     State Detect_State()
@@ -157,10 +203,14 @@ public class PlayerController : MonoBehaviour
 
             if(cd <= maxGrappleLength){
                 currentGrappleTarget = co;
+                grappleRope.Grapple(co);
             }
         }
 
-        if(Input.GetKeyUp(KeyCode.Q)) currentGrappleTarget = null;
+        if(Input.GetKeyUp(KeyCode.Q)){
+            currentGrappleTarget = null; 
+            grappleRope.UnGrapple();
+        }
 
         if(currentGrappleTarget != null){
             float angle = Mathf.Atan2(currentGrappleTarget.position.y - this.transform.position.y, currentGrappleTarget.position.x - this.transform.position.x);
