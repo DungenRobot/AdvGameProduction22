@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     public Vector3 velocity;
 
-    private enum State { ON_GROUND, JUMPING, FALL_UP, FALLING}
+    private enum State { ON_GROUND, JUMPING, FALL_UP, FALLING, FAILED}
     private State playerstate;
 
     private bool jumpInput = false;
@@ -90,7 +90,14 @@ public class PlayerController : MonoBehaviour
                     playerstate = State.ON_GROUND;
                 }
                 break;
+
+            case State.FAILED:
+                velocity.x = 0;
+                velocity.y = 0;
+                print("You Failed");
+                break;
         }
+
 
         if (!is_on_ground){
             velocity.y -= gravity * Time.deltaTime;
@@ -116,6 +123,10 @@ public class PlayerController : MonoBehaviour
                 audioSource.clip = crashAudio;
                 audioSource.Play();
             }
+            if (hitRight.collider.gameObject.layer == 3)
+            {
+                playerstate = State.FAILED;
+            }
         }
 
         if (Physics2D.Raycast(transform.position + Vector3.up, Vector2.right, raycastRightDistrance, layerMask))
@@ -129,6 +140,10 @@ public class PlayerController : MonoBehaviour
                 audioSource.clip = crashAudio;
                 audioSource.Play();
             }
+            if (hitRight.collider.gameObject.layer == 3)
+            {
+                playerstate = State.FAILED;
+            }
         }
 
         if (Physics2D.Raycast(transform.position + Vector3.down, Vector2.right, raycastRightDistrance, layerMask))
@@ -141,6 +156,10 @@ public class PlayerController : MonoBehaviour
 
                 audioSource.clip = crashAudio;
                 audioSource.Play();
+            }
+            if (hitRight.collider.gameObject.layer == 3)
+            {
+                playerstate = State.FAILED;
             }
         }
 
