@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GrappleRope : MonoBehaviour{
   public Transform player;
-  public Transform gp;
+  private Transform gp;
   public LineRenderer lr;
   public int percision = 40;
   [Range(0,20)] public float straightenLineSpeed = 5;
@@ -15,8 +15,9 @@ public class GrappleRope : MonoBehaviour{
   private float waveSize;
   private float moveTime;
   
-  bool straightLine = true;
-  [HideInInspector] public bool isGrappling = true; // Need Set Through Movement Script
+  //bool straightLine = true;
+  //[HideInInspector] 
+  private bool isGrappling = false;
   
 
   public void Start(){
@@ -24,12 +25,12 @@ public class GrappleRope : MonoBehaviour{
   }
 
   public void Grapple(Transform to){
+    gp = to;
     moveTime = 0;
     lr.positionCount = percision;
     waveSize = StartWaveSize;
-    straightLine = false;
+    //straightLine = false;
     LinePointsToFirePoint();
-    gp = to;
     lr.enabled = true;
     isGrappling = true;
   }
@@ -46,6 +47,7 @@ public class GrappleRope : MonoBehaviour{
   }
 
 public void DrawRope(){
+  Debug.Log("Draw");
     if (waveSize > 0){
       waveSize -= Time.deltaTime * straightenLineSpeed;
       moveTime = (StartWaveSize - waveSize)/StartWaveSize;
@@ -80,6 +82,7 @@ public void DrawRope(){
   }
 
   public void Update(){
+    Debug.Log(isGrappling);
     if(isGrappling) DrawRope();
   }
 
