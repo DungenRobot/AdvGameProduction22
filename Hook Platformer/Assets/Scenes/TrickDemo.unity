@@ -2116,6 +2116,8 @@ MonoBehaviour:
   maxGrappleLength: Infinity
   grappleables: []
   grappleRope: {fileID: 3556132628892733104}
+  jumpAudio: {fileID: 0}
+  crashAudio: {fileID: 0}
 --- !u!143 &3556132628892733095
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2148,6 +2150,7 @@ GameObject:
   - component: {fileID: 3556132628892733095}
   - component: {fileID: 3556132628892733105}
   - component: {fileID: 3556132628892733104}
+  - component: {fileID: 3556132628892733106}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -2349,3 +2352,23 @@ LineRenderer:
     generateLightingData: 1
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &3556132628892733106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3556132628892733103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f68c49a871db4512a72634d14b11b9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tricks:
+  - tag: Rail
+    maxDirToTarget: {x: 0, y: 0}
+    minDirToTarget: {x: 0, y: 0}
+    orderedKey: 1
+    keyPressSpeed: 0
+    keyPressSpeedError: 0
+    keys: 6100000064000000
