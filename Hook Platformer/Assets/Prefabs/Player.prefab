@@ -116,7 +116,7 @@ MonoBehaviour:
   grappleStrength: 0.05
   maxGrappleLength: Infinity
   grappleables: []
-  grappleRope: {fileID: 0}
+  grappleRope: {fileID: 1325413757892962027}
   jumpAudio: {fileID: 8300000, guid: d89fdcbf071ee460f866738237a4bd99, type: 3}
   crashAudio: {fileID: 8300000, guid: f0f3e12ade89d40f3a1772bfb53ebf29, type: 3}
 --- !u!143 &3556132627368546090
