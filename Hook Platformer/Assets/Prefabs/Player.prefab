@@ -904,10 +904,10 @@ GameObject:
   - component: {fileID: 3556132627368546094}
   - component: {fileID: 3556132627368546090}
   - component: {fileID: -8480808261431432563}
-  - component: {fileID: 189571487}
   - component: {fileID: 2717438983669902647}
   - component: {fileID: 5570666514087402590}
   - component: {fileID: 1325413757892962027}
+  - component: {fileID: 189571487}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -927,8 +927,8 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3556132627765900438}
   - {fileID: 2356387318427700646}
+  - {fileID: 3556132627765900438}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1004,7 +1004,6 @@ MonoBehaviour:
   up_gravity: 30
   raycastRightDistrance: 1
   raycastDownDistrance: 1.5
-  slowOnHit: 0.33
   grappleStrength: 0.05
   maxGrappleLength: Infinity
   grappleables: []
@@ -1022,13 +1021,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.7
+  m_Height: 1.75
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.1, z: 0}
+  m_Center: {x: 0, y: -0.1, z: 0}
 --- !u!114 &-8480808261431432563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1043,26 +1042,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Library: []
   m_SpriteLibraryAsset: {fileID: 0}
---- !u!95 &189571487
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3556132627368546082}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: be38b77ef22c54b9ba995529c569c116, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!82 &2717438983669902647
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1083,7 +1062,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.126985
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -1351,6 +1330,26 @@ MonoBehaviour:
     m_RotationOrder: 4
   ropeProgressionSpeed: 1
   StartWaveSize: 5
+--- !u!95 &189571487
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3556132627368546082}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: be38b77ef22c54b9ba995529c569c116, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3556132627765900437
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,7 +1382,7 @@ Transform:
   m_Children:
   - {fileID: 6707269237378767923}
   m_Father: {fileID: 3556132627368546093}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &3556132627765900432
 Camera:
@@ -2125,12 +2124,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7745649946063886935}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.8033, y: -1.4174, z: 0}
-  m_LocalScale: {x: 1.2369108, y: 0.95347434, z: 1}
+  m_LocalPosition: {x: -0.86, y: -0.44, z: 2}
+  m_LocalScale: {x: 0.61195, y: 0.47172248, z: 0.4947406}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3556132627368546093}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1722359745544951385
 SpriteRenderer:
@@ -2173,7 +2172,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 1249195838, guid: bcff75f4c259147d683e097b3ce4c4d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

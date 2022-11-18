@@ -207,31 +207,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &189571478 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3556132627368546082, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
-  m_PrefabInstance: {fileID: 3556132627280178868}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &189571487
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 189571478}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: be38b77ef22c54b9ba995529c569c116, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &282193082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1797,33 +1772,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3556132627368546092, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1027106423, guid: d765c14c008a149eabc0939b1e837d52, type: 3}
-    - target: {fileID: 3556132627368546092, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3556132627368546092, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3556132627368546092, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3556132627368546093, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3556132627368546093, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.39
+      value: -0.69
       objectReference: {fileID: 0}
     - target: {fileID: 3556132627368546093, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.29
+      value: 0.74
       objectReference: {fileID: 0}
     - target: {fileID: 3556132627368546093, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
       propertyPath: m_LocalPosition.z
