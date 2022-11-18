@@ -927,8 +927,8 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3556132627765900438}
   - {fileID: 2356387318427700646}
+  - {fileID: 3556132627765900438}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1004,7 +1004,6 @@ MonoBehaviour:
   up_gravity: 30
   raycastRightDistrance: 1
   raycastDownDistrance: 1.5
-  slowOnHit: 0.33
   grappleStrength: 0.05
   maxGrappleLength: Infinity
   grappleables: []
@@ -1383,7 +1382,7 @@ Transform:
   m_Children:
   - {fileID: 6707269237378767923}
   m_Father: {fileID: 3556132627368546093}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &3556132627765900432
 Camera:
@@ -2130,7 +2129,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3556132627368546093}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1722359745544951385
 SpriteRenderer:
