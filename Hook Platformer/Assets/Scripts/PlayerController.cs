@@ -10,8 +10,10 @@ public class PlayerController : MonoBehaviour
     private enum State { ON_GROUND, JUMPING, FALL_UP, FALLING, FAILED}
     private State playerstate;
 
-    private bool jumpInput = false;
-    private bool is_on_ground = false;
+
+    private bool jumpInput;
+    private bool is_on_ground;
+
 
     public float speed = 70.0f;
     public float jump_velocity = 10f;
@@ -260,6 +262,20 @@ public class PlayerController : MonoBehaviour
 
         return new Vector3(0,0,0);
     }
+
+
+
+    void GameLevel()
+    {
+        Debug.Log("Game Over");
+    }
+
+    void FinishLevel()
+    {
+        Debug.Log("Level Complete!");
+    }
+
+
 
     Transform[] GetGrappleables(){
         GameObject[] temp = GameObject.FindGameObjectsWithTag("grappleable");
