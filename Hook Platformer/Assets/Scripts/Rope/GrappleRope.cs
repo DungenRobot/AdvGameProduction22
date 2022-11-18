@@ -47,7 +47,6 @@ public class GrappleRope : MonoBehaviour{
   }
 
 public void DrawRope(){
-  Debug.Log("Draw");
     if (waveSize > 0){
       waveSize -= Time.deltaTime * straightenLineSpeed;
       moveTime = (StartWaveSize - waveSize)/StartWaveSize;
@@ -63,14 +62,12 @@ public void DrawRope(){
   }
 
   public void DrawRopeNoWaves(){
-   // Debug.Log("Straight");
     if(lr.positionCount != 2) lr.positionCount = 2;
     lr.SetPosition(0, player.position);
     lr.SetPosition(1, gp.position);
   }
 
   public void DrawRopeWaves(){
-    Debug.Log("Waves At " + ropeProgressionCurve.Evaluate(moveTime));
     for(int i = 0; i< percision;i++){
         float delta = (float) i / ((float) percision - 1f);
         Vector2 offset = Vector2.Perpendicular(((player.position - gp.position).normalized) * ropeAnimationCurve.Evaluate(delta) * waveSize);
@@ -82,7 +79,6 @@ public void DrawRope(){
   }
 
   public void Update(){
-    Debug.Log(isGrappling);
     if(isGrappling) DrawRope();
   }
 
