@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     //CollisionStuff
     public float raycastRightDistrance = 4.0f;
     public float raycastDownDistrance = 4.0f;
-    //public float slowOnHit = 0.33f;
+    public float slowOnHit = 0.33f;
     private Vector3 shiftUD = new Vector3(0, 0.75f, 0);
 
     // Grapple Stuff
@@ -41,7 +41,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip crashAudio;
     private AudioSource audioSource;
 
-    //Tricks
+    //Health Stuff
+    public int heartCount = 2; //Make it one less than desired value
 
 
     // Start is called before the first frame update
@@ -94,9 +95,13 @@ public class PlayerController : MonoBehaviour
                 break;
 
             case State.FAILED:
+                
+                
                 velocity.x = 0;
                 velocity.y = 0;
                 print("You Failed");
+                
+                    
                 break;
         }
 
@@ -109,24 +114,30 @@ public class PlayerController : MonoBehaviour
         velocity = velocity + Grapple();
         controller.Move((velocity) * Time.deltaTime);
 
+        
         int layerMask = 1 << 6;
         layerMask = ~layerMask;
 
         
-
+        
         if (Physics2D.Raycast(transform.position, Vector2.right, raycastRightDistrance, layerMask))
         {
+            
             RaycastHit2D hitRight = Physics2D.Raycast(transform.position, Vector2.right, raycastRightDistrance, layerMask);
             if (hitRight.collider.gameObject.layer == 7)
             {
-                /*
+                
                 velocity.x = velocity.x * slowOnHit;
                 hitRight.collider.gameObject.layer = 8;
 
-                audioSource.clip = crashAudio;
-                audioSource.Play();
-                */
-                playerstate = State.FAILED;
+                //audioSource.clip = crashAudio;
+                //audioSource.Play();
+
+                heartCount--;
+                if (heartCount == 0)
+                {
+                    playerstate = State.FAILED;
+                }
             }
             if (hitRight.collider.gameObject.layer == 3)
             {
@@ -134,19 +145,21 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Physics2D.Raycast(transform.position + Vector3.up, Vector2.right, raycastRightDistrance, layerMask))
+        if (Physics2D.Raycast(transform.position + shiftUD, Vector2.right, raycastRightDistrance, layerMask))
         {
             RaycastHit2D hitRight = Physics2D.Raycast(transform.position + shiftUD, Vector2.right, raycastRightDistrance, layerMask);
             if (hitRight.collider.gameObject.layer == 7)
             {
-                /*
                 velocity.x = velocity.x * slowOnHit;
                 hitRight.collider.gameObject.layer = 8;
 
-                audioSource.clip = crashAudio;
-                audioSource.Play();
-                */
-                playerstate = State.FAILED;
+                //audioSource.clip = crashAudio;
+                //audioSource.Play();
+                heartCount--;
+                if (heartCount == 0)
+                {
+                    playerstate = State.FAILED;
+                }
             }
             if (hitRight.collider.gameObject.layer == 3)
             {
@@ -154,19 +167,22 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Physics2D.Raycast(transform.position + Vector3.down, Vector2.right, raycastRightDistrance, layerMask))
+        if (Physics2D.Raycast(transform.position - shiftUD, Vector2.right, raycastRightDistrance, layerMask))
         {
             RaycastHit2D hitRight = Physics2D.Raycast(transform.position - shiftUD, Vector2.right, raycastRightDistrance, layerMask);
             if (hitRight.collider.gameObject.layer == 7)
             {
-                /*
                 velocity.x = velocity.x * slowOnHit;
                 hitRight.collider.gameObject.layer = 8;
 
-                audioSource.clip = crashAudio;
-                audioSource.Play();
-                */
-                playerstate = State.FAILED;
+                //audioSource.clip = crashAudio;
+                //audioSource.Play();
+                heartCount--;
+                if (heartCount == 0)
+                {
+                    playerstate = State.FAILED;
+                }
+                
             }
             if (hitRight.collider.gameObject.layer == 3)
             {
@@ -212,6 +228,8 @@ public class PlayerController : MonoBehaviour
         {
             return (State.FALLING);
         }
+
+        
     }
 
     Vector3 Grapple()
