@@ -8,28 +8,33 @@ public class pausemenu : MonoBehaviour
     public GameObject pausemenuOBJ;
     public GameObject settingmenuOBJ;
     public bool onpaused;
+    public bool g0;
     // Start is called before the first frame update
     void Start()
     {
         //Starting rules for stuff.
         onpaused = false;
         pausemenuOBJ.SetActive(false);
+        g0 = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Input for pausing/resuming the game using the escape key
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (g0)
         {
-            if(onpaused)
+            //Input for pausing/resuming the game using the escape key
+            if(Input.GetKeyDown(KeyCode.Escape))
             {
-                resume();
-            }
+                if(onpaused)
+                {
+                    resume();
+                }
 
-            else
-            {
-                pause();
+                else
+                {
+                    pause();
+                }
             }
         }
     }
@@ -84,8 +89,9 @@ public class pausemenu : MonoBehaviour
 
     public void SetFullscreen(bool isFullScreen)
     {
-        Screen.fullScreen = isFullScreen;
+            Screen.fullScreen = isFullScreen;
     }
+
 
     public void Resolution1920()
     {
@@ -101,4 +107,4 @@ public class pausemenu : MonoBehaviour
     {
         Screen.SetResolution(640, 480, true);
     }
-    }
+}
