@@ -257,7 +257,7 @@ public class PlayerController : MonoBehaviour
 
         if(currentGrappleTarget != null){
             float angle = Mathf.Atan2(currentGrappleTarget.position.y - this.transform.position.y, currentGrappleTarget.position.x - this.transform.position.x);
-            return new Vector3(Mathf.Cos(angle), Mathf.Sin(angle),0) * grappleStrength;
+            return new Vector3(Mathf.Cos(angle), Mathf.Sin(angle),0) * grappleStrength * Time.deltaTime;
         }
 
         return new Vector3(0,0,0);
