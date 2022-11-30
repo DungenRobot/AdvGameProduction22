@@ -1676,7 +1676,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 65f0e363b74cf5845ab8c3fbc14f39ac, type: 3}
   m_Color: {r: 0, g: 0.26012278, b: 1, a: 1}
   m_FlipX: 0
@@ -2211,12 +2211,14 @@ MonoBehaviour:
   up_gravity: 30
   raycastRightDistrance: 4
   raycastDownDistrance: 4
+  slowOnHit: 0.33
   grappleStrength: 0.05
   maxGrappleLength: Infinity
   grappleables: []
   grappleRope: {fileID: 3556132628892733104}
   jumpAudio: {fileID: 0}
   crashAudio: {fileID: 0}
+  heartCount: 2
 --- !u!143 &3556132628892733095
 CharacterController:
   m_ObjectHideFlags: 0
