@@ -64,8 +64,10 @@ public void DrawRope(){
 
   public void DrawRopeNoWaves(){
     if(lr.positionCount != 2) lr.positionCount = 2;
-    lr.SetPosition(0, player.position);
-    lr.SetPosition(1, gp.position);
+    Vector3 ppos = new Vector3(player.position.x, player.position.y, -1);
+    Vector3 gppos = new Vector3(gp.position.x,gp.position.y,-1);
+    lr.SetPosition(0, ppos);
+    lr.SetPosition(1, gppos);
   }
 
   public void DrawRopeWaves(){
@@ -76,7 +78,8 @@ public void DrawRope(){
         Vector2 targetPosition = Vector2.Lerp(player.position, gp.position, delta) + offset;
         Vector2 currentPosition = Vector2.Lerp(player.position, targetPosition, ropeProgressionCurve.Evaluate(moveTime) * ropeProgressionSpeed);
 
-        lr.SetPosition(i, currentPosition);
+        Vector3 currentPos = new Vector3(currentPosition.x, currentPosition.y, -1);
+        lr.SetPosition(i, currentPos);
     }
   }
 
