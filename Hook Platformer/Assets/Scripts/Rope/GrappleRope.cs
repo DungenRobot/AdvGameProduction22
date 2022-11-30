@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GrappleRope : MonoBehaviour{
   public Transform player;
-  public Transform gp;
+  private Transform gp;
   public LineRenderer lr;
   public int percision = 40;
   [Range(0,20)] public float straightenLineSpeed = 5;
@@ -15,8 +15,9 @@ public class GrappleRope : MonoBehaviour{
   private float waveSize;
   private float moveTime;
   
-  bool straightLine = true;
-  [HideInInspector] public bool isGrappling = true; // Need Set Through Movement Script
+  //bool straightLine = true;
+  //[HideInInspector] 
+  private bool isGrappling = false;
   
 
   public void Start(){
@@ -24,12 +25,12 @@ public class GrappleRope : MonoBehaviour{
   }
 
   public void Grapple(Transform to){
+    gp = to;
     moveTime = 0;
     lr.positionCount = percision;
     waveSize = StartWaveSize;
-    straightLine = false;
+    //straightLine = false;
     LinePointsToFirePoint();
-    gp = to;
     lr.enabled = true;
     isGrappling = true;
   }
@@ -46,6 +47,7 @@ public class GrappleRope : MonoBehaviour{
   }
 
 public void DrawRope(){
+  //Debug.Log("Draw");
     if (waveSize > 0){
       waveSize -= Time.deltaTime * straightenLineSpeed;
       moveTime = (StartWaveSize - waveSize)/StartWaveSize;
@@ -61,14 +63,13 @@ public void DrawRope(){
   }
 
   public void DrawRopeNoWaves(){
-   // Debug.Log("Straight");
     if(lr.positionCount != 2) lr.positionCount = 2;
     lr.SetPosition(0, player.position);
     lr.SetPosition(1, gp.position);
   }
 
   public void DrawRopeWaves(){
-    Debug.Log("Waves At " + ropeProgressionCurve.Evaluate(moveTime));
+    //Debug.Log("Waves At " + ropeProgressionCurve.Evaluate(moveTime));
     for(int i = 0; i< percision;i++){
         float delta = (float) i / ((float) percision - 1f);
         Vector2 offset = Vector2.Perpendicular(((player.position - gp.position).normalized) * ropeAnimationCurve.Evaluate(delta) * waveSize);
@@ -80,6 +81,7 @@ public void DrawRope(){
   }
 
   public void Update(){
+//    Debug.Log(isGrappling);
     if(isGrappling) DrawRope();
   }
 
