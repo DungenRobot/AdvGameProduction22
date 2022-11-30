@@ -24,11 +24,12 @@ public class gameOver : MonoBehaviour
         
     }
 
-    void menu()
+    public void menu()
     {
         SceneManager.LoadScene("MainMenu");
     }
-    void TryAgain()
+    
+    public void tryAgain()
     {
         SceneManager.LoadScene("SampleScene");
     }
