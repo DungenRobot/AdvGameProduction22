@@ -235,16 +235,19 @@ public class PlayerController : MonoBehaviour
     Vector3 Grapple()
     {
         if(Input.GetKeyDown(KeyCode.Q)){
-            float cd = Vector2.Distance(grappleables[0].position, this.transform.position);
-            Transform co = grappleables[0];
+            float cd = maxGrappleLength;
+            Transform co = null;
 
-            for(int i = 1; i<grappleables.Length;i++){
+            for(int i = 0; i<grappleables.Length;i++){
                 Transform grappleable = grappleables[i];
+                if(transform.position.x > grappleable.position.x) continue;
                 float dist = Vector2.Distance(grappleable.position, this.transform.position);
                 if(dist < cd){ co = grappleable; cd = dist;} 
             }
 
-            if(cd <= maxGrappleLength){
+     
+
+            if(co != null && cd <= maxGrappleLength){
                 currentGrappleTarget = co;
                 grappleRope.Grapple(co);
             }
