@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Collision Basics.unity
     guid: 7e7dfc6a289a9432fa1f1a8e1b81ceb7
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 17e2fecb40a39984482b25905ced2555
   m_configObjects: {}
