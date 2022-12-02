@@ -117,12 +117,12 @@ public class PlayerController : MonoBehaviour
         int layerMask = 1 << 6;
         layerMask = ~layerMask;
 
-        
-        
-        if (Physics2D.Raycast(transform.position, Vector2.right, raycastRightDistrance, layerMask))
+
+        RaycastHit hitRight;
+        if (Physics.Raycast(transform.position, Vector3.right, out hitRight, raycastRightDistrance, layerMask))
         {
             
-            RaycastHit2D hitRight = Physics2D.Raycast(transform.position, Vector2.right, raycastRightDistrance, layerMask);
+            //RaycastHit hitRight = Physics.Raycast(transform.position, Vector3.right, raycastRightDistrance, layerMask);
             if (hitRight.collider.gameObject.layer == 7)
             {
                 
@@ -143,10 +143,10 @@ public class PlayerController : MonoBehaviour
                 playerstate = State.FAILED;
             }
         }
-
-        if (Physics2D.Raycast(transform.position + shiftUD, Vector2.right, raycastRightDistrance, layerMask))
+        
+        if (Physics.Raycast(transform.position + shiftUD, Vector3.right, out hitRight, raycastRightDistrance, layerMask))
         {
-            RaycastHit2D hitRight = Physics2D.Raycast(transform.position + shiftUD, Vector2.right, raycastRightDistrance, layerMask);
+            //RaycastHit2D hitRight = Physics2D.Raycast(transform.position + shiftUD, Vector2.right, raycastRightDistrance, layerMask);
             if (hitRight.collider.gameObject.layer == 7)
             {
                 velocity.x = velocity.x * slowOnHit;
@@ -166,9 +166,9 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Physics2D.Raycast(transform.position - shiftUD, Vector2.right, raycastRightDistrance, layerMask))
+        if (Physics.Raycast(transform.position - shiftUD, Vector3.right, out hitRight, raycastRightDistrance, layerMask))
         {
-            RaycastHit2D hitRight = Physics2D.Raycast(transform.position - shiftUD, Vector2.right, raycastRightDistrance, layerMask);
+            //RaycastHit2D hitRight = Physics2D.Raycast(transform.position - shiftUD, Vector2.right, raycastRightDistrance, layerMask);
             if (hitRight.collider.gameObject.layer == 7)
             {
                 velocity.x = velocity.x * slowOnHit;
@@ -189,9 +189,10 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Physics2D.Raycast(transform.position, Vector2.down, raycastDownDistrance, layerMask))
+        RaycastHit hitDown;
+        if (Physics.Raycast(transform.position, Vector3.down, out hitDown, raycastDownDistrance, layerMask))
         {
-            RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector2.down, raycastDownDistrance, layerMask);
+            //RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector2.down, raycastDownDistrance, layerMask);
             if (hitDown.collider.gameObject.layer == 7)
             {
                 velocity.y = jump_velocity;
