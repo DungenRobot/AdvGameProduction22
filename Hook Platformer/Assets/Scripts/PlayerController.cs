@@ -5,12 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private CharacterController controller;
+    
+    
     public Vector3 velocity;
-
-    private enum State { ON_GROUND, JUMPING, FALL_UP, FALLING, FAILED}
+    private enum State { ON_GROUND, JUMPING, FALL_UP, FALLING, CROUCHED, FAILED}
     private State playerstate;
-
-
     private bool jumpInput;
     private bool is_on_ground;
 
