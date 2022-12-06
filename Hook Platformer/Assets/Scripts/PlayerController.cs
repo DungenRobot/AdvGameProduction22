@@ -36,8 +36,8 @@ public class PlayerController : MonoBehaviour
     public GrappleRope grappleRope;
 
     //Audio
-    public AudioClip jumpAudio;
-    public AudioClip crashAudio;
+    public AudioClip[] audioClip;
+    public float soundToPlay = -1.0f;
     private AudioSource audioSource;
 
     //Health Stuff
@@ -68,8 +68,7 @@ public class PlayerController : MonoBehaviour
                 if (jumpInput) {
                     velocity.y = jump_velocity;
                     playerstate = State.JUMPING;
-                    audioSource.clip = jumpAudio;
-                    audioSource.Play();
+                    
                 }
                 else if (!controller.isGrounded) {
                     playerstate = State.FALLING;
@@ -113,6 +112,12 @@ public class PlayerController : MonoBehaviour
         velocity = velocity + Grapple();
         controller.Move((velocity) * Time.deltaTime);
 
+        if (soundToPlay > -1.0f)
+        {
+            PlaySound((int) soundToPlay, 1);
+            soundToPlay = -1.0f;
+        }
+
         
         int layerMask = 1 << 6;
         layerMask = ~layerMask;
@@ -129,9 +134,7 @@ public class PlayerController : MonoBehaviour
                 velocity.x = velocity.x * slowOnHit;
                 hitRight.collider.gameObject.layer = 8;
 
-                //audioSource.clip = crashAudio;
-                //audioSource.Play();
-
+                
                 heartCount--;
                 if (heartCount == 0)
                 {
@@ -152,8 +155,7 @@ public class PlayerController : MonoBehaviour
                 velocity.x = velocity.x * slowOnHit;
                 hitRight.collider.gameObject.layer = 8;
 
-                //audioSource.clip = crashAudio;
-                //audioSource.Play();
+                
                 heartCount--;
                 if (heartCount == 0)
                 {
@@ -174,8 +176,7 @@ public class PlayerController : MonoBehaviour
                 velocity.x = velocity.x * slowOnHit;
                 hitRight.collider.gameObject.layer = 8;
 
-                //audioSource.clip = crashAudio;
-                //audioSource.Play();
+                
                 heartCount--;
                 if (heartCount == 0)
                 {
@@ -286,5 +287,9 @@ public class PlayerController : MonoBehaviour
         foreach(GameObject go in temp)
            temp2.Add(go.transform);
         return temp2.ToArray();
+    }
+    void PlaySound(int clip, float volumeScale)
+    {
+        audioSource.PlayOneShot(audioClip[clip], volumeScale);
     }
 }
