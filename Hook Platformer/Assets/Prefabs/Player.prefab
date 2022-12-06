@@ -1010,8 +1010,10 @@ MonoBehaviour:
   maxGrappleLength: Infinity
   grappleables: []
   grappleRope: {fileID: 1325413757892962027}
-  jumpAudio: {fileID: 8300000, guid: d89fdcbf071ee460f866738237a4bd99, type: 3}
-  crashAudio: {fileID: 8300000, guid: f0f3e12ade89d40f3a1772bfb53ebf29, type: 3}
+  audioClip:
+  - {fileID: 8300000, guid: 41d900f97e3b045288c3621d48915e0f, type: 3}
+  - {fileID: 0}
+  soundToPlay: -1
   heartCount: 3
 --- !u!143 &3556132627368546090
 CharacterController:
