@@ -6,7 +6,8 @@ using TMPro;
 public class PlayerController : MonoBehaviour
 {
     private CharacterController controller;
-    
+    public pausemenu script;
+    public GameObject game0ver;
     
     public Vector3 velocity;
     private enum State { ON_GROUND, JUMPING, FALL_UP, FALLING, CROUCHED, FAILED}
@@ -44,7 +45,10 @@ public class PlayerController : MonoBehaviour
     //Health Stuff
     public int heartCount = 2; //Make it one less than desired value
     public TMP_Text healthText;
+
+    //Endings
     public GameObject gameOverText;
+    public GameObject winLevelText;
 
     // Start is called before the first frame update
     void Start()
@@ -146,10 +150,16 @@ public class PlayerController : MonoBehaviour
                     GameOver();
                 }
             }
-            if (hitRight.collider.gameObject.layer == 3)
+            else if (hitRight.collider.gameObject.layer == 3)
             {
                 playerstate = State.FAILED;
                 GameOver();
+
+            }
+            else if (hitRight.collider.gameObject.layer == 9)
+            {
+                playerstate = State.FAILED;
+                FinishLevel();
 
             }
         }
@@ -172,10 +182,16 @@ public class PlayerController : MonoBehaviour
                     GameOver();
                 }
             }
-            if (hitRight.collider.gameObject.layer == 3)
+            else if (hitRight.collider.gameObject.layer == 3)
             {
                 playerstate = State.FAILED;
                 GameOver();
+            }
+            else if (hitRight.collider.gameObject.layer == 9)
+            {
+                playerstate = State.FAILED;
+                FinishLevel();
+
             }
         }
 
@@ -196,12 +212,19 @@ public class PlayerController : MonoBehaviour
                     playerstate = State.FAILED;
                     GameOver();
                 }
+
                 
             }
             else if (hitRight.collider.gameObject.layer == 3)
             {
                 playerstate = State.FAILED;
                 GameOver();
+            }
+            else if (hitRight.collider.gameObject.layer == 9)
+            {
+                playerstate = State.FAILED;
+                FinishLevel();
+
             }
         }
 
@@ -292,12 +315,20 @@ public class PlayerController : MonoBehaviour
 
         print("You Failed");
         gameOverText.SetActive(true);
+        script.g0 = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        
         //DO GAMEOVER
     }
 
     void FinishLevel()
     {
-        Debug.Log("Level Complete!");
+        
+        winLevelText.SetActive(true);
+        script.g0 = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
 

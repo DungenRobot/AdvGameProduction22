@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("Level layout test");
+        SceneManager.LoadScene("Tutorial scean");
+        Time.timeScale = 1;
     }
 }
