@@ -1277,6 +1277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 489753946911179018}
   - component: {fileID: 2007783013410107710}
+  - component: {fileID: 513647765}
   m_Layer: 0
   m_Name: sky (2)
   m_TagString: Untagged
@@ -1351,6 +1352,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &513647765
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767224833547359101}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 19.2, y: 10.8}
+    newSize: {x: 19.2, y: 10.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 19.2, y: 10.8}
+  m_EdgeRadius: 0
 --- !u!1 &1895243415120021897
 GameObject:
   m_ObjectHideFlags: 0
@@ -3306,7 +3333,7 @@ Transform:
   m_GameObject: {fileID: 3556132627368546082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.11, y: -0.16, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 3.2328, y: 3.1112, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8430912310979850633}
@@ -3404,7 +3431,7 @@ MonoBehaviour:
   heartCount: 3
   healthText: {fileID: 1565394109}
   gameOverText: {fileID: 2263248811389319683}
-  winLevelText: {fileID: 0}
+  winLevelText: {fileID: 5195397907580212999}
 --- !u!143 &3556132627368546090
 CharacterController:
   m_ObjectHideFlags: 0
@@ -4532,7 +4559,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4266890962146640839}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.23, y: -1.8325744, z: 0}
+  m_LocalPosition: {x: 17.23, y: 4, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
