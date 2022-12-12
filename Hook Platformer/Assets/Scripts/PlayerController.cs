@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
     //Health Stuff
     public int heartCount = 2; //Make it one less than desired value
-    public GameObject healthText;
+    public TMP_Text healthText;
     public GameObject gameOverText;
 
     // Start is called before the first frame update
@@ -138,7 +139,7 @@ public class PlayerController : MonoBehaviour
                 
                 heartCount--;
                 
-                healthText.GetComponent<UnityEngine.UI.Text>().text = "Health: " + heartCount.ToString();
+                healthText.GetComponent<TMP_Text>().text = "Health: " + heartCount.ToString();
                 if (heartCount == 0)
                 {
                     playerstate = State.FAILED;
@@ -163,8 +164,8 @@ public class PlayerController : MonoBehaviour
 
                 
                 heartCount--;
-                
-                healthText.GetComponent<UnityEngine.UI.Text>().text = "Health: " + heartCount.ToString();
+
+                healthText.GetComponent<TMP_Text>().text = "Health: " + heartCount.ToString();
                 if (heartCount == 0)
                 {
                     playerstate = State.FAILED;
@@ -188,8 +189,8 @@ public class PlayerController : MonoBehaviour
 
                 
                 heartCount--;
-                
-                healthText.GetComponent<UnityEngine.UI.Text>().text = "Health: " + heartCount.ToString();
+
+                healthText.GetComponent<TMP_Text>().text = "Health: " + heartCount.ToString();
                 if (heartCount == 0)
                 {
                     playerstate = State.FAILED;
