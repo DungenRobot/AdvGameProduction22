@@ -15,10 +15,9 @@ public class Music : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("MU");
+        
         if(!intro.isPlaying && !main.isPlaying)
         {
-            Debug.Log("MP");
             main.Play(0);
         }
     }

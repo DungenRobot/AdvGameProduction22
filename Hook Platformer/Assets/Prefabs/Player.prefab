@@ -1392,7 +1392,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895243415120021897}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f3c1ec2429e2434e9b54527d9dedd90, type: 3}
   m_Name: 
@@ -1406,7 +1406,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895243415120021897}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8194d36b6cfe84a4da327c5494f0e2b1, type: 3}
@@ -1502,7 +1502,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895243415120021897}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 829ca6372079544c18ee3abef82dc0a4, type: 3}
@@ -3404,6 +3404,7 @@ MonoBehaviour:
   heartCount: 3
   healthText: {fileID: 1565394109}
   gameOverText: {fileID: 2263248811389319683}
+  winLevelText: {fileID: 0}
 --- !u!143 &3556132627368546090
 CharacterController:
   m_ObjectHideFlags: 0
