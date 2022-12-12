@@ -42,7 +42,8 @@ public class PlayerController : MonoBehaviour
 
     //Health Stuff
     public int heartCount = 2; //Make it one less than desired value
-
+    public GameObject healthText;
+    public GameObject gameOverText;
 
     // Start is called before the first frame update
     void Start()
@@ -136,14 +137,19 @@ public class PlayerController : MonoBehaviour
 
                 
                 heartCount--;
+                
+                healthText.GetComponent<UnityEngine.UI.Text>().text = "Health: " + heartCount.ToString();
                 if (heartCount == 0)
                 {
                     playerstate = State.FAILED;
+                    GameOver();
                 }
             }
             if (hitRight.collider.gameObject.layer == 3)
             {
                 playerstate = State.FAILED;
+                GameOver();
+
             }
         }
         
@@ -157,14 +163,18 @@ public class PlayerController : MonoBehaviour
 
                 
                 heartCount--;
+                
+                healthText.GetComponent<UnityEngine.UI.Text>().text = "Health: " + heartCount.ToString();
                 if (heartCount == 0)
                 {
                     playerstate = State.FAILED;
+                    GameOver();
                 }
             }
             if (hitRight.collider.gameObject.layer == 3)
             {
                 playerstate = State.FAILED;
+                GameOver();
             }
         }
 
@@ -178,6 +188,8 @@ public class PlayerController : MonoBehaviour
 
                 
                 heartCount--;
+                
+                healthText.GetComponent<UnityEngine.UI.Text>().text = "Health: " + heartCount.ToString();
                 if (heartCount == 0)
                 {
                     playerstate = State.FAILED;
@@ -204,7 +216,12 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        
+        if (heartCount == 0)
+        {
+            playerstate = State.FAILED;
+            GameOver();
+        }
+
     }
 
     State Detect_State()
@@ -273,6 +290,7 @@ public class PlayerController : MonoBehaviour
     {
 
         print("You Failed");
+        gameOverText.SetActive(true);
         //DO GAMEOVER
     }
 
