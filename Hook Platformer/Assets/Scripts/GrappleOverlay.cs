@@ -27,7 +27,6 @@ public class GrappleOverlay : MonoBehaviour
 
         if(cd <= maxGrappleLength){
             sr.enabled = true;
-            Debug.Log(grappleables[co].position.x + ", " +  grappleables[co].position.y);
             this.transform.position = new Vector3(grappleables[co].position.x, grappleables[co].position.y, 0);
         }else sr.enabled = false;
     }
