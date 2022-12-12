@@ -546,11 +546,7 @@ Transform:
   - {fileID: 1821144388}
   - {fileID: 365314111}
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-  m_RootOrder: 2
-=======
   m_RootOrder: 9
->>>>>>> d82c99cc1e1cdbeb89ad58dc86cd5a702cf74e7f
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &427006933 stripped
 Transform:
@@ -682,11 +678,7 @@ Transform:
   - {fileID: 867610307}
   - {fileID: 1077366806}
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-  m_RootOrder: 1
-=======
   m_RootOrder: 9
->>>>>>> d82c99cc1e1cdbeb89ad58dc86cd5a702cf74e7f
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &512522510
 PrefabInstance:
@@ -701,11 +693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2979047221791451550, guid: cc402362aa6c84c2082ace182da24009, type: 3}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
-      value: 11
-=======
       value: 6
->>>>>>> d82c99cc1e1cdbeb89ad58dc86cd5a702cf74e7f
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2979047221791451550, guid: cc402362aa6c84c2082ace182da24009, type: 3}
@@ -1060,11 +1048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6107285977244475232, guid: 10e00bbe5c34341eab63f414566e01d1, type: 3}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
-      value: 11
-=======
       value: 5
->>>>>>> d82c99cc1e1cdbeb89ad58dc86cd5a702cf74e7f
       objectReference: {fileID: 0}
     - target: {fileID: 6107285977244475232, guid: 10e00bbe5c34341eab63f414566e01d1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1589,11 +1573,7 @@ Transform:
   - {fileID: 217692232}
   - {fileID: 808863729}
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-  m_RootOrder: 3
-=======
   m_RootOrder: 11
->>>>>>> d82c99cc1e1cdbeb89ad58dc86cd5a702cf74e7f
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1054634897
@@ -2756,11 +2736,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4694647238306144936, guid: ccee59601b5f64decb2b2efe0fdb8d0a, type: 3}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
-      value: 12
-=======
       value: 7
->>>>>>> d82c99cc1e1cdbeb89ad58dc86cd5a702cf74e7f
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4694647238306144936, guid: ccee59601b5f64decb2b2efe0fdb8d0a, type: 3}
