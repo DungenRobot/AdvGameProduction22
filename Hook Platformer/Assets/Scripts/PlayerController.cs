@@ -45,7 +45,10 @@ public class PlayerController : MonoBehaviour
     //Health Stuff
     public int heartCount = 2; //Make it one less than desired value
     public TMP_Text healthText;
+
+    //Endings
     public GameObject gameOverText;
+    public GameObject winLevelText;
 
     // Start is called before the first frame update
     void Start()
@@ -153,6 +156,12 @@ public class PlayerController : MonoBehaviour
                 GameOver();
 
             }
+            if (hitRight.collider.gameObject.layer == 9)
+            {
+                playerstate = State.FAILED;
+                FinishLevel();
+
+            }
         }
         
         if (Physics.Raycast(transform.position + shiftUD, Vector3.right, out hitRight, raycastRightDistrance, layerMask))
@@ -178,6 +187,12 @@ public class PlayerController : MonoBehaviour
                 playerstate = State.FAILED;
                 GameOver();
             }
+            if (hitRight.collider.gameObject.layer == 9)
+            {
+                playerstate = State.FAILED;
+                FinishLevel();
+
+            }
         }
 
         if (Physics.Raycast(transform.position - shiftUD, Vector3.right, out hitRight, raycastRightDistrance, layerMask))
@@ -197,12 +212,19 @@ public class PlayerController : MonoBehaviour
                     playerstate = State.FAILED;
                     GameOver();
                 }
+
                 
             }
             else if (hitRight.collider.gameObject.layer == 3)
             {
                 playerstate = State.FAILED;
                 GameOver();
+            }
+            if (hitRight.collider.gameObject.layer == 9)
+            {
+                playerstate = State.FAILED;
+                FinishLevel();
+
             }
         }
 
@@ -303,6 +325,10 @@ public class PlayerController : MonoBehaviour
     void FinishLevel()
     {
         Debug.Log("Level Complete!");
+        winLevelText.SetActive(true);
+        script.g0 = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
 
