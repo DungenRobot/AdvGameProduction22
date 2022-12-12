@@ -150,13 +150,13 @@ public class PlayerController : MonoBehaviour
                     GameOver();
                 }
             }
-            if (hitRight.collider.gameObject.layer == 3)
+            else if (hitRight.collider.gameObject.layer == 3)
             {
                 playerstate = State.FAILED;
                 GameOver();
 
             }
-            if (hitRight.collider.gameObject.layer == 9)
+            else if (hitRight.collider.gameObject.layer == 9)
             {
                 playerstate = State.FAILED;
                 FinishLevel();
@@ -182,12 +182,12 @@ public class PlayerController : MonoBehaviour
                     GameOver();
                 }
             }
-            if (hitRight.collider.gameObject.layer == 3)
+            else if (hitRight.collider.gameObject.layer == 3)
             {
                 playerstate = State.FAILED;
                 GameOver();
             }
-            if (hitRight.collider.gameObject.layer == 9)
+            else if (hitRight.collider.gameObject.layer == 9)
             {
                 playerstate = State.FAILED;
                 FinishLevel();
@@ -220,7 +220,7 @@ public class PlayerController : MonoBehaviour
                 playerstate = State.FAILED;
                 GameOver();
             }
-            if (hitRight.collider.gameObject.layer == 9)
+            else if (hitRight.collider.gameObject.layer == 9)
             {
                 playerstate = State.FAILED;
                 FinishLevel();
@@ -324,7 +324,7 @@ public class PlayerController : MonoBehaviour
 
     void FinishLevel()
     {
-        Debug.Log("Level Complete!");
+        
         winLevelText.SetActive(true);
         script.g0 = false;
         Cursor.lockState = CursorLockMode.None;
