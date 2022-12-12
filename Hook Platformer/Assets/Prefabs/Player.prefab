@@ -1946,8 +1946,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d5b85286bfd4e848b992d33ca1d4adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: {fileID: 0}
-  game0ver: {fileID: 0}
+  script: {fileID: 1483307258654205763}
+  game0ver: {fileID: 2263248811389319683}
 --- !u!1 &2434196342780081697
 GameObject:
   m_ObjectHideFlags: 0
@@ -2870,8 +2870,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b9550c1a272c408f8c76f7c2704be5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: {fileID: 0}
-  game0ver: {fileID: 0}
+  script: {fileID: 1483307258654205763}
+  game0ver: {fileID: 2263248811389319683}
   velocity: {x: 0, y: 0, z: 0}
   speed: 18
   jump_velocity: 11
