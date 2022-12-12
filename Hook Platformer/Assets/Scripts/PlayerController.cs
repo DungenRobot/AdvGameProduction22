@@ -5,12 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private CharacterController controller;
+    
+    
     public Vector3 velocity;
-
-    private enum State { ON_GROUND, JUMPING, FALL_UP, FALLING, FAILED}
+    private enum State { ON_GROUND, JUMPING, FALL_UP, FALLING, CROUCHED, FAILED}
     private State playerstate;
-
-
     private bool jumpInput;
     private bool is_on_ground;
 
@@ -37,8 +36,8 @@ public class PlayerController : MonoBehaviour
     public GrappleRope grappleRope;
 
     //Audio
-    public AudioClip jumpAudio;
-    public AudioClip crashAudio;
+    public AudioClip[] audioClip;
+    public float soundToPlay = -1.0f;
     private AudioSource audioSource;
 
     //Health Stuff
@@ -69,8 +68,7 @@ public class PlayerController : MonoBehaviour
                 if (jumpInput) {
                     velocity.y = jump_velocity;
                     playerstate = State.JUMPING;
-                    audioSource.clip = jumpAudio;
-                    audioSource.Play();
+                    
                 }
                 else if (!controller.isGrounded) {
                     playerstate = State.FALLING;
@@ -99,7 +97,7 @@ public class PlayerController : MonoBehaviour
                 
                 velocity.x = 0;
                 velocity.y = 0;
-                print("You Failed");
+                //print("You Failed");
                 
                     
                 break;
@@ -114,25 +112,50 @@ public class PlayerController : MonoBehaviour
         velocity = velocity + Grapple();
         controller.Move((velocity) * Time.deltaTime);
 
+        if (soundToPlay > -1.0f)
+        {
+            PlaySound((int) soundToPlay, 1);
+            soundToPlay = -1.0f;
+        }
+
         
         int layerMask = 1 << 6;
         layerMask = ~layerMask;
 
-        
-        
-        if (Physics2D.Raycast(transform.position, Vector2.right, raycastRightDistrance, layerMask))
+
+        RaycastHit hitRight;
+        if (Physics.Raycast(transform.position, Vector3.right, out hitRight, raycastRightDistrance, layerMask))
         {
             
-            RaycastHit2D hitRight = Physics2D.Raycast(transform.position, Vector2.right, raycastRightDistrance, layerMask);
+            //RaycastHit hitRight = Physics.Raycast(transform.position, Vector3.right, raycastRightDistrance, layerMask);
             if (hitRight.collider.gameObject.layer == 7)
             {
                 
                 velocity.x = velocity.x * slowOnHit;
                 hitRight.collider.gameObject.layer = 8;
 
-                //audioSource.clip = crashAudio;
-                //audioSource.Play();
+                
+                heartCount--;
+                if (heartCount == 0)
+                {
+                    playerstate = State.FAILED;
+                }
+            }
+            if (hitRight.collider.gameObject.layer == 3)
+            {
+                playerstate = State.FAILED;
+            }
+        }
+        
+        if (Physics.Raycast(transform.position + shiftUD, Vector3.right, out hitRight, raycastRightDistrance, layerMask))
+        {
+            //RaycastHit2D hitRight = Physics2D.Raycast(transform.position + shiftUD, Vector2.right, raycastRightDistrance, layerMask);
+            if (hitRight.collider.gameObject.layer == 7)
+            {
+                velocity.x = velocity.x * slowOnHit;
+                hitRight.collider.gameObject.layer = 8;
 
+                
                 heartCount--;
                 if (heartCount == 0)
                 {
@@ -145,54 +168,34 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Physics2D.Raycast(transform.position + shiftUD, Vector2.right, raycastRightDistrance, layerMask))
+        if (Physics.Raycast(transform.position - shiftUD, Vector3.right, out hitRight, raycastRightDistrance, layerMask))
         {
-            RaycastHit2D hitRight = Physics2D.Raycast(transform.position + shiftUD, Vector2.right, raycastRightDistrance, layerMask);
+            //RaycastHit2D hitRight = Physics2D.Raycast(transform.position - shiftUD, Vector2.right, raycastRightDistrance, layerMask);
             if (hitRight.collider.gameObject.layer == 7)
             {
                 velocity.x = velocity.x * slowOnHit;
                 hitRight.collider.gameObject.layer = 8;
 
-                //audioSource.clip = crashAudio;
-                //audioSource.Play();
+                
                 heartCount--;
                 if (heartCount == 0)
                 {
                     playerstate = State.FAILED;
-                }
-            }
-            if (hitRight.collider.gameObject.layer == 3)
-            {
-                playerstate = State.FAILED;
-            }
-        }
-
-        if (Physics2D.Raycast(transform.position - shiftUD, Vector2.right, raycastRightDistrance, layerMask))
-        {
-            RaycastHit2D hitRight = Physics2D.Raycast(transform.position - shiftUD, Vector2.right, raycastRightDistrance, layerMask);
-            if (hitRight.collider.gameObject.layer == 7)
-            {
-                velocity.x = velocity.x * slowOnHit;
-                hitRight.collider.gameObject.layer = 8;
-
-                //audioSource.clip = crashAudio;
-                //audioSource.Play();
-                heartCount--;
-                if (heartCount == 0)
-                {
-                    playerstate = State.FAILED;
+                    GameOver();
                 }
                 
             }
-            if (hitRight.collider.gameObject.layer == 3)
+            else if (hitRight.collider.gameObject.layer == 3)
             {
                 playerstate = State.FAILED;
+                GameOver();
             }
         }
 
-        if (Physics2D.Raycast(transform.position, Vector2.down, raycastDownDistrance, layerMask))
+        RaycastHit hitDown;
+        if (Physics.Raycast(transform.position, Vector3.down, out hitDown, raycastDownDistrance, layerMask))
         {
-            RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector2.down, raycastDownDistrance, layerMask);
+            //RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector2.down, raycastDownDistrance, layerMask);
             if (hitDown.collider.gameObject.layer == 7)
             {
                 velocity.y = jump_velocity;
@@ -235,16 +238,19 @@ public class PlayerController : MonoBehaviour
     Vector3 Grapple()
     {
         if(Input.GetKeyDown(KeyCode.Q)){
-            float cd = Vector2.Distance(grappleables[0].position, this.transform.position);
-            Transform co = grappleables[0];
+            float cd = maxGrappleLength;
+            Transform co = null;
 
-            for(int i = 1; i<grappleables.Length;i++){
+            for(int i = 0; i<grappleables.Length;i++){
                 Transform grappleable = grappleables[i];
+                if(transform.position.x > grappleable.position.x) continue;
                 float dist = Vector2.Distance(grappleable.position, this.transform.position);
                 if(dist < cd){ co = grappleable; cd = dist;} 
             }
 
-            if(cd <= maxGrappleLength){
+     
+
+            if(co != null && cd <= maxGrappleLength){
                 currentGrappleTarget = co;
                 grappleRope.Grapple(co);
             }
@@ -263,11 +269,11 @@ public class PlayerController : MonoBehaviour
         return new Vector3(0,0,0);
     }
 
-
-
-    void GameLevel()
+    void GameOver()
     {
-        Debug.Log("Game Over");
+
+        print("You Failed");
+        //DO GAMEOVER
     }
 
     void FinishLevel()
@@ -283,5 +289,9 @@ public class PlayerController : MonoBehaviour
         foreach(GameObject go in temp)
            temp2.Add(go.transform);
         return temp2.ToArray();
+    }
+    void PlaySound(int clip, float volumeScale)
+    {
+        audioSource.PlayOneShot(audioClip[clip], volumeScale);
     }
 }

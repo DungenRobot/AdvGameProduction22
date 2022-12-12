@@ -12,6 +12,6 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("Collision Basics");
+        SceneManager.LoadScene("Level layout test");
     }
 }

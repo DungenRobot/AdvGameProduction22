@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: 237534520}
   - component: {fileID: 237534519}
   - component: {fileID: 237534518}
+  - component: {fileID: 237534521}
   m_Layer: 0
   m_Name: Static Sprite (4)
   m_TagString: Untagged
@@ -349,6 +350,19 @@ Transform:
   m_Father: {fileID: 1256517279}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &237534521
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237534517}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.025234057
+  m_Center: {x: -0.49970955, y: 0.00000011920929, z: 0}
 --- !u!1 &282193082
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,8 +622,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439105146}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.274509, y: -7.1288695, z: -0.759406}
-  m_LocalScale: {x: 19.56121, y: 1, z: 1}
+  m_LocalPosition: {x: 17.5065, y: -7.1288695, z: -0.759406}
+  m_LocalScale: {x: 26.026192, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1256517279}
@@ -2185,10 +2199,6 @@ PrefabInstance:
     - target: {fileID: 3556132627368546093, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3556132627368546094, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
-      propertyPath: grappleStrength
-      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
