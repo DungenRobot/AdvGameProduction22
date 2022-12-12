@@ -118,12 +118,6 @@ public class PlayerController : MonoBehaviour
         velocity = velocity + Grapple();
         controller.Move((velocity) * Time.deltaTime);
 
-        if (soundToPlay > -1.0f)
-        {
-            PlaySound((int) soundToPlay, 1);
-            soundToPlay = -1.0f;
-        }
-
         
         int layerMask = 1 << 6;
         layerMask = ~layerMask;
