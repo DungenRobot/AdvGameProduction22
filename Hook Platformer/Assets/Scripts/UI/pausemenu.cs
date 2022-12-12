@@ -16,6 +16,8 @@ public class pausemenu : MonoBehaviour
         onpaused = false;
         pausemenuOBJ.SetActive(false);
         g0 = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -44,6 +46,9 @@ public class pausemenu : MonoBehaviour
         onpaused = true;
         pausemenuOBJ.SetActive(true);
         settingmenuOBJ.SetActive(false);
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
     //To resume game
     public void resume()
@@ -51,7 +56,9 @@ public class pausemenu : MonoBehaviour
         onpaused = false;
         pausemenuOBJ.SetActive(false);
         settingmenuOBJ.SetActive(false);
-
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     //To Open the Setting Menu

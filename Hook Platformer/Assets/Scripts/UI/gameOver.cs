@@ -18,6 +18,7 @@ public class gameOver : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.G))
         {
+            Time.timeScale = 0f;
             script.g0 = false;
             game0ver.SetActive(true);
         }
