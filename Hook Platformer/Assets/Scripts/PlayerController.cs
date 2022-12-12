@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
                 
                 velocity.x = 0;
                 velocity.y = 0;
-                print("You Failed");
+                //print("You Failed");
                 
                     
                 break;
@@ -181,12 +181,14 @@ public class PlayerController : MonoBehaviour
                 if (heartCount == 0)
                 {
                     playerstate = State.FAILED;
+                    GameOver();
                 }
                 
             }
-            if (hitRight.collider.gameObject.layer == 3)
+            else if (hitRight.collider.gameObject.layer == 3)
             {
                 playerstate = State.FAILED;
+                GameOver();
             }
         }
 
@@ -267,11 +269,11 @@ public class PlayerController : MonoBehaviour
         return new Vector3(0,0,0);
     }
 
-
-
-    void GameLevel()
+    void GameOver()
     {
-        Debug.Log("Game Over");
+
+        print("You Failed");
+        //DO GAMEOVER
     }
 
     void FinishLevel()
