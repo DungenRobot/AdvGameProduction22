@@ -13,5 +13,6 @@ public class MainMenu : MonoBehaviour
     public void Play()
     {
         SceneManager.LoadScene("Tutorial scean");
+        Time.timeScale = 1;
     }
 }
