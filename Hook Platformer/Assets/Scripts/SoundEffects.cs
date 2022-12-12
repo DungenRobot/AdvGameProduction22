@@ -8,33 +8,19 @@ public class SoundEffects : MonoBehaviour
 
     // Jumping
     public Effect playerLand;
-    public void onPlayerLand(){ source.PlayOneShot(playerLand.clip, playerLand.volume); }
-
     public Effect playerJump;
-    public void onPlayerJump(){ source.PlayOneShot(playerLand.clip, playerLand.volume); }
-
     public Effect playerInAir;
-    public void onPlayerInAir(){ source.PlayOneShot(playerLand.clip, playerLand.volume); }
-
     // Grapple
     public Effect grappleConnect;
-    public void onPlayerLand(){ source.PlayOneShot(playerLand.clip, playerLand.volume); }
-
     public Effect grappleMove;
-    public void onPlayerLand(){ source.PlayOneShot(playerLand.clip, playerLand.volume); }
-
     public Effect grappleRelease;
-    public void onPlayerLand(){ source.PlayOneShot(playerLand.clip, playerLand.volume); }
 
     // Skateboard
     public Effect skateboardCrash;
-    public void onPlayerLand(){ source.PlayOneShot(playerLand.clip, playerLand.volume); }
-
     public Effect skateboardRoll;
-    public void onPlayerLand(){ source.PlayOneShot(playerLand.clip, playerLand.volume); }
 
     private static SoundEffects inst;
-    public static getInstance(){
+    public static SoundEffects getInstance(){
         return inst;
     }
 
