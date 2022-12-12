@@ -6,7 +6,8 @@ using TMPro;
 public class PlayerController : MonoBehaviour
 {
     private CharacterController controller;
-    
+    public pausemenu script;
+    public GameObject game0ver;
     
     public Vector3 velocity;
     private enum State { ON_GROUND, JUMPING, FALL_UP, FALLING, CROUCHED, FAILED}
@@ -292,6 +293,10 @@ public class PlayerController : MonoBehaviour
 
         print("You Failed");
         gameOverText.SetActive(true);
+        script.g0 = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        
         //DO GAMEOVER
     }
 

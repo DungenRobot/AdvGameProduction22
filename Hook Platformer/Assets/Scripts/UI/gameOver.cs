@@ -32,6 +32,6 @@ public class gameOver : MonoBehaviour
     
     public void tryAgain()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Tutorial scean");
     }
 }
