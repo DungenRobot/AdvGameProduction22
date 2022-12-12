@@ -16,17 +16,18 @@ public class GrappleOverlay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float cd = Vector2.Distance(grappleables[0].position, this.transform.position);
+        float cd = Vector2.Distance(grappleables[0].position, this.transform.parent.position);
         int co = 0;
 
         for(int i = 1; i<grappleables.Length;i++){
             Transform grappleable = grappleables[i];
-            float dist = Vector2.Distance(grappleable.position, this.transform.position);
+            float dist = Vector2.Distance(grappleable.position, this.transform.parent.position);
             if(dist < cd){ co = i; cd = dist;} 
         }
 
         if(cd <= maxGrappleLength){
             sr.enabled = true;
+            Debug.Log(grappleables[co].position.x + ", " +  grappleables[co].position.y);
             this.transform.position = new Vector3(grappleables[co].position.x, grappleables[co].position.y, 0);
         }else sr.enabled = false;
     }
