@@ -118,7 +118,6 @@ public class PlayerController : MonoBehaviour
         velocity = velocity + Grapple();
         controller.Move((velocity) * Time.deltaTime);
 
-        
         int layerMask = 1 << 6;
         layerMask = ~layerMask;
 
@@ -247,6 +246,10 @@ public class PlayerController : MonoBehaviour
 
         if (controller.isGrounded)
         {
+            if(playerstate == State.FALLING){
+                SoundEffects.Effect playerLand = SoundEffects.getInstance().playerLand;
+                playerLand.source.PlayOneShot(playerLand.clip, playerLand.volume);
+            }
             return (State.ON_GROUND);
         }
 
@@ -254,6 +257,10 @@ public class PlayerController : MonoBehaviour
         {
             if (jumpInput)
             {
+                if(playerstate != State.JUMPING){ 
+                    SoundEffects.Effect playerJump = SoundEffects.getInstance().playerJump;
+                    playerJump.source.PlayOneShot(playerJump.clip, playerJump.volume);
+                }
                 return (State.JUMPING);
             }
             else
@@ -272,7 +279,10 @@ public class PlayerController : MonoBehaviour
 
     Vector3 Grapple()
     {
+        
         if(Input.GetKeyDown(KeyCode.Q)){
+            SoundEffects.Effect grappleConnect = SoundEffects.getInstance().grappleConnect;
+            grappleConnect.source.PlayOneShot(grappleConnect.clip, grappleConnect.volume);
             float cd = maxGrappleLength;
             Transform co = null;
 
@@ -292,8 +302,11 @@ public class PlayerController : MonoBehaviour
         }
 
         if(Input.GetKeyUp(KeyCode.Q)){
-            currentGrappleTarget = null; 
+            currentGrappleTarget = null;
+            SoundEffects.Effect grappleRelease = SoundEffects.getInstance().grappleRelease;
+            grappleRelease.source.PlayOneShot(grappleRelease.clip, grappleRelease.volume); 
             grappleRope.UnGrapple();
+            
         }
 
         if(currentGrappleTarget != null){
@@ -333,9 +346,5 @@ public class PlayerController : MonoBehaviour
         foreach(GameObject go in temp)
            temp2.Add(go.transform);
         return temp2.ToArray();
-    }
-    void PlaySound(int clip, float volumeScale)
-    {
-        audioSource.PlayOneShot(audioClip[clip], volumeScale);
     }
 }
