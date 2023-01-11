@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     public float raycastDownDistrance = 4.0f;
     public float bounceBack = -18.0f;
     private Vector3 shiftUD = new Vector3(0, 0.75f, 0);
+    private float getUpTime = 5.0f;
 
     // Grapple Stuff
     public float grappleStrength = 1;
@@ -102,7 +103,7 @@ public class PlayerController : MonoBehaviour
                 
                 
                 velocity.x = 0;
-                velocity.y = 0;
+                //velocity.y = 0;
                 //print("You Failed");
                 
                     
@@ -132,6 +133,8 @@ public class PlayerController : MonoBehaviour
                 
                 velocity.x = bounceBack;
                 hitRight.collider.gameObject.layer = 8;
+                
+
 
                 
                 heartCount--;
@@ -142,6 +145,17 @@ public class PlayerController : MonoBehaviour
                     playerstate = State.FAILED;
                     GameOver();
                 }
+                /*playerstate = State.FAILED;
+                while (getUpTime > 0)
+                {
+                    getUpTime -= Time.deltaTime;
+                }
+                if (getUpTime <= 0)
+                {
+                    playerstate = State.ON_GROUND;
+
+                    getUpTime = 5.0f;
+                }*/
             }
             else if (hitRight.collider.gameObject.layer == 3)
             {
@@ -174,6 +188,17 @@ public class PlayerController : MonoBehaviour
                     playerstate = State.FAILED;
                     GameOver();
                 }
+                /*playerstate = State.FAILED;
+                while (getUpTime > 0)
+                {
+                    getUpTime -= Time.deltaTime;
+                }
+                if (getUpTime <= 0)
+                {
+                    playerstate = State.ON_GROUND;
+
+                    getUpTime = 5.0f;
+                }*/
             }
             else if (hitRight.collider.gameObject.layer == 3)
             {
@@ -205,8 +230,20 @@ public class PlayerController : MonoBehaviour
                     playerstate = State.FAILED;
                     GameOver();
                 }
+                /*playerstate = State.FAILED;
+                while (getUpTime > 0)
+                {
+                    getUpTime -= Time.deltaTime;
+                }
+                if (getUpTime <= 0)
+                {
+                    playerstate = State.ON_GROUND;
 
-                
+                    getUpTime = 5.0f;
+                }*/
+
+
+
             }
             else if (hitRight.collider.gameObject.layer == 3)
             {
