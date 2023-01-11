@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     //CollisionStuff
     public float raycastRightDistrance = 4.0f;
     public float raycastDownDistrance = 4.0f;
-    public float slowOnHit = 0.33f;
+    public float bounceBack = -18.0f;
     private Vector3 shiftUD = new Vector3(0, 0.75f, 0);
 
     // Grapple Stuff
@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
             if (hitRight.collider.gameObject.layer == 7)
             {
                 
-                velocity.x = velocity.x * slowOnHit;
+                velocity.x = bounceBack;
                 hitRight.collider.gameObject.layer = 8;
 
                 
@@ -162,7 +162,7 @@ public class PlayerController : MonoBehaviour
             //RaycastHit2D hitRight = Physics2D.Raycast(transform.position + shiftUD, Vector2.right, raycastRightDistrance, layerMask);
             if (hitRight.collider.gameObject.layer == 7)
             {
-                velocity.x = velocity.x * slowOnHit;
+                velocity.x = bounceBack;
                 hitRight.collider.gameObject.layer = 8;
 
                 
@@ -193,7 +193,7 @@ public class PlayerController : MonoBehaviour
             //RaycastHit2D hitRight = Physics2D.Raycast(transform.position - shiftUD, Vector2.right, raycastRightDistrance, layerMask);
             if (hitRight.collider.gameObject.layer == 7)
             {
-                velocity.x = velocity.x * slowOnHit;
+                velocity.x = bounceBack;
                 hitRight.collider.gameObject.layer = 8;
 
                 
