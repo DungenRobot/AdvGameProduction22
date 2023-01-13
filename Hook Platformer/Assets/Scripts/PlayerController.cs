@@ -145,6 +145,7 @@ public class PlayerController : MonoBehaviour
                     playerstate = State.FAILED;
                     GameOver();
                 }
+                
                 /*playerstate = State.FAILED;
                 while (getUpTime > 0)
                 {
@@ -188,6 +189,7 @@ public class PlayerController : MonoBehaviour
                     playerstate = State.FAILED;
                     GameOver();
                 }
+                
                 /*playerstate = State.FAILED;
                 while (getUpTime > 0)
                 {
@@ -230,6 +232,8 @@ public class PlayerController : MonoBehaviour
                     playerstate = State.FAILED;
                     GameOver();
                 }
+                
+                
                 /*playerstate = State.FAILED;
                 while (getUpTime > 0)
                 {
@@ -374,6 +378,7 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
+    
 
 
 
