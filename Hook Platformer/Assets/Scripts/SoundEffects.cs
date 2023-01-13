@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class SoundEffects : MonoBehaviour
 {
-    public AudioSource source;
-
     // Jumping
     public Effect playerLand;
     public Effect playerJump;
@@ -38,8 +36,9 @@ public class SoundEffects : MonoBehaviour
 
     [System.Serializable]
     public class Effect{
-        AudioClip clip;
-        float volume;
+        public AudioClip clip;
+        public AudioSource source;
+        public float volume;
     }
     
 }

@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class Music : MonoBehaviour
 {
-    public AudioSource intro;
-    public AudioSource main;
+
+    private static Music instance;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(instance != null){
+            Destroy(this.gameObject);
+            return;
+        }
+        instance = this;
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        if(!intro.isPlaying && !main.isPlaying)
-        {
-            main.Play(0);
-        }
+    
     }
 }

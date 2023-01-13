@@ -27,8 +27,9 @@ public class PlayerController : MonoBehaviour
     //CollisionStuff
     public float raycastRightDistrance = 4.0f;
     public float raycastDownDistrance = 4.0f;
-    public float slowOnHit = 0.33f;
+    public float bounceBack = -18.0f;
     private Vector3 shiftUD = new Vector3(0, 0.75f, 0);
+    private float getUpTime = 5.0f;
 
     // Grapple Stuff
     public float grappleStrength = 1;
@@ -102,7 +103,7 @@ public class PlayerController : MonoBehaviour
                 
                 
                 velocity.x = 0;
-                velocity.y = 0;
+                //velocity.y = 0;
                 //print("You Failed");
                 
                     
@@ -118,7 +119,6 @@ public class PlayerController : MonoBehaviour
         velocity = velocity + Grapple();
         controller.Move((velocity) * Time.deltaTime);
 
-        
         int layerMask = 1 << 6;
         layerMask = ~layerMask;
 
@@ -131,8 +131,10 @@ public class PlayerController : MonoBehaviour
             if (hitRight.collider.gameObject.layer == 7)
             {
                 
-                velocity.x = velocity.x * slowOnHit;
+                velocity.x = bounceBack;
                 hitRight.collider.gameObject.layer = 8;
+                
+
 
                 
                 heartCount--;
@@ -143,6 +145,17 @@ public class PlayerController : MonoBehaviour
                     playerstate = State.FAILED;
                     GameOver();
                 }
+                /*playerstate = State.FAILED;
+                while (getUpTime > 0)
+                {
+                    getUpTime -= Time.deltaTime;
+                }
+                if (getUpTime <= 0)
+                {
+                    playerstate = State.ON_GROUND;
+
+                    getUpTime = 5.0f;
+                }*/
             }
             else if (hitRight.collider.gameObject.layer == 3)
             {
@@ -163,7 +176,7 @@ public class PlayerController : MonoBehaviour
             //RaycastHit2D hitRight = Physics2D.Raycast(transform.position + shiftUD, Vector2.right, raycastRightDistrance, layerMask);
             if (hitRight.collider.gameObject.layer == 7)
             {
-                velocity.x = velocity.x * slowOnHit;
+                velocity.x = bounceBack;
                 hitRight.collider.gameObject.layer = 8;
 
                 
@@ -175,6 +188,17 @@ public class PlayerController : MonoBehaviour
                     playerstate = State.FAILED;
                     GameOver();
                 }
+                /*playerstate = State.FAILED;
+                while (getUpTime > 0)
+                {
+                    getUpTime -= Time.deltaTime;
+                }
+                if (getUpTime <= 0)
+                {
+                    playerstate = State.ON_GROUND;
+
+                    getUpTime = 5.0f;
+                }*/
             }
             else if (hitRight.collider.gameObject.layer == 3)
             {
@@ -194,7 +218,7 @@ public class PlayerController : MonoBehaviour
             //RaycastHit2D hitRight = Physics2D.Raycast(transform.position - shiftUD, Vector2.right, raycastRightDistrance, layerMask);
             if (hitRight.collider.gameObject.layer == 7)
             {
-                velocity.x = velocity.x * slowOnHit;
+                velocity.x = bounceBack;
                 hitRight.collider.gameObject.layer = 8;
 
                 
@@ -206,8 +230,20 @@ public class PlayerController : MonoBehaviour
                     playerstate = State.FAILED;
                     GameOver();
                 }
+                /*playerstate = State.FAILED;
+                while (getUpTime > 0)
+                {
+                    getUpTime -= Time.deltaTime;
+                }
+                if (getUpTime <= 0)
+                {
+                    playerstate = State.ON_GROUND;
 
-                
+                    getUpTime = 5.0f;
+                }*/
+
+
+
             }
             else if (hitRight.collider.gameObject.layer == 3)
             {
@@ -247,6 +283,10 @@ public class PlayerController : MonoBehaviour
 
         if (controller.isGrounded)
         {
+            if(playerstate == State.FALLING){
+                SoundEffects.Effect playerLand = SoundEffects.getInstance().playerLand;
+                playerLand.source.PlayOneShot(playerLand.clip, playerLand.volume);
+            }
             return (State.ON_GROUND);
         }
 
@@ -254,6 +294,10 @@ public class PlayerController : MonoBehaviour
         {
             if (jumpInput)
             {
+                if(playerstate != State.JUMPING){ 
+                    SoundEffects.Effect playerJump = SoundEffects.getInstance().playerJump;
+                    playerJump.source.PlayOneShot(playerJump.clip, playerJump.volume);
+                }
                 return (State.JUMPING);
             }
             else
@@ -272,7 +316,10 @@ public class PlayerController : MonoBehaviour
 
     Vector3 Grapple()
     {
+        
         if(Input.GetKeyDown(KeyCode.Q)){
+            SoundEffects.Effect grappleConnect = SoundEffects.getInstance().grappleConnect;
+            grappleConnect.source.PlayOneShot(grappleConnect.clip, grappleConnect.volume);
             float cd = maxGrappleLength;
             Transform co = null;
 
@@ -292,8 +339,11 @@ public class PlayerController : MonoBehaviour
         }
 
         if(Input.GetKeyUp(KeyCode.Q)){
-            currentGrappleTarget = null; 
+            currentGrappleTarget = null;
+            SoundEffects.Effect grappleRelease = SoundEffects.getInstance().grappleRelease;
+            grappleRelease.source.PlayOneShot(grappleRelease.clip, grappleRelease.volume); 
             grappleRope.UnGrapple();
+            
         }
 
         if(currentGrappleTarget != null){
@@ -333,9 +383,5 @@ public class PlayerController : MonoBehaviour
         foreach(GameObject go in temp)
            temp2.Add(go.transform);
         return temp2.ToArray();
-    }
-    void PlaySound(int clip, float volumeScale)
-    {
-        audioSource.PlayOneShot(audioClip[clip], volumeScale);
     }
 }
