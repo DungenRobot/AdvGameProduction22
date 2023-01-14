@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
     //Health Stuff
     public int heartCount = 2; //Make it one less than desired value
     public TMP_Text healthText;
+    public healthBar healthBar
 
     //Endings
     public GameObject gameOverText;
