@@ -352,6 +352,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if(currentGrappleTarget != null){
+            Debug.Log("hello world");
             float angle = Mathf.Atan2(currentGrappleTarget.position.y - this.transform.position.y, currentGrappleTarget.position.x - this.transform.position.x);
             if(angle>maxAngle){
                 currentGrappleTarget = null;
