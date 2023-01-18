@@ -29,8 +29,7 @@ public class PlayerController : MonoBehaviour
     public float raycastDownDistrance = 4.0f;
     public float bounceBack = -18.0f;
     private Vector3 shiftUD = new Vector3(0, 0.75f, 0);
-    private float stunTime = 3.0f;
-    
+    private float getUpTime = 5.0f;
 
     // Grapple Stuff
     public float grappleStrength = 1;
@@ -48,7 +47,6 @@ public class PlayerController : MonoBehaviour
     //Health Stuff
     public int heartCount = 2; //Make it one less than desired value
     public TMP_Text healthText;
-    public healthBar healthBar
 
     //Endings
     public GameObject gameOverText;
@@ -148,7 +146,7 @@ public class PlayerController : MonoBehaviour
                     playerstate = State.FAILED;
                     GameOver();
                 }
-                StartCoroutine(stun());
+                
                 /*playerstate = State.FAILED;
                 while (getUpTime > 0)
                 {
@@ -192,7 +190,7 @@ public class PlayerController : MonoBehaviour
                     playerstate = State.FAILED;
                     GameOver();
                 }
-                StartCoroutine(stun());
+                
                 /*playerstate = State.FAILED;
                 while (getUpTime > 0)
                 {
@@ -235,7 +233,7 @@ public class PlayerController : MonoBehaviour
                     playerstate = State.FAILED;
                     GameOver();
                 }
-                StartCoroutine(stun());
+                
                 
                 /*playerstate = State.FAILED;
                 while (getUpTime > 0)
@@ -387,18 +385,7 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
-
-    IEnumerator stun()
-    {
-        yield return new WaitForSeconds(1);
-
-        playerstate = State.FAILED;
-
-        yield return new WaitForSeconds(stunTime);
-
-        playerstate = State.ON_GROUND;
-
-    }
+    
 
 
 
