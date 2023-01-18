@@ -3209,6 +3209,7 @@ MonoBehaviour:
   maxGrappleLength: Infinity
   grappleables: []
   grappleRope: {fileID: 1325413757892962027}
+  maxAngle: 2.3561945
   audioClip:
   - {fileID: 8300000, guid: 41d900f97e3b045288c3621d48915e0f, type: 3}
   - {fileID: 0}
