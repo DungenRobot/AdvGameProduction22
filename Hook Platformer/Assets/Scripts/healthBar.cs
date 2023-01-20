@@ -18,14 +18,4 @@ public class healthBar : MonoBehaviour
     {
         slider.value = health;
     }
-
-    void Start()
-    {
-        health = PlayerController.heartCount;
-    }   
-    
-    void Update()
-    {
-        health = PlayerController.heartCount;
-    }    
 }
