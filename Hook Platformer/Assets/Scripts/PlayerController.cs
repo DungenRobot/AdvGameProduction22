@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
     //Health Stuff
     public int heartCount = 2; //Make it one less than desired value
     public TMP_Text healthText;
-    public healthBar healthBar
+    public healthBar healthBar;
 
     //Endings
     public GameObject gameOverText;
@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
         controller = gameObject.GetComponent<CharacterController>();
         grappleables = GetGrappleables();
         audioSource = GetComponent<AudioSource>();
+        healthBar.SetMaxHealth(heartCount + 1);
     }
 
     // Update is called once per frame
@@ -142,6 +143,7 @@ public class PlayerController : MonoBehaviour
                 heartCount--;
                 
                 healthText.GetComponent<TMP_Text>().text = "Health: " + heartCount.ToString();
+                healthBar.SetHealth(heartCount + 1);
                 if (heartCount == 0)
                 {
                     playerstate = State.FAILED;
@@ -186,6 +188,7 @@ public class PlayerController : MonoBehaviour
                 heartCount--;
 
                 healthText.GetComponent<TMP_Text>().text = "Health: " + heartCount.ToString();
+                healthBar.SetHealth(heartCount + 1);
                 if (heartCount == 0)
                 {
                     playerstate = State.FAILED;
@@ -229,6 +232,7 @@ public class PlayerController : MonoBehaviour
                 heartCount--;
 
                 healthText.GetComponent<TMP_Text>().text = "Health: " + heartCount.ToString();
+                healthBar.SetHealth(heartCount + 1);
                 if (heartCount == 0)
                 {
                     playerstate = State.FAILED;
