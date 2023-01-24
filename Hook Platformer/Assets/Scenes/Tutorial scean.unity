@@ -2719,6 +2719,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2521295032407823182, guid: ec1ab8fa34b02408084df3c00c0a4c30, type: 3}
   m_PrefabInstance: {fileID: 1105054580}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1132093767 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2521295032407823181, guid: ec1ab8fa34b02408084df3c00c0a4c30, type: 3}
+  m_PrefabInstance: {fileID: 1183807332}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1132093772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132093767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96ce49f94cf8b410d889e1c50d6bb24d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1132491060 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7184150239592746656, guid: 7174d9c3185c946eca32ecce61213cf9, type: 3}
@@ -2731,6 +2748,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 419157414}
     m_Modifications:
+    - target: {fileID: 1132093771, guid: ec1ab8fa34b02408084df3c00c0a4c30, type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1132093771, guid: ec1ab8fa34b02408084df3c00c0a4c30, type: 3}
+      propertyPath: m_Animations.Array.data[0]
+      value: 
+      objectReference: {fileID: 7400000, guid: 18971d80bc8bd4d70ac6acaba81bffe2, type: 2}
     - target: {fileID: 2521295032407823181, guid: ec1ab8fa34b02408084df3c00c0a4c30, type: 3}
       propertyPath: m_Name
       value: Small obstacle (8)

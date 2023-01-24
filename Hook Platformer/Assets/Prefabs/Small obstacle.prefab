@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2521295032407823183}
   - component: {fileID: 2521295031879922913}
   - component: {fileID: 1132093770}
+  - component: {fileID: 1132093771}
   m_Layer: 7
   m_Name: Small obstacle
   m_TagString: Untagged
@@ -119,3 +120,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &1132093771
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2521295032407823181}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 18971d80bc8bd4d70ac6acaba81bffe2, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
