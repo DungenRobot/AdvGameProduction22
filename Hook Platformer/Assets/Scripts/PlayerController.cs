@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     public Transform[] grappleables;
     private Transform currentGrappleTarget = null;
     public GrappleRope grappleRope;
+    public float maxAngle = (3/4)*Mathf.PI;
 
     //Audio
     public AudioClip[] audioClip;
@@ -357,7 +358,14 @@ public class PlayerController : MonoBehaviour
         }
 
         if(currentGrappleTarget != null){
+            Debug.Log("hello world");
             float angle = Mathf.Atan2(currentGrappleTarget.position.y - this.transform.position.y, currentGrappleTarget.position.x - this.transform.position.x);
+            if(angle>maxAngle){
+                currentGrappleTarget = null;
+                SoundEffects.Effect grappleRelease = SoundEffects.getInstance().grappleRelease;
+                grappleRelease.source.PlayOneShot(grappleRelease.clip, grappleRelease.volume); 
+                grappleRope.UnGrapple();
+                }
             return new Vector3(Mathf.Cos(angle), Mathf.Sin(angle),0) * grappleStrength * Time.deltaTime;
         }
 
@@ -384,7 +392,7 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
-
+    
     IEnumerator stun()
     {
         yield return new WaitForSeconds(1);
