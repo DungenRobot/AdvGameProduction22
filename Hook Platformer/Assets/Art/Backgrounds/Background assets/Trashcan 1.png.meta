@@ -103,7 +103,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Trashcan 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3024
+        width: 1514
+        height: 1008
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2646fbff20e98475db1a4c2b5a78f54c
+      internalID: -1385853244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trashcan 1_1
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 2355
+        width: 1514
+        height: 1177
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3509e779d6b2447b5ab5b514ad12c578
+      internalID: -440501231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trashcan 1_2
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 1177.6666
+        width: 1514
+        height: 1177.3334
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3cdd36812cc9496692cb878ff7a3f8a
+      internalID: 945337225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trashcan 1_3
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 0.666626
+        width: 1514
+        height: 1177.3334
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78d44f3e8639a45d788484b5b1403db2
+      internalID: 1200758603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trashcan 1_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2008
+        width: 1504
+        height: 1004
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf79bcf2e186a43a29d1d6484143608e
+      internalID: 1983435303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trashcan 1_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1004
+        width: 1504
+        height: 1004
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0431a5873990416c98fd0f8c92cc87a
+      internalID: -234365611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trashcan 1_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1504
+        height: 1004
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51ec94977f6b34a1380020dba6456b1f
+      internalID: -572365277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +261,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Trashcan 1_0: -1385853244
+      Trashcan 1_2: 945337225
+      Trashcan 1_5: -234365611
+      Trashcan 1_3: 1200758603
+      Trashcan 1_4: 1983435303
+      Trashcan 1_1: -440501231
+      Trashcan 1_6: -572365277
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

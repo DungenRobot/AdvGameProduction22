@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2521295032407823182}
   - component: {fileID: 2521295032407823183}
   - component: {fileID: 2521295031879922913}
+  - component: {fileID: 1132093770}
   m_Layer: 7
   m_Name: Small obstacle
   m_TagString: Untagged
@@ -98,3 +99,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.1418939, y: 4.1883535, z: 0.20000002}
   m_Center: {x: 0.0878375, y: 1.5941774, z: 0}
+--- !u!95 &1132093770
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2521295032407823181}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 41762a9818b584a6088e440fb4c57309, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
