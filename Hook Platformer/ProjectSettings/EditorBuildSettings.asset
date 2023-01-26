@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level layout test.unity
     guid: b9987a6048bf84cc1b3c1d0eca14d731
   - enabled: 1
-    path: Assets/Scenes/Collision Basics.unity
+    path: Assets/Scenes/Testing stuff/Collision Basics.unity
     guid: 7e7dfc6a289a9432fa1f1a8e1b81ceb7
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
