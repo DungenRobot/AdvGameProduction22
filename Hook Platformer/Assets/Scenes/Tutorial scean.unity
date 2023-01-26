@@ -4408,10 +4408,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 1795405781247669547, guid: 6b4c5a3c03edb4a2c8de6f77426bc313, type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8167791627232186458, guid: 6b4c5a3c03edb4a2c8de6f77426bc313, type: 3}
       propertyPath: m_RootOrder
       value: 6
