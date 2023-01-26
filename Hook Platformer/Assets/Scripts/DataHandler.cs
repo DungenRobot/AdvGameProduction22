@@ -20,4 +20,11 @@ public class DataHandler : MonoBehaviour
         }
 
     }
+
+    public void LevelClear(int level)
+    {
+        if (level > LatestLevel){
+            LatestLevel = level;
+        }
+    }
 }
