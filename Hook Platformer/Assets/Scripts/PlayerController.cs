@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
     public int heartCount = 2; //Make it one less than desired value
     public TMP_Text healthText;
     public healthBar healthBar;
+    private GameObject nearestRespawnPoint;
 
     //Endings
     public GameObject gameOverText;
@@ -126,8 +127,10 @@ public class PlayerController : MonoBehaviour
         int layerMask = 1 << 6;
         layerMask = ~layerMask;
 
+        //int respawnLayerMask = 1 << 10;
 
         RaycastHit hitRight;
+        
         if (Physics.Raycast(transform.position, Vector3.right, out hitRight, raycastRightDistrance, layerMask))
         {
             
@@ -175,6 +178,26 @@ public class PlayerController : MonoBehaviour
                 FinishLevel();
 
             }
+            /*else if (hitRight.collider.gameObject.layer == 10)
+            {
+                gameObject.transform.position = nearestRespawnPoint.transform.position;
+                
+                hitRight.collider.gameObject.layer = 8;
+
+                heartCount--;
+
+                healthText.GetComponent<TMP_Text>().text = "Health: " + heartCount.ToString();
+                healthBar.SetHealth(heartCount + 1);
+                if (heartCount == 0)
+                {
+                    playerstate = State.FAILED;
+                    GameOver();
+                }
+                
+
+
+
+            }*/
         }
         
         if (Physics.Raycast(transform.position + shiftUD, Vector3.right, out hitRight, raycastRightDistrance, layerMask))
@@ -219,6 +242,11 @@ public class PlayerController : MonoBehaviour
                 FinishLevel();
 
             }
+           /*else if (hitRight.collider.gameObject.layer == 10)
+            {
+                playerstate = State.FAILED;
+                GameOver();
+            }*/
         }
 
         if (Physics.Raycast(transform.position - shiftUD, Vector3.right, out hitRight, raycastRightDistrance, layerMask))
@@ -267,25 +295,42 @@ public class PlayerController : MonoBehaviour
                 FinishLevel();
 
             }
+            /*else if (hitRight.collider.gameObject.layer == 10)
+            {
+                playerstate = State.FAILED;
+                GameOver();
+            }*/
+
         }
 
-        RaycastHit hitDown;
-        if (Physics.Raycast(transform.position, Vector3.down, out hitDown, raycastDownDistrance, layerMask))
+
+        if (Physics.Raycast(transform.position, Vector3.down, out hitRight, raycastDownDistrance, layerMask))
         {
             //RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector2.down, raycastDownDistrance, layerMask);
-            if (hitDown.collider.gameObject.layer == 7)
+            if (hitRight.collider.gameObject.layer == 7)
             {
                 velocity.y = jump_velocity;
                 playerstate = State.FALL_UP;
-                hitDown.collider.gameObject.layer = 8;
+                hitRight.collider.gameObject.layer = 8;
             }
+            /*if (hitRight.collider.gameObject.layer == 10)
+            {
+                velocity.y = jump_velocity;
+                playerstate = State.FALL_UP;
+                hitRight.collider.gameObject.layer = 8;
+            }*/
         }
+        /*if (Physics.SphereCast(transform.position, 4, Vector3.left, out hitRight, respawnLayerMask))
+        {
 
+            nearestRespawnPoint = hitRight.collider.gameObject;
+        }*/
         if (heartCount == 0)
         {
             playerstate = State.FAILED;
             GameOver();
         }
+        
 
     }
 
