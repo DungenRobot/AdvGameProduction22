@@ -55,10 +55,16 @@ public class PlayerController : MonoBehaviour
     public GameObject gameOverText;
     public GameObject winLevelText;
 
+    //Datahandler
+    public GameObject DataHandler;
+    //Current level
+    public int currentLevel;
+
     // Start is called before the first frame update
     void Start()
     {
         controller = gameObject.GetComponent<CharacterController>();
+        DataHandler = GameObject.Find("DataHandler");
         grappleables = GetGrappleables();
         audioSource = GetComponent<AudioSource>();
         healthBar.SetMaxHealth(heartCount + 1);
@@ -175,7 +181,7 @@ public class PlayerController : MonoBehaviour
             else if (hitRight.collider.gameObject.layer == 9)
             {
                 playerstate = State.FAILED;
-                FinishLevel();
+                FinishLevel(currentLevel);
 
             }
             /*else if (hitRight.collider.gameObject.layer == 10)
@@ -239,7 +245,7 @@ public class PlayerController : MonoBehaviour
             else if (hitRight.collider.gameObject.layer == 9)
             {
                 playerstate = State.FAILED;
-                FinishLevel();
+                FinishLevel(currentLevel);
 
             }
            /*else if (hitRight.collider.gameObject.layer == 10)
@@ -292,7 +298,8 @@ public class PlayerController : MonoBehaviour
             else if (hitRight.collider.gameObject.layer == 9)
             {
                 playerstate = State.FAILED;
-                FinishLevel();
+
+                FinishLevel(currentLevel);
 
             }
             /*else if (hitRight.collider.gameObject.layer == 10)
@@ -428,8 +435,10 @@ public class PlayerController : MonoBehaviour
         //DO GAMEOVER
     }
 
-    void FinishLevel()
+    void FinishLevel(int thisLevel)
     {
+
+        DataHandler.GetComponent<DataHandler>().LevelClear(thisLevel);
         
         winLevelText.SetActive(true);
         script.g0 = false;
