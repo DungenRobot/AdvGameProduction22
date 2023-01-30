@@ -30,7 +30,11 @@ public class PlayerController : MonoBehaviour
     public float bounceBack = -18.0f;
     private Vector3 shiftUD = new Vector3(0, 0.75f, 0);
     private float stunTime = 3.0f;
-    
+    private Vector3 respawnLocation = new Vector3(0, 0, 0);
+    public Transform[] respawnPoints;
+    private Transform currentRespawnTarget = null;
+    private float maxRespawnLength = 10;
+
 
     // Grapple Stuff
     public float grappleStrength = 1;
@@ -68,6 +72,8 @@ public class PlayerController : MonoBehaviour
         grappleables = GetGrappleables();
         audioSource = GetComponent<AudioSource>();
         healthBar.SetMaxHealth(heartCount + 1);
+        respawnPoints = GetRespawnPoints();
+
     }
 
     // Update is called once per frame
@@ -133,7 +139,7 @@ public class PlayerController : MonoBehaviour
         int layerMask = 1 << 6;
         layerMask = ~layerMask;
 
-        int respawnLayerMask = 1 << 10;
+        int respawnLayerMask = 1 << 11;
 
         RaycastHit hitRight;
         
@@ -159,7 +165,7 @@ public class PlayerController : MonoBehaviour
                     playerstate = State.FAILED;
                     GameOver();
                 }
-                StartCoroutine(stun());
+                StartCoroutine(stun(1));
                 /*playerstate = State.FAILED;
                 while (getUpTime > 0)
                 {
@@ -186,9 +192,11 @@ public class PlayerController : MonoBehaviour
             }
             else if (hitRight.collider.gameObject.layer == 10)
             {
-                gameObject.transform.position = nearestRespawnPoint.transform.position;
+                gameObject.transform.position = respawnLocation;
                 
-                hitRight.collider.gameObject.layer = 8;
+
+
+
 
                 heartCount--;
 
@@ -199,7 +207,7 @@ public class PlayerController : MonoBehaviour
                     playerstate = State.FAILED;
                     GameOver();
                 }
-                
+                StartCoroutine(stun(0));
 
 
 
@@ -224,7 +232,7 @@ public class PlayerController : MonoBehaviour
                     playerstate = State.FAILED;
                     GameOver();
                 }
-                StartCoroutine(stun());
+                StartCoroutine(stun(1));
                 /*playerstate = State.FAILED;
                 while (getUpTime > 0)
                 {
@@ -248,11 +256,27 @@ public class PlayerController : MonoBehaviour
                 FinishLevel(currentLevel);
 
             }
-           /*else if (hitRight.collider.gameObject.layer == 10)
+            else if (hitRight.collider.gameObject.layer == 10)
             {
-                playerstate = State.FAILED;
-                GameOver();
-            }*/
+                gameObject.transform.position = respawnLocation;
+
+
+
+
+
+                heartCount--;
+
+                healthText.GetComponent<TMP_Text>().text = "Health: " + heartCount.ToString();
+                healthBar.SetHealth(heartCount + 1);
+                if (heartCount == 0)
+                {
+                    playerstate = State.FAILED;
+                    GameOver();
+                }
+                StartCoroutine(stun(0));
+
+
+            }
         }
 
         if (Physics.Raycast(transform.position - shiftUD, Vector3.right, out hitRight, raycastRightDistrance, layerMask))
@@ -273,7 +297,7 @@ public class PlayerController : MonoBehaviour
                     playerstate = State.FAILED;
                     GameOver();
                 }
-                StartCoroutine(stun());
+                StartCoroutine(stun(1));
                 
                 /*playerstate = State.FAILED;
                 while (getUpTime > 0)
@@ -302,11 +326,27 @@ public class PlayerController : MonoBehaviour
                 FinishLevel(currentLevel);
 
             }
-            /*else if (hitRight.collider.gameObject.layer == 10)
+            else if (hitRight.collider.gameObject.layer == 10)
             {
-                playerstate = State.FAILED;
-                GameOver();
-            }*/
+                gameObject.transform.position = respawnLocation;
+
+
+
+
+
+                heartCount--;
+
+                healthText.GetComponent<TMP_Text>().text = "Health: " + heartCount.ToString();
+                healthBar.SetHealth(heartCount + 1);
+                if (heartCount == 0)
+                {
+                    playerstate = State.FAILED;
+                    GameOver();
+                }
+                StartCoroutine(stun(0));
+
+
+            }
 
         }
 
@@ -320,18 +360,55 @@ public class PlayerController : MonoBehaviour
                 playerstate = State.FALL_UP;
                 hitRight.collider.gameObject.layer = 8;
             }
-            /*if (hitRight.collider.gameObject.layer == 10)
+            else if (hitRight.collider.gameObject.layer == 10)
             {
-                velocity.y = jump_velocity;
-                playerstate = State.FALL_UP;
-                hitRight.collider.gameObject.layer = 8;
-            }*/
+                gameObject.transform.position = respawnLocation;
+
+
+
+
+
+                heartCount--;
+
+                healthText.GetComponent<TMP_Text>().text = "Health: " + heartCount.ToString();
+                healthBar.SetHealth(heartCount + 1);
+                if (heartCount == 0)
+                {
+                    playerstate = State.FAILED;
+                    GameOver();
+                }
+                StartCoroutine(stun(0));
+
+
+            }
         }
-        if (Physics.SphereCast(transform.position, 4, Vector3.left, out hitRight, respawnLayerMask))
+        /*if (Physics.SphereCast(transform.position, 4, Vector3.left, out hitRight, respawnLayerMask))
         {
 
             nearestRespawnPoint = hitRight.collider.gameObject;
+            respawnLocation = new Vector3(nearestRespawnPoint.transform.position.x, nearestRespawnPoint.transform.position.y + 1, 0);
+
+        }*/
+        float cd1 = maxRespawnLength;
+        Transform co1 = null;
+
+        for (int i = 0; i < respawnPoints.Length; i++)
+        {
+            Transform respawnPoint = respawnPoints[i];
+            if (transform.position.x > respawnPoint.position.x) continue;
+            float dist = Vector2.Distance(respawnPoint.position, this.transform.position);
+            if (dist < cd1) { co1 = respawnPoint; cd1 = dist; }
         }
+
+
+
+        if (co1 != null && cd1 <= maxGrappleLength)
+        {
+            currentRespawnTarget = co1;
+             
+            respawnLocation = new Vector3(currentRespawnTarget.transform.position.x, currentRespawnTarget.transform.position.y + 4, 0);
+        }
+
         if (heartCount == 0)
         {
             playerstate = State.FAILED;
@@ -446,9 +523,12 @@ public class PlayerController : MonoBehaviour
         Cursor.visible = true;
     }
     
-    IEnumerator stun()
+    IEnumerator stun(int objectHit)
     {
-        yield return new WaitForSeconds(1);
+        if (objectHit == 1)
+        {
+            yield return new WaitForSeconds(1);
+        }
 
         playerstate = State.FAILED;
 
@@ -466,5 +546,13 @@ public class PlayerController : MonoBehaviour
         foreach(GameObject go in temp)
            temp2.Add(go.transform);
         return temp2.ToArray();
+    }
+    Transform[] GetRespawnPoints()
+    {
+        GameObject[] temp3 = GameObject.FindGameObjectsWithTag("Respawn");
+        List<Transform> temp4 = new List<Transform>();
+        foreach (GameObject go in temp3)
+            temp4.Add(go.transform);
+        return temp4.ToArray();
     }
 }
