@@ -4254,7 +4254,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4266890962146640839}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.23, y: 4, z: 0}
+  m_LocalPosition: {x: 17.23, y: -1, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6134,9 +6134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff030881d55dc43a1aad410aec7a6e37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   sr: {fileID: 6016115613887727556}
-  locationIndicator: {fileID: 0}
   maxGrappleLength: Infinity
 --- !u!1 &7547484061209805743
 GameObject:
