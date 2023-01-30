@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
 
     public GameObject MainM;
     public GameObject LicenceM;
+    public GameObject GameSelect;
 
 
 
@@ -15,13 +16,14 @@ public class MainMenu : MonoBehaviour
     {
         MainM.SetActive(true);
         LicenceM.SetActive(false);
+        GameSelect.SetActive(false);
     }
     public void quit()
     {
         Application.Quit();
     }
 
-    public void Play()
+    public void PlayTutorial()
     {
         SceneManager.LoadScene("Tutorial scean");
         Time.timeScale = 1;
@@ -38,4 +40,22 @@ public class MainMenu : MonoBehaviour
         MainM.SetActive(true);
         LicenceM.SetActive(false);
     }
+
+    //GameSelect Code
+
+    public void Ls()
+    {
+        GameSelect.SetActive(true);
+        MainM.SetActive(false);
+    }
+
+    public void Bls()
+    {
+        GameSelect.SetActive(false);
+        MainM.SetActive(true);
+    }
+
+    //Licenses Code for the Menu
+
+    
 }
