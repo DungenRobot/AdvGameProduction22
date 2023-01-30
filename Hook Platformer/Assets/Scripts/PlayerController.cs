@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
         int layerMask = 1 << 6;
         layerMask = ~layerMask;
 
-        //int respawnLayerMask = 1 << 10;
+        int respawnLayerMask = 1 << 10;
 
         RaycastHit hitRight;
         
@@ -178,7 +178,7 @@ public class PlayerController : MonoBehaviour
                 FinishLevel();
 
             }
-            /*else if (hitRight.collider.gameObject.layer == 10)
+            else if (hitRight.collider.gameObject.layer == 10)
             {
                 gameObject.transform.position = nearestRespawnPoint.transform.position;
                 
@@ -197,7 +197,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-            }*/
+            }
         }
         
         if (Physics.Raycast(transform.position + shiftUD, Vector3.right, out hitRight, raycastRightDistrance, layerMask))
@@ -320,11 +320,11 @@ public class PlayerController : MonoBehaviour
                 hitRight.collider.gameObject.layer = 8;
             }*/
         }
-        /*if (Physics.SphereCast(transform.position, 4, Vector3.left, out hitRight, respawnLayerMask))
+        if (Physics.SphereCast(transform.position, 4, Vector3.left, out hitRight, respawnLayerMask))
         {
 
             nearestRespawnPoint = hitRight.collider.gameObject;
-        }*/
+        }
         if (heartCount == 0)
         {
             playerstate = State.FAILED;
