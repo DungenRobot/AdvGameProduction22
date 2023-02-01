@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement; 
 
+
 public class Reload : MonoBehaviour
 {
+
+    Scene currentScene;
+    string sceneName;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentScene = SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
 
     }
 
@@ -16,7 +22,7 @@ public class Reload : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.R)){
-         SceneManager.LoadScene("Tutorial scean");
+         SceneManager.LoadScene(sceneName);
     }
     }
 
