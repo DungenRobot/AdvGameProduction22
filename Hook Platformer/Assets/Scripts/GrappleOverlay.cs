@@ -29,7 +29,7 @@ public class GrappleOverlay : MonoBehaviour
 
         if(cd <= maxGrappleLength){
             sr.enabled = true;
-            this.transform.position = new Vector3(grappleables[co].position.x, grappleables[co].position.y, 0);
+            this.transform.position = new Vector3(grappleables[co].position.x + 2.7f, grappleables[co].position.y + 2.7f, 0);
         }else sr.enabled = false;
 
          Vector2 pos = Camera.main.WorldToScreenPoint(transform.position);
@@ -40,7 +40,7 @@ public class GrappleOverlay : MonoBehaviour
         locationIndicator.GetComponent<RectTransform>().rotation = Quaternion.Euler(0,0, angleTo * Mathf.Rad2Deg - 45);
         
 
-        if(outOfBounds){
+        if(outOfBounds && grappleables[co].transform.position.x > player.position.x){
             locationIndicator.GetComponent<Image>().enabled = true; // Make Overlay Visable
             // Draw Pointing At Edge Of The Screen
             
@@ -61,7 +61,7 @@ public class GrappleOverlay : MonoBehaviour
                 newArrowPosition.y = rotationRay.y * (rectBounds.x/(2));
                 
             }
-        locationIndicator.GetComponent<RectTransform>().localPosition = newArrowPosition;
+            locationIndicator.GetComponent<RectTransform>().localPosition = newArrowPosition;
             
             
         }else{

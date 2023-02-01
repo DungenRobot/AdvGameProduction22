@@ -97,6 +97,7 @@ public class PlayerController : MonoBehaviour
                 else if (!controller.isGrounded) {
                     playerstate = State.FALLING;
                 }
+                velocity.y = -gravity * Time.deltaTime;
                 break;
 
             case State.JUMPING:
@@ -114,7 +115,12 @@ public class PlayerController : MonoBehaviour
                 {
                     playerstate = State.ON_GROUND;
                 }
+                else 
+                {
+                    velocity.y -= gravity * Time.deltaTime;
+                }
                 break;
+               
 
             case State.FAILED:
                 
@@ -129,7 +135,7 @@ public class PlayerController : MonoBehaviour
 
 
         if (!is_on_ground){
-            velocity.y -= gravity * Time.deltaTime;
+           
             
         }
 
