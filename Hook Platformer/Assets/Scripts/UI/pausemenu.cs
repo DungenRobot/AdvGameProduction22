@@ -92,6 +92,13 @@ public class pausemenu : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    //To play the Tutorial
+    public void PlayTutorial()
+    {
+        SceneManager.LoadScene("Tutorial scean");
+        Time.timeScale = 1;
+    }
+
     //This is for the options menu
 
     public void SetFullscreen(bool isFullScreen)

@@ -6,7 +6,7 @@ public class DataHandler : MonoBehaviour
 {
     public static DataHandler Instance;
 
-    private int LatestLevel;
+    public int LatestLevel;
 
 
     void Awake()

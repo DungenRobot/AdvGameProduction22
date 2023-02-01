@@ -166,8 +166,9 @@ RectTransform:
   m_Children:
   - {fileID: 4315244810069246825}
   - {fileID: 1217880254695029467}
+  - {fileID: 8740507810499194878}
   m_Father: {fileID: 8430912310979850633}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1981,7 +1982,7 @@ RectTransform:
   - {fileID: 7312843097723312707}
   - {fileID: 5758798020401406665}
   m_Father: {fileID: 8430912310979850633}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3207,6 +3208,8 @@ MonoBehaviour:
   raycastRightDistrance: 1
   raycastDownDistrance: 1.5
   bounceBack: -15
+  stunTime: 1.5
+  respawnPoints: []
   grappleStrength: 30
   maxGrappleLength: Infinity
   grappleables: []
@@ -5556,8 +5559,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8740507810499194878}
-  - component: {fileID: 5141956229597989552}
-  - component: {fileID: 3189462847684035643}
   m_Layer: 5
   m_Name: Finish
   m_TagString: Untagged
@@ -5574,51 +5575,20 @@ RectTransform:
   m_GameObject: {fileID: 5195397907580212999}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5398662996617815184}
   - {fileID: 725524552135865823}
   - {fileID: 5048578848168855850}
-  m_Father: {fileID: 8430912310979850633}
-  m_RootOrder: 3
+  m_Father: {fileID: 1430172494791749607}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5141956229597989552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5195397907580212999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0f1e29b6c88dbf4391ff1b6f7b0856d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pausemenuOBJ: {fileID: 0}
-  settingmenuOBJ: {fileID: 0}
-  onpaused: 0
-  g0: 0
---- !u!114 &3189462847684035643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5195397907580212999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 450dcccaac48cd3418d741fcbd6d2cd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainM: {fileID: 0}
-  LicenceM: {fileID: 0}
-  GameSelect: {fileID: 0}
 --- !u!1 &6080916217601810780
 GameObject:
   m_ObjectHideFlags: 0
@@ -6068,7 +6038,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8430912310979850633}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6638,7 +6608,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5141956229597989552}
+      - m_Target: {fileID: 1483307258654205763}
         m_TargetAssemblyTypeName: pausemenu, Assembly-CSharp
         m_MethodName: mainmenu
         m_Mode: 1
@@ -7321,9 +7291,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3189462847684035643}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: Play
+      - m_Target: {fileID: 1483307258654205763}
+        m_TargetAssemblyTypeName: pausemenu, Assembly-CSharp
+        m_MethodName: PlayTutorial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7636,7 +7606,6 @@ RectTransform:
   - {fileID: 4147294147872031902}
   - {fileID: 1565394108}
   - {fileID: 8837545085219996459}
-  - {fileID: 8740507810499194878}
   - {fileID: 1142343815956367168}
   - {fileID: 1430172494791749607}
   - {fileID: 3332109689055546789}

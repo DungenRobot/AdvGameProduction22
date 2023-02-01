@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-
+    public int latestLevel;
     public GameObject MainM;
     public GameObject LicenceM;
     public GameObject GameSelect;
@@ -17,6 +17,8 @@ public class MainMenu : MonoBehaviour
         MainM.SetActive(true);
         LicenceM.SetActive(false);
         GameSelect.SetActive(false);
+        latestLevel = GameObject.Find("DataHandler").GetComponent<DataHandler>().LatestLevel;
+
     }
     public void quit()
     {
@@ -54,6 +56,8 @@ public class MainMenu : MonoBehaviour
         GameSelect.SetActive(false);
         MainM.SetActive(true);
     }
+
+
 
     //Licenses Code for the Menu
 
