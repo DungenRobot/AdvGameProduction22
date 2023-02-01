@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     public float raycastDownDistrance = 4.0f;
     public float bounceBack = -18.0f;
     private Vector3 shiftUD = new Vector3(0, 0.75f, 0);
-    private float stunTime = 3.0f;
+    public float stunTime = 1.5f;
     private Vector3 respawnLocation = new Vector3(0, 0, 0);
     public Transform[] respawnPoints;
     private Transform currentRespawnTarget = null;
@@ -139,7 +139,7 @@ public class PlayerController : MonoBehaviour
         int layerMask = 1 << 6;
         layerMask = ~layerMask;
 
-        int respawnLayerMask = 1 << 11;
+        
 
         RaycastHit hitRight;
         
