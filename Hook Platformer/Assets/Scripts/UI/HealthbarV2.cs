@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthbarV2 : MonoBehaviour
 {
@@ -10,21 +11,22 @@ public class HealthbarV2 : MonoBehaviour
     
     void Start()
     {
-        this.gameObject.GetComponent<SpriteRenderer>().sprite = HealthThree;
+        gameObject.GetComponent<Image>().sprite = HealthThree;
+        
     }
     
     public void Health3()
     {
-        gameObject.GetComponent<SpriteRenderer>().sprite = HealthThree;
+        gameObject.GetComponent<Image>().sprite = HealthThree;
     }
 
     public void Health2()
     {
-        gameObject.GetComponent<SpriteRenderer>().sprite = HealthTwo;
+        gameObject.GetComponent<Image>().sprite = HealthTwo;
     }
 
     public void Health1()
     {
-        gameObject.GetComponent<SpriteRenderer>().sprite = HealthOne;
+        gameObject.GetComponent<Image>().sprite = HealthOne;
     }
 }
