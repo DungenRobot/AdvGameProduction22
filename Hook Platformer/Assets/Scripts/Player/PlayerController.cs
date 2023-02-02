@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
     //Health Stuff
     public int heartCount = 2; //Make it one less than desired value
     public TMP_Text healthText;
-    public healthBar healthBar;
+    public HealthbarV2 HealthbarV2;
     private GameObject nearestRespawnPoint;
 
     //Endings
@@ -71,7 +71,6 @@ public class PlayerController : MonoBehaviour
         DataHandler = GameObject.Find("DataHandler");
         grappleables = GetGrappleables();
         audioSource = GetComponent<AudioSource>();
-        healthBar.SetMaxHealth(heartCount + 1);
         respawnPoints = GetRespawnPoints();
 
     }
@@ -165,7 +164,6 @@ public class PlayerController : MonoBehaviour
                 heartCount--;
                 
                 healthText.GetComponent<TMP_Text>().text = "Health: " + heartCount.ToString();
-                healthBar.SetHealth(heartCount + 1);
                 if (heartCount == 0)
                 {
                     playerstate = State.FAILED;
@@ -207,7 +205,7 @@ public class PlayerController : MonoBehaviour
                 heartCount--;
 
                 healthText.GetComponent<TMP_Text>().text = "Health: " + heartCount.ToString();
-                healthBar.SetHealth(heartCount + 1);
+
                 if (heartCount == 0)
                 {
                     playerstate = State.FAILED;
@@ -232,7 +230,6 @@ public class PlayerController : MonoBehaviour
                 heartCount--;
 
                 healthText.GetComponent<TMP_Text>().text = "Health: " + heartCount.ToString();
-                healthBar.SetHealth(heartCount + 1);
                 if (heartCount == 0)
                 {
                     playerstate = State.FAILED;
@@ -273,7 +270,6 @@ public class PlayerController : MonoBehaviour
                 heartCount--;
 
                 healthText.GetComponent<TMP_Text>().text = "Health: " + heartCount.ToString();
-                healthBar.SetHealth(heartCount + 1);
                 if (heartCount == 0)
                 {
                     playerstate = State.FAILED;
@@ -297,7 +293,6 @@ public class PlayerController : MonoBehaviour
                 heartCount--;
 
                 healthText.GetComponent<TMP_Text>().text = "Health: " + heartCount.ToString();
-                healthBar.SetHealth(heartCount + 1);
                 if (heartCount == 0)
                 {
                     playerstate = State.FAILED;
@@ -343,7 +338,6 @@ public class PlayerController : MonoBehaviour
                 heartCount--;
 
                 healthText.GetComponent<TMP_Text>().text = "Health: " + heartCount.ToString();
-                healthBar.SetHealth(heartCount + 1);
                 if (heartCount == 0)
                 {
                     playerstate = State.FAILED;
@@ -377,7 +371,6 @@ public class PlayerController : MonoBehaviour
                 heartCount--;
 
                 healthText.GetComponent<TMP_Text>().text = "Health: " + heartCount.ToString();
-                healthBar.SetHealth(heartCount + 1);
                 if (heartCount == 0)
                 {
                     playerstate = State.FAILED;
@@ -419,6 +412,20 @@ public class PlayerController : MonoBehaviour
         {
             playerstate = State.FAILED;
             GameOver();
+        }
+
+        
+        if (heartCount == 2)
+        {
+            HealthbarV2.Health3();
+        }
+        if (heartCount == 1)
+        {
+            HealthbarV2.Health2();
+        }
+        if (heartCount == 0)
+        {
+            HealthbarV2.Health1();
         }
         
 
