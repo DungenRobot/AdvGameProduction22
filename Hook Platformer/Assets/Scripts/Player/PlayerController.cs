@@ -82,12 +82,19 @@ public class PlayerController : MonoBehaviour
 
         is_on_ground = controller.isGrounded;
 
-        //Debug.Log(playerstate);
+        //Debug.Log(is_on_ground);
+
+        Debug.Log(playerstate);
 
         switch (playerstate)
         {
+            //if the player is on the ground
             case State.ON_GROUND:
+
                 velocity.x = Mathf.Lerp(velocity.x, speed, Time.deltaTime * 0.5f);
+                
+                velocity.y = -gravity * Time.deltaTime;
+
                 if (jumpInput) {
                     velocity.y = jump_velocity;
                     playerstate = State.JUMPING;
@@ -96,7 +103,7 @@ public class PlayerController : MonoBehaviour
                 else if (!controller.isGrounded) {
                     playerstate = State.FALLING;
                 }
-                velocity.y = -gravity * Time.deltaTime;
+                
                 break;
 
             case State.JUMPING:
