@@ -6,11 +6,10 @@ using UnityEngine.UI;
 public class HealthbarV2 : MonoBehaviour
 {
     public Sprite[] HealthSprites;
-    
+
     public void SetHealth(int healthValue)
     {
         //get respective sprite to health value
-        Debug.Log(healthValue);
         gameObject.GetComponent<Image>().sprite = HealthSprites[healthValue];
         if (healthValue < 0)
         {
