@@ -1,6 +1,32 @@
 {
-    "TITLE": {
-        "EN": "Title blah blah",
-        "ES": "Title title"
+    "PLAY": {
+        "EN": "Play",
+        "ES": "Juega"
     }
+    "QUIT": {
+           "EN": "Quit",
+           "ES": "Sal"
+       }
+    "RESUME": {
+           "EN": "Resume",
+           "ES": "Continua"
+    
+       }
+    "SETTINGS": {
+           "EN": "Settings",
+           "ES": "Configuración"
+       }
+    "MENU": {
+              "EN": "Main Menu",
+              "ES": "Menú Principal"
+          }
+     "FINISHED": {
+                  "EN": "Finished",
+                  "ES": "Terminado!"
+              }
+     "AGAIN": {
+                  "EN": "Play Again",
+                  "ES": "Juega Otra Vez"
+              }
+     
 }
