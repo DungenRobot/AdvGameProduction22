@@ -28,23 +28,24 @@ public class HealthbarV2 : MonoBehaviour
             gameObject.GetComponent<Image>().sprite = HealthSprites[0];
         }
     }
-    
-    public void Health3()
-    {
-        gameObject.GetComponent<Image>().sprite = HealthThree;
-    }
-
-    public void Health2()
-    {
-        gameObject.GetComponent<Image>().sprite = HealthTwo;
-    }
-
-    public void Health1()
-    {
-        gameObject.GetComponent<Image>().sprite = HealthOne;
-    }
-    public void Dead()
-    {
-        gameObject.GetComponent<Image>().sprite = DEAD;
-    }
 }
+
+//     public void Health3()
+//     {
+//         gameObject.GetComponent<Image>().sprite = HealthThree;
+//     }
+
+//     public void Health2()
+//     {
+//         gameObject.GetComponent<Image>().sprite = HealthTwo;
+//     }
+
+//     public void Health1()
+//     {
+//         gameObject.GetComponent<Image>().sprite = HealthOne;
+//     }
+//     public void Dead()
+//     {
+//         gameObject.GetComponent<Image>().sprite = DEAD;
+//     }
+//

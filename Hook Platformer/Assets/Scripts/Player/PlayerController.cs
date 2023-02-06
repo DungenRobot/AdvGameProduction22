@@ -82,9 +82,6 @@ public class PlayerController : MonoBehaviour
 
         is_on_ground = controller.isGrounded;
 
-        //Debug.Log(is_on_ground);
-
-        //Debug.Log(playerstate);
 
 
 
@@ -145,10 +142,7 @@ public class PlayerController : MonoBehaviour
                     break;
                 }
                 velocity.y -= gravity;
-                //velocity.y = 0;
-                //print("You Failed");
-                
-                    
+    
                 break;
         }
 
@@ -395,13 +389,7 @@ public class PlayerController : MonoBehaviour
 
             }
         }
-        /*if (Physics.SphereCast(transform.position, 4, Vector3.left, out hitRight, respawnLayerMask))
-        {
 
-            nearestRespawnPoint = hitRight.collider.gameObject;
-            respawnLocation = new Vector3(nearestRespawnPoint.transform.position.x, nearestRespawnPoint.transform.position.y + 1, 0);
-
-        }*/
         float cd1 = maxRespawnLength;
         Transform co1 = null;
 
@@ -432,18 +420,6 @@ public class PlayerController : MonoBehaviour
 
         HealthbarV2.SetHealth(heartCount);
         
-        // if (heartCount == 3)
-        // {
-        //     HealthbarV2.Health3();
-        // }
-        // if (heartCount == 2)
-        // {
-        //     HealthbarV2.Health2();
-        // }
-        // if (heartCount == 1)
-        // {
-        //     HealthbarV2.Health1();
-        // }
         
 
     }
