@@ -413,7 +413,6 @@ public class PlayerController : MonoBehaviour
         if (heartCount == 0)
         {
             playerstate = State.FAILED;
-            HealthbarV2.Dead();
             GameOver();
             return;
         }
