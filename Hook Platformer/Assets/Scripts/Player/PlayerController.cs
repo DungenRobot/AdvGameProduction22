@@ -84,7 +84,15 @@ public class PlayerController : MonoBehaviour
 
         //Debug.Log(is_on_ground);
 
-        Debug.Log(playerstate);
+        //Debug.Log(playerstate);
+
+
+
+
+
+
+
+
 
         switch (playerstate)
         {
@@ -132,17 +140,16 @@ public class PlayerController : MonoBehaviour
                 
                 
                 velocity.x = 0;
+                if (is_on_ground){
+                    velocity.y = gravity;
+                    break;
+                }
+                velocity.y += gravity;
                 //velocity.y = 0;
                 //print("You Failed");
                 
                     
                 break;
-        }
-
-
-        if (!is_on_ground){
-           
-            
         }
 
         velocity = velocity + Grapple();
@@ -419,21 +426,23 @@ public class PlayerController : MonoBehaviour
         {
             playerstate = State.FAILED;
             GameOver();
+            return;
         }
 
+        HealthbarV2.SetHealth(heartCount);
         
-        if (heartCount == 3)
-        {
-            HealthbarV2.Health3();
-        }
-        if (heartCount == 2)
-        {
-            HealthbarV2.Health2();
-        }
-        if (heartCount == 1)
-        {
-            HealthbarV2.Health1();
-        }
+        // if (heartCount == 3)
+        // {
+        //     HealthbarV2.Health3();
+        // }
+        // if (heartCount == 2)
+        // {
+        //     HealthbarV2.Health2();
+        // }
+        // if (heartCount == 1)
+        // {
+        //     HealthbarV2.Health1();
+        // }
         
 
     }
