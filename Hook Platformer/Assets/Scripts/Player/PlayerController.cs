@@ -141,10 +141,10 @@ public class PlayerController : MonoBehaviour
                 
                 velocity.x = 0;
                 if (is_on_ground){
-                    velocity.y = gravity;
+                    velocity.y = -gravity;
                     break;
                 }
-                velocity.y += gravity;
+                velocity.y -= gravity;
                 //velocity.y = 0;
                 //print("You Failed");
                 

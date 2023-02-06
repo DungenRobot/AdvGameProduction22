@@ -20,9 +20,13 @@ public class HealthbarV2 : MonoBehaviour
 
     public void SetHealth(int healthValue)
     {
-        //subtract one from the health value and get the respective sprite
-        healthValue -= 1;
+        //get respective sprite to health value
+        Debug.Log(healthValue);
         gameObject.GetComponent<Image>().sprite = HealthSprites[healthValue];
+        if (healthValue < 0)
+        {
+            gameObject.GetComponent<Image>().sprite = HealthSprites[0];
+        }
     }
     
     public void Health3()
