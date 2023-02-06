@@ -18,7 +18,6 @@ public class MainMenu : MonoBehaviour
         LicenceM.SetActive(false);
         GameSelect.SetActive(false);
         latestLevel = GameObject.Find("DataHandler").GetComponent<DataHandler>().LatestLevel;
-
     }
     public void quit()
     {
@@ -28,6 +27,18 @@ public class MainMenu : MonoBehaviour
     public void PlayTutorial()
     {
         SceneManager.LoadScene("Tutorial scean");
+        Time.timeScale = 1;
+    }
+
+    public void PlayLevel1()
+    {
+        SceneManager.LoadScene("First level outline 1");
+        Time.timeScale = 1;
+    }
+
+    public void PlayLevel2()
+    {
+        SceneManager.LoadScene("Second level layout");
         Time.timeScale = 1;
     }
 

@@ -61,6 +61,12 @@ public class pausemenu : MonoBehaviour
         Cursor.visible = false;
     }
 
+    public void ResetTheLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
+    }
+
     //To Open the Setting Menu
     public void settingopen()
     {
