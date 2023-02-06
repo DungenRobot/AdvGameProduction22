@@ -7682,22 +7682,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3556132627368546093}
     m_Modifications:
-    - target: {fileID: 4502213259059221357, guid: 67a972854a5ad40c683b88d3eb762c42, type: 3}
-      propertyPath: HealthSprites.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4502213259059221357, guid: 67a972854a5ad40c683b88d3eb762c42, type: 3}
-      propertyPath: HealthSprites.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 789ddcab998204901ba831d4b4a783c2, type: 3}
-    - target: {fileID: 4502213259059221357, guid: 67a972854a5ad40c683b88d3eb762c42, type: 3}
-      propertyPath: HealthSprites.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: ef04f517ea9cc4c17923e252fb260a8e, type: 3}
-    - target: {fileID: 4502213259059221357, guid: 67a972854a5ad40c683b88d3eb762c42, type: 3}
-      propertyPath: HealthSprites.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: 24a71441077254209a225bf16fb9b087, type: 3}
     - target: {fileID: 8625721709073941305, guid: 67a972854a5ad40c683b88d3eb762c42, type: 3}
       propertyPath: m_Name
       value: Health Bar

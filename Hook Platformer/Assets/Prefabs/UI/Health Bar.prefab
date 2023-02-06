@@ -89,9 +89,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6953947ff544a96bd32ac6e0b35cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthThree: {fileID: 21300000, guid: 24a71441077254209a225bf16fb9b087, type: 3}
-  HealthTwo: {fileID: 21300000, guid: ef04f517ea9cc4c17923e252fb260a8e, type: 3}
-  HealthOne: {fileID: 21300000, guid: 789ddcab998204901ba831d4b4a783c2, type: 3}
+  HealthSprites:
+  - {fileID: 21300000, guid: d8d8db2a2db23432583bf5fccfd2ff82, type: 3}
+  - {fileID: 21300000, guid: 789ddcab998204901ba831d4b4a783c2, type: 3}
+  - {fileID: 21300000, guid: ef04f517ea9cc4c17923e252fb260a8e, type: 3}
+  - {fileID: 21300000, guid: 24a71441077254209a225bf16fb9b087, type: 3}
 --- !u!1 &8625721709073941305
 GameObject:
   m_ObjectHideFlags: 0

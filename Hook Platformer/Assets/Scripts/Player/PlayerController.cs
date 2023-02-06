@@ -430,6 +430,7 @@ public class PlayerController : MonoBehaviour
 
         if (controller.isGrounded)
         {
+            //if player just landed on ground
             if(playerstate == State.FALLING){
                 SoundEffects.Effect playerLand = SoundEffects.getInstance().playerLand;
                 playerLand.source.PlayOneShot(playerLand.clip, playerLand.volume);
@@ -441,6 +442,7 @@ public class PlayerController : MonoBehaviour
         {
             if (jumpInput)
             {
+                //if player just jumped
                 if(playerstate != State.JUMPING){ 
                     SoundEffects.Effect playerJump = SoundEffects.getInstance().playerJump;
                     playerJump.source.PlayOneShot(playerJump.clip, playerJump.volume);
