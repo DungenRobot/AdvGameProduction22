@@ -73,6 +73,8 @@ public class PlayerController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         respawnPoints = GetRespawnPoints();
 
+        HealthbarV2.SetHealth(3);
+
     }
 
     // Update is called once per frame

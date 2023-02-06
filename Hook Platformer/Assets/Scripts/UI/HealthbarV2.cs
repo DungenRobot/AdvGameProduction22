@@ -7,12 +7,6 @@ public class HealthbarV2 : MonoBehaviour
 {
     public Sprite[] HealthSprites;
     
-    void Start()
-    {
-        gameObject.GetComponent<Image>().sprite = HealthThree;
-        
-    }
-
     public void SetHealth(int healthValue)
     {
         //get respective sprite to health value
