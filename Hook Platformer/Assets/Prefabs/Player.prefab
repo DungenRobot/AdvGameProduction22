@@ -3066,9 +3066,9 @@ MonoBehaviour:
   game0ver: {fileID: 2263248811389319683}
   velocity: {x: 0, y: 0, z: 0}
   speed: 18
-  jump_velocity: 11
+  jump_velocity: 12
   gravity: 13
-  jump_gravity: 10
+  jump_gravity: 13
   up_gravity: 30
   raycastRightDistrance: 1
   raycastDownDistrance: 1.5
@@ -3089,7 +3089,7 @@ MonoBehaviour:
   gameOverText: {fileID: 2263248811389319683}
   winLevelText: {fileID: 5195397907580212999}
   DataHandler: {fileID: 0}
-  currentLevel: 0
+  currentLevel: 1
 --- !u!143 &3556132627368546090
 CharacterController:
   m_ObjectHideFlags: 0
@@ -7682,6 +7682,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3556132627368546093}
     m_Modifications:
+    - target: {fileID: 4502213259059221357, guid: 67a972854a5ad40c683b88d3eb762c42, type: 3}
+      propertyPath: DEAD
+      value: 
+      objectReference: {fileID: 21300000, guid: d8d8db2a2db23432583bf5fccfd2ff82, type: 3}
     - target: {fileID: 8625721709073941305, guid: 67a972854a5ad40c683b88d3eb762c42, type: 3}
       propertyPath: m_Name
       value: Health Bar
