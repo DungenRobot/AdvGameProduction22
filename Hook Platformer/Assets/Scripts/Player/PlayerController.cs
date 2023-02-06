@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
     //Health Stuff
     public int heartCount = 2; //Make it one less than desired value
-    public TMP_Text healthText;
+    
     public HealthbarV2 HealthbarV2;
     private GameObject nearestRespawnPoint;
 
@@ -163,7 +163,7 @@ public class PlayerController : MonoBehaviour
                 
                 heartCount--;
                 
-                healthText.GetComponent<TMP_Text>().text = "Health: " + heartCount.ToString();
+                
                 if (heartCount == 0)
                 {
                     playerstate = State.FAILED;
@@ -204,7 +204,7 @@ public class PlayerController : MonoBehaviour
 
                 heartCount--;
 
-                healthText.GetComponent<TMP_Text>().text = "Health: " + heartCount.ToString();
+                
 
                 if (heartCount == 0)
                 {
@@ -229,7 +229,7 @@ public class PlayerController : MonoBehaviour
                 
                 heartCount--;
 
-                healthText.GetComponent<TMP_Text>().text = "Health: " + heartCount.ToString();
+                
                 if (heartCount == 0)
                 {
                     playerstate = State.FAILED;
@@ -269,7 +269,7 @@ public class PlayerController : MonoBehaviour
 
                 heartCount--;
 
-                healthText.GetComponent<TMP_Text>().text = "Health: " + heartCount.ToString();
+                
                 if (heartCount == 0)
                 {
                     playerstate = State.FAILED;
@@ -292,7 +292,7 @@ public class PlayerController : MonoBehaviour
                 
                 heartCount--;
 
-                healthText.GetComponent<TMP_Text>().text = "Health: " + heartCount.ToString();
+                
                 if (heartCount == 0)
                 {
                     playerstate = State.FAILED;
@@ -337,7 +337,7 @@ public class PlayerController : MonoBehaviour
 
                 heartCount--;
 
-                healthText.GetComponent<TMP_Text>().text = "Health: " + heartCount.ToString();
+                
                 if (heartCount == 0)
                 {
                     playerstate = State.FAILED;
@@ -370,7 +370,7 @@ public class PlayerController : MonoBehaviour
 
                 heartCount--;
 
-                healthText.GetComponent<TMP_Text>().text = "Health: " + heartCount.ToString();
+                
                 if (heartCount == 0)
                 {
                     playerstate = State.FAILED;
@@ -415,15 +415,15 @@ public class PlayerController : MonoBehaviour
         }
 
         
-        if (heartCount == 2)
+        if (heartCount == 3)
         {
             HealthbarV2.Health3();
         }
-        if (heartCount == 1)
+        if (heartCount == 2)
         {
             HealthbarV2.Health2();
         }
-        if (heartCount == 0)
+        if (heartCount == 1)
         {
             HealthbarV2.Health1();
         }
