@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Tutorial Level.unity
     guid: 1cb1440c793ac443a9caf676da83f9e8
+  - enabled: 1
+    path: Assets/Scenes/Levels/First Level Outline.unity
+    guid: dad5d0a88ad544c919db7da1eb921a1f
   m_configObjects: {}
