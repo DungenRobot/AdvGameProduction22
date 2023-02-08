@@ -160,73 +160,39 @@ public class PlayerController : MonoBehaviour
         
         if (Physics.Raycast(transform.position, Vector3.right, out hitRight, raycastRightDistrance, layerMask))
         {
-            
+            HitOutputs(hitRight.collider.gameObject.layer, hitRight.collider.gameObject);
             //RaycastHit hitRight = Physics.Raycast(transform.position, Vector3.right, raycastRightDistrance, layerMask);
-            if (hitRight.collider.gameObject.layer == 7)
-            {
-                HitOutputs(7, hitRight.collider.gameObject);
+            //if (hitRight.collider.gameObject.layer == 7)
+            //{
+            //    HitOutputs(7, hitRight.collider.gameObject);
 
-            }
-            else if (hitRight.collider.gameObject.layer == 3)
-            {
-                HitOutputs(3, hitRight.collider.gameObject);
+            //}
+            //else if (hitRight.collider.gameObject.layer == 3)
+            //{
+            //    HitOutputs(3, hitRight.collider.gameObject);
 
-            }
-            else if (hitRight.collider.gameObject.layer == 9)
-            {
-                HitOutputs(9, hitRight.collider.gameObject);
+            //}
+            //else if (hitRight.collider.gameObject.layer == 9)
+            //{
+            //    HitOutputs(9, hitRight.collider.gameObject);
 
-            }
-            else if (hitRight.collider.gameObject.layer == 10)
-            {
-                HitOutputs(10, hitRight.collider.gameObject);
-            }
+            //}
+            //else if (hitRight.collider.gameObject.layer == 10)
+            //{
+            //    HitOutputs(10, hitRight.collider.gameObject);
+            //}
         }
         
         if (Physics.Raycast(transform.position + shiftUD, Vector3.right, out hitRight, raycastRightDistrance, layerMask))
         {
-            //RaycastHit2D hitRight = Physics2D.Raycast(transform.position + shiftUD, Vector2.right, raycastRightDistrance, layerMask);
-            if (hitRight.collider.gameObject.layer == 7)
-            {
-                HitOutputs(7, hitRight.collider.gameObject);
-            }
-            else if (hitRight.collider.gameObject.layer == 3)
-            {
-                HitOutputs(3, hitRight.collider.gameObject);
-            }
-            else if (hitRight.collider.gameObject.layer == 9)
-            {
-                HitOutputs(9, hitRight.collider.gameObject);
-
-            }
-            else if (hitRight.collider.gameObject.layer == 10)
-            {
-                HitOutputs(10, hitRight.collider.gameObject);
-            }
+            HitOutputs(hitRight.collider.gameObject.layer, hitRight.collider.gameObject);
+            
         }
 
         if (Physics.Raycast(transform.position - shiftUD, Vector3.right, out hitRight, raycastRightDistrance, layerMask))
         {
-            //RaycastHit2D hitRight = Physics2D.Raycast(transform.position - shiftUD, Vector2.right, raycastRightDistrance, layerMask);
-            if (hitRight.collider.gameObject.layer == 7)
-            {
-                HitOutputs(7, hitRight.collider.gameObject);
-
-            }
-            else if (hitRight.collider.gameObject.layer == 3)
-            {
-                HitOutputs(3, hitRight.collider.gameObject);
-
-            }
-            else if (hitRight.collider.gameObject.layer == 9)
-            {
-                HitOutputs(9, hitRight.collider.gameObject);
-
-            }
-            else if (hitRight.collider.gameObject.layer == 10)
-            {
-                HitOutputs(10, hitRight.collider.gameObject);
-            }
+            HitOutputs(hitRight.collider.gameObject.layer, hitRight.collider.gameObject);
+            
 
         }
 
