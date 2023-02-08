@@ -26,13 +26,13 @@ public class MainMenu : MonoBehaviour
 
     public void PlayTutorial()
     {
-        SceneManager.LoadScene("Tutorial scean");
+        SceneManager.LoadScene("Tutorial Level");
         Time.timeScale = 1;
     }
 
     public void PlayLevel1()
     {
-        SceneManager.LoadScene("First level outline 1");
+        SceneManager.LoadScene("First Level Outline");
         Time.timeScale = 1;
     }
 

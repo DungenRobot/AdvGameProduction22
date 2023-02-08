@@ -2,44 +2,44 @@
     "PLAY": {
         "EN": "Play",
         "ES": "Juega"
-    }
+    },
     "QUIT": {
            "EN": "Quit",
            "ES": "Sal"
-       }
+       },
     "RESUME": {
            "EN": "Resume",
            "ES": "Continua"
     
-       }
+       },
     "SETTINGS": {
            "EN": "Settings",
            "ES": "Configuración"
-       }
+       },
     "MENU": {
               "EN": "Main Menu",
               "ES": "Menú Principal"
-          }
+          },
      "FINISHED": {
                   "EN": "Finished",
                   "ES": "Terminado!"
-              }
+              },
      "AGAIN": {
                   "EN": "Play Again",
                   "ES": "Juega Otra Vez"
-              }
+              },
      "SELECT": {
                       "EN": "Level Select",
                       "ES": "Selecta Nivel"
-                  }
+                  },
      "LEVEL": {
                       "EN": "Level One",
                       "ES": "Nivel 1"
-                  }
+                  },
      "TWO": {
                       "EN": "Level Two",
                       "ES": "Nivel 2"
-                  }
+                  },
      "BACK": {
                       "EN": "Go Back",
                       "ES": "Regresa"
