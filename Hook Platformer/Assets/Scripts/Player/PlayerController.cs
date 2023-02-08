@@ -164,67 +164,22 @@ public class PlayerController : MonoBehaviour
             //RaycastHit hitRight = Physics.Raycast(transform.position, Vector3.right, raycastRightDistrance, layerMask);
             if (hitRight.collider.gameObject.layer == 7)
             {
-                
-                velocity.x = bounceBack;
-                hitRight.collider.gameObject.layer = 8;
-                
+                HitOutputs(7, hitRight.collider.gameObject);
 
-
-                
-                heartCount--;
-                
-                
-                if (heartCount == 0)
-                {
-                    playerstate = State.FAILED;
-                    GameOver();
-                }
-                StartCoroutine(stun(1));
-                /*playerstate = State.FAILED;
-                while (getUpTime > 0)
-                {
-                    getUpTime -= Time.deltaTime;
-                }
-                if (getUpTime <= 0)
-                {
-                    playerstate = State.ON_GROUND;
-
-                    getUpTime = 5.0f;
-                }*/
             }
             else if (hitRight.collider.gameObject.layer == 3)
             {
-                playerstate = State.FAILED;
-                GameOver();
+                HitOutputs(3, hitRight.collider.gameObject);
 
             }
             else if (hitRight.collider.gameObject.layer == 9)
             {
-                playerstate = State.FAILED;
-                FinishLevel(currentLevel);
+                HitOutputs(9, hitRight.collider.gameObject);
 
             }
             else if (hitRight.collider.gameObject.layer == 10)
             {
-                gameObject.transform.position = respawnLocation;
-                
-
-
-
-
-                heartCount--;
-
-                
-
-                if (heartCount == 0)
-                {
-                    playerstate = State.FAILED;
-                    GameOver();
-                }
-                StartCoroutine(stun(0));
-
-
-
+                HitOutputs(10, hitRight.collider.gameObject);
             }
         }
         
@@ -233,61 +188,20 @@ public class PlayerController : MonoBehaviour
             //RaycastHit2D hitRight = Physics2D.Raycast(transform.position + shiftUD, Vector2.right, raycastRightDistrance, layerMask);
             if (hitRight.collider.gameObject.layer == 7)
             {
-                velocity.x = bounceBack;
-                hitRight.collider.gameObject.layer = 8;
-
-                
-                heartCount--;
-
-                
-                if (heartCount == 0)
-                {
-                    playerstate = State.FAILED;
-                    GameOver();
-                }
-                StartCoroutine(stun(1));
-                /*playerstate = State.FAILED;
-                while (getUpTime > 0)
-                {
-                    getUpTime -= Time.deltaTime;
-                }
-                if (getUpTime <= 0)
-                {
-                    playerstate = State.ON_GROUND;
-
-                    getUpTime = 5.0f;
-                }*/
+                HitOutputs(7, hitRight.collider.gameObject);
             }
             else if (hitRight.collider.gameObject.layer == 3)
             {
-                playerstate = State.FAILED;
-                GameOver();
+                HitOutputs(3, hitRight.collider.gameObject);
             }
             else if (hitRight.collider.gameObject.layer == 9)
             {
-                playerstate = State.FAILED;
-                FinishLevel(currentLevel);
+                HitOutputs(9, hitRight.collider.gameObject);
 
             }
             else if (hitRight.collider.gameObject.layer == 10)
             {
-                gameObject.transform.position = respawnLocation;
-
-
-
-
-
-                heartCount--;
-
-                
-                if (heartCount == 0)
-                {
-                    playerstate = State.FAILED;
-                    GameOver();
-                }
-                StartCoroutine(stun(0));
-
-
+                HitOutputs(10, hitRight.collider.gameObject);
             }
         }
 
@@ -296,66 +210,22 @@ public class PlayerController : MonoBehaviour
             //RaycastHit2D hitRight = Physics2D.Raycast(transform.position - shiftUD, Vector2.right, raycastRightDistrance, layerMask);
             if (hitRight.collider.gameObject.layer == 7)
             {
-                velocity.x = bounceBack;
-                hitRight.collider.gameObject.layer = 8;
-
-                
-                heartCount--;
-
-                
-                if (heartCount == 0)
-                {
-                    playerstate = State.FAILED;
-                    GameOver();
-                }
-                StartCoroutine(stun(1));
-                
-                /*playerstate = State.FAILED;
-                while (getUpTime > 0)
-                {
-                    getUpTime -= Time.deltaTime;
-                }
-                if (getUpTime <= 0)
-                {
-                    playerstate = State.ON_GROUND;
-
-                    getUpTime = 5.0f;
-                }*/
-
-
+                HitOutputs(7, hitRight.collider.gameObject);
 
             }
             else if (hitRight.collider.gameObject.layer == 3)
             {
-                playerstate = State.FAILED;
-                GameOver();
+                HitOutputs(3, hitRight.collider.gameObject);
+
             }
             else if (hitRight.collider.gameObject.layer == 9)
             {
-                playerstate = State.FAILED;
-
-                FinishLevel(currentLevel);
+                HitOutputs(9, hitRight.collider.gameObject);
 
             }
             else if (hitRight.collider.gameObject.layer == 10)
             {
-                gameObject.transform.position = respawnLocation;
-
-
-
-
-
-                heartCount--;
-
-                
-                if (heartCount == 0)
-                {
-                    playerstate = State.FAILED;
-                    GameOver();
-                }
-                StartCoroutine(stun(0));
-
-
+                HitOutputs(10, hitRight.collider.gameObject);
             }
 
         }
@@ -364,32 +234,24 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(transform.position, Vector3.down, out hitRight, raycastDownDistrance, layerMask))
         {
             //RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector2.down, raycastDownDistrance, layerMask);
-            if (hitRight.collider.gameObject.layer == 7)
+            /*if (hitRight.collider.gameObject.layer == 7)
             {
+                HitOutputs(7, hitRight.collider.gameObject);
                 velocity.y = jump_velocity;
                 playerstate = State.FALL_UP;
                 hitRight.collider.gameObject.layer = 8;
-            }
-            else if (hitRight.collider.gameObject.layer == 10)
+            }*/
+            if (hitRight.collider.gameObject.layer == 10)
             {
-                gameObject.transform.position = respawnLocation;
-
-
-
-
-
-                heartCount--;
-
-                
-                if (heartCount == 0)
-                {
-                    playerstate = State.FAILED;
-                    GameOver();
-                }
-                StartCoroutine(stun(0));
-
+                HitOutputs(10, hitRight.collider.gameObject);
 
             }
+        }
+        if (heartCount == 0)
+        {
+            playerstate = State.FAILED;
+            GameOver();
+            return;
         }
 
         float cd1 = maxRespawnLength;
@@ -405,19 +267,14 @@ public class PlayerController : MonoBehaviour
 
 
 
-        if (co1 != null && cd1 <= maxGrappleLength)
+        if (co1 != null && cd1 <= maxRespawnLength)
         {
             currentRespawnTarget = co1;
              
             respawnLocation = new Vector3(currentRespawnTarget.transform.position.x, currentRespawnTarget.transform.position.y + 4, 0);
         }
 
-        if (heartCount == 0)
-        {
-            playerstate = State.FAILED;
-            GameOver();
-            return;
-        }
+        
 
         HealthbarV2.SetHealth(heartCount);
         
@@ -564,4 +421,63 @@ public class PlayerController : MonoBehaviour
             temp4.Add(go.transform);
         return temp4.ToArray();
     }
+
+    void HitOutputs(int objLayer, GameObject obstacle)
+    {
+        if (objLayer == 7)
+        {
+
+            velocity.x = bounceBack;
+            obstacle.layer = 8;
+
+
+
+
+            heartCount--;
+
+
+            if (heartCount == 0)
+            {
+                playerstate = State.FAILED;
+                GameOver();
+            }
+            StartCoroutine(stun(1));
+            
+        }
+        else if (objLayer == 3)
+        {
+            playerstate = State.FAILED;
+            GameOver();
+
+        }
+        else if (objLayer == 9)
+        {
+            playerstate = State.FAILED;
+            FinishLevel(currentLevel);
+
+        }
+        else if (objLayer == 10)
+        {
+            gameObject.transform.position = respawnLocation;
+
+
+
+
+
+            heartCount--;
+
+
+
+            if (heartCount == 0)
+            {
+                playerstate = State.FAILED;
+                GameOver();
+            }
+            StartCoroutine(stun(0));
+
+
+
+        }
+    
+}
 }
