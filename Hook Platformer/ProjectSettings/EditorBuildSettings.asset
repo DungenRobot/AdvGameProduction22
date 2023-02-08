@@ -24,6 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Second level layout.unity
     guid: b9ba487615bc34ea6a35712d773e2bca
   - enabled: 1
-    path: Assets/Scenes/Levels/First level outline 1.unity
+    path: Assets/Scenes/Levels/Tutorial Level.unity
     guid: 1cb1440c793ac443a9caf676da83f9e8
   m_configObjects: {}
