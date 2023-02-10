@@ -399,7 +399,7 @@ public class PlayerController : MonoBehaviour
         if (objLayer == 7)
         {
             //calls screen shake 
-            ScreenShake.GetComponent<ScreenShake>().Shaking();
+            StartCoroutine(ScreenShake.GetComponent<ScreenShake>().Shaking());
             
             velocity.x = bounceBack;
             obstacle.layer = 8;
