@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// IGNORE THIS ENTIRE SCRIPT IT JUST TAKES TWO POINTS AND DRAWS A LINE WITH SOME COOL EFFECTS I DONT KNOW WHAT IS GOING ON DONT EDIT IT
 public class GrappleRope : MonoBehaviour{
   public Transform player;
   private Transform gp;

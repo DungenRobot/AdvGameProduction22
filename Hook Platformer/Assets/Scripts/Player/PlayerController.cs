@@ -85,15 +85,6 @@ public class PlayerController : MonoBehaviour
 
         is_on_ground = controller.isGrounded;
 
-
-
-
-
-
-
-
-
-
         switch (playerstate)
         {
             //if the player is on the ground
@@ -149,8 +140,8 @@ public class PlayerController : MonoBehaviour
                 break;
         }
 
-        velocity = velocity + Grapple();
-        controller.Move((velocity) * Time.deltaTime);
+        velocity = velocity + Grapple(); // Add ze grapple force to ze velocity
+        controller.Move((velocity) * Time.deltaTime); // MOOOOVE
 
         int layerMask = 1 << 6;
         layerMask = ~layerMask;
@@ -294,47 +285,59 @@ public class PlayerController : MonoBehaviour
 
     Vector3 Grapple()
     {
+        // This Does Grappling!
         
-        if(Input.GetKeyDown(KeyCode.Q)){
+        if(Input.GetKeyDown(KeyCode.Q)){ // The player pressed q (this means they want to grapple hooray)
+            // Play SFX
             SoundEffects.Effect grappleConnect = SoundEffects.getInstance().grappleConnect;
             grappleConnect.source.PlayOneShot(grappleConnect.clip, grappleConnect.volume);
-            float cd = maxGrappleLength;
-            Transform co = null;
+
+            // Get The Closest Grapple
+            float currentDistance = maxGrappleLength;
+            Transform currentObject = null;
 
             for(int i = 0; i<grappleables.Length;i++){
                 Transform grappleable = grappleables[i];
                 if(transform.position.x > grappleable.position.x) continue;
                 float dist = Vector2.Distance(grappleable.position, this.transform.position);
-                if(dist < cd){ co = grappleable; cd = dist;} 
+                if(dist < currentDistance){ currentObject = grappleable; currentDistance = dist;} 
             }
 
      
-
-            if(co != null && cd <= maxGrappleLength){
-                currentGrappleTarget = co;
-                grappleRope.Grapple(co);
+            // If There Is A Closest Object, And Its Closer Than Max Distance, Connect Grapple
+            if(currentObject != null && currentDistance <= maxGrappleLength){
+                currentGrappleTarget = currentObject;
+                grappleRope.Grapple(currentObject); // make rope appear
             }
         }
 
+        // Player let go of q, this probably means they are done grappling
         if(Input.GetKeyUp(KeyCode.Q)){
-            currentGrappleTarget = null;
+            currentGrappleTarget = null; // Get Rid Of Grapple Target
+            // Play SFX
             SoundEffects.Effect grappleRelease = SoundEffects.getInstance().grappleRelease;
-            grappleRelease.source.PlayOneShot(grappleRelease.clip, grappleRelease.volume); 
+            grappleRelease.source.PlayOneShot(grappleRelease.clip, grappleRelease.volume);
+            // Get rid of rope 
             grappleRope.UnGrapple();
             
         }
 
+
+        // If We are currently grappling to something
         if(currentGrappleTarget != null){
+            // get the angle to that thing
             float angle = Mathf.Atan2(currentGrappleTarget.position.y - this.transform.position.y, currentGrappleTarget.position.x - this.transform.position.x);
-            if(angle>maxAngle){
-                currentGrappleTarget = null;
+            if(angle>maxAngle){ // if the angle is too high, disconnect
+                currentGrappleTarget = null; 
+                // play sfx
                 SoundEffects.Effect grappleRelease = SoundEffects.getInstance().grappleRelease;
                 grappleRelease.source.PlayOneShot(grappleRelease.clip, grappleRelease.volume); 
-                grappleRope.UnGrapple();
+                grappleRope.UnGrapple(); // make rope go away
                 }
+                // return the force that should be added
             return new Vector3(Mathf.Cos(angle), Mathf.Sin(angle),0) * grappleStrength * Time.deltaTime;
-        }
-
+        }  
+        // return no force because there shouldn't be grapple force if the player isn't grappling
         return new Vector3(0,0,0);
     }
 
@@ -379,11 +382,11 @@ public class PlayerController : MonoBehaviour
 
 
     Transform[] GetGrappleables(){
-        GameObject[] temp = GameObject.FindGameObjectsWithTag("grappleable");
-        List<Transform> temp2 = new List<Transform>();
-        foreach(GameObject go in temp)
-           temp2.Add(go.transform);
-        return temp2.ToArray();
+        GameObject[] grapplePoints = GameObject.FindGameObjectsWithTag("grappleable"); // Get All The Grapple Points
+        List<Transform> grapplePointsList = new List<Transform>(); // Have a list to add the transforms of all the objects because I don't want to keep refrences to the objects
+        foreach(GameObject go in grapplePoints) // loop through points
+           grapplePointsList.Add(go.transform); // add the transform of the point to the list
+        return grapplePointsList.ToArray(); // return the list as an array
     }
     Transform[] GetRespawnPoints()
     {

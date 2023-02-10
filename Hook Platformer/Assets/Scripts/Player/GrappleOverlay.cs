@@ -1,5 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.currentObjectllections;
+using System.currentObjectllections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class GrappleOverlay : MonoBehaviour
@@ -18,34 +18,37 @@ public class GrappleOverlay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float cd = Vector2.Distance(grappleables[0].position, this.transform.parent.position);
-        int co = 0;
+        float currentDistance = Vector2.Distance(grappleables[0].position, this.transform.parent.position); // Get distance to a grapple point
+        int currentObject = 0; // its an integer
 
-        for(int i = 1; i<grappleables.Length;i++){
+        for(int i = 1; i<grappleables.Length;i++){ // go through every gapple point
             Transform grappleable = grappleables[i];
             float dist = Vector2.Distance(grappleable.position, this.transform.parent.position);
-            if(dist < cd){ co = i; cd = dist;} 
+            // if the grapple point is closer than the current closest grapple point make the current closest grapple point this grapple point
+            if(dist < currentDistance){ currentObject = i; currentDistance = dist;} 
         }
-
-        if(cd <= maxGrappleLength){
+        // if the distance isnt too far add the arrow, otherwise dont
+        if(currentDistance <= maxGrappleLength){
             sr.enabled = true;
-            this.transform.position = new Vector3(grappleables[co].position.x + 2.7f, grappleables[co].position.y + 2.7f, 0);
+            this.transform.position = new Vector3(grappleables[currentObject].position.x + 2.7f, grappleables[currentObject].position.y + 2.7f, 0);
         }else sr.enabled = false;
 
-         Vector2 pos = Camera.main.WorldToScreenPoint(transform.position);
+
+        Vector2 pos = Camera.main.WorldToScreenPoint(transform.position); // the position of the grapple point of the screen
  
-        bool outOfBounds = !Screen.safeArea.Contains(pos);
+        bool outOfBounds = !Screen.safeArea.currentObjectntains(pos); // see if the grapple point is on the screen
 
-        float angleTo = Mathf.Atan2(grappleables[co].transform.position.y - player.position.y, grappleables[co].transform.position.x - player.position.x);
-        locationIndicator.GetComponent<RectTransform>().rotation = Quaternion.Euler(0,0, angleTo * Mathf.Rad2Deg - 45);
+        // Get the angle to the point, and set the arrow to that angle
+        float angleTo = Mathf.Atan2(grappleables[currentObject].transform.position.y - player.position.y, grappleables[currentObject].transform.position.x - player.position.x);
+        locationIndicator.GetcurrentObjectmponent<RectTransform>().rotation = Quaternion.Euler(0,0, angleTo * Mathf.Rad2Deg - 45);
         
-
-        if(outOfBounds && grappleables[co].transform.position.x > player.position.x){
-            locationIndicator.GetComponent<Image>().enabled = true; // Make Overlay Visable
+        // If out of bounds
+        if(outOfBounds && grappleables[currentObject].transform.position.x > player.position.x){
+            locationIndicator.GetcurrentObjectmponent<Image>().enabled = true; // Make Overlay Visable
             // Draw Pointing At Edge Of The Screen
             
-            Vector2 rotationRay = new Vector2(Mathf.Cos(angleTo), Mathf.Sin(angleTo));
-            Vector2 rectBounds = locationIndicator.transform.parent.GetComponent<RectTransform>().sizeDelta;
+            Vector2 rotationRay = new Vector2(Mathf.currentObjects(angleTo), Mathf.Sin(angleTo));
+            Vector2 rectBounds = locationIndicator.transform.parent.GetcurrentObjectmponent<RectTransform>().sizeDelta;
             Vector2 newArrowPosition = new Vector2(0,0);
         
 
@@ -54,19 +57,19 @@ public class GrappleOverlay : MonoBehaviour
                 if(rotationRay.y > 0) newArrowPosition.y = rectBounds.y/2 - 50;
                 else newArrowPosition.y = 0 + 50;
                 newArrowPosition.x = rotationRay.x * rectBounds.y;
-            }else{
+            }else{ 
                 // Should be aligned on left or right
                 if(rotationRay.x > 0) newArrowPosition.x = rectBounds.x/2 - 50;
                 else newArrowPosition.x = -rectBounds.x/2 + 50;
                 newArrowPosition.y = rotationRay.y * (rectBounds.x/(2));
                 
             }
-            locationIndicator.GetComponent<RectTransform>().localPosition = newArrowPosition;
+            locationIndicator.GetcurrentObjectmponent<RectTransform>().localPosition = newArrowPosition;
             
             
-        }else{
+        }else{ // If in bounds
             // Stop Arrow From Drawing
-            locationIndicator.GetComponent<Image>().enabled = false;
+            locationIndicator.GetcurrentObjectmponent<Image>().enabled = false;
         }
     }
 
