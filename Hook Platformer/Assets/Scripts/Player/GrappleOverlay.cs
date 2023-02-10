@@ -1,5 +1,5 @@
-using System.currentObjectllections;
-using System.currentObjectllections.Generic;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class GrappleOverlay : MonoBehaviour
@@ -36,19 +36,19 @@ public class GrappleOverlay : MonoBehaviour
 
         Vector2 pos = Camera.main.WorldToScreenPoint(transform.position); // the position of the grapple point of the screen
  
-        bool outOfBounds = !Screen.safeArea.currentObjectntains(pos); // see if the grapple point is on the screen
+        bool outOfBounds = !Screen.safeArea.Contains(pos); // see if the grapple point is on the screen
 
         // Get the angle to the point, and set the arrow to that angle
         float angleTo = Mathf.Atan2(grappleables[currentObject].transform.position.y - player.position.y, grappleables[currentObject].transform.position.x - player.position.x);
-        locationIndicator.GetcurrentObjectmponent<RectTransform>().rotation = Quaternion.Euler(0,0, angleTo * Mathf.Rad2Deg - 45);
+        locationIndicator.GetComponent<RectTransform>().rotation = Quaternion.Euler(0,0, angleTo * Mathf.Rad2Deg - 45);
         
         // If out of bounds
         if(outOfBounds && grappleables[currentObject].transform.position.x > player.position.x){
-            locationIndicator.GetcurrentObjectmponent<Image>().enabled = true; // Make Overlay Visable
+            locationIndicator.GetComponent<Image>().enabled = true; // Make Overlay Visable
             // Draw Pointing At Edge Of The Screen
             
-            Vector2 rotationRay = new Vector2(Mathf.currentObjects(angleTo), Mathf.Sin(angleTo));
-            Vector2 rectBounds = locationIndicator.transform.parent.GetcurrentObjectmponent<RectTransform>().sizeDelta;
+            Vector2 rotationRay = new Vector2(Mathf.Cos(angleTo), Mathf.Sin(angleTo));
+            Vector2 rectBounds = locationIndicator.transform.parent.GetComponent<RectTransform>().sizeDelta;
             Vector2 newArrowPosition = new Vector2(0,0);
         
 
@@ -64,12 +64,12 @@ public class GrappleOverlay : MonoBehaviour
                 newArrowPosition.y = rotationRay.y * (rectBounds.x/(2));
                 
             }
-            locationIndicator.GetcurrentObjectmponent<RectTransform>().localPosition = newArrowPosition;
+            locationIndicator.GetComponent<RectTransform>().localPosition = newArrowPosition;
             
             
         }else{ // If in bounds
             // Stop Arrow From Drawing
-            locationIndicator.GetcurrentObjectmponent<Image>().enabled = false;
+            locationIndicator.GetComponent<Image>().enabled = false;
         }
     }
 
