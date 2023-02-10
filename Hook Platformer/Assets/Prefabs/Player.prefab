@@ -3075,6 +3075,7 @@ MonoBehaviour:
   bounceBack: -15
   stunTime: 1.5
   respawnPoints: []
+  ScreenShake: {fileID: 3820902424599474538}
   grappleStrength: 30
   maxGrappleLength: Infinity
   grappleables: []
@@ -3441,6 +3442,7 @@ GameObject:
   - component: {fileID: 3556132627765900438}
   - component: {fileID: 3556132627765900432}
   - component: {fileID: 3556132627765900439}
+  - component: {fileID: 3820902424599474538}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -3514,6 +3516,53 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3556132627765900437}
   m_Enabled: 1
+--- !u!114 &3820902424599474538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3556132627765900437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76f0d49fc5c054924bd38417ea39fd1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.2
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.0032767202
+      value: 0
+      inSlope: 1.3002428
+      outSlope: 1.3002428
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.05262982
+    - serializedVersion: 3
+      time: 0.29138088
+      value: 0.19429792
+      inSlope: -0.26723567
+      outSlope: -0.26723567
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.061326716
+    - serializedVersion: 3
+      time: 0.9934082
+      value: -0.002357483
+      inSlope: -0.280125
+      outSlope: -0.280125
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  start: 0
 --- !u!1 &3594939527519819266
 GameObject:
   m_ObjectHideFlags: 0

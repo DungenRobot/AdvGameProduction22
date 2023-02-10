@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     public Transform[] respawnPoints;
     private Transform currentRespawnTarget = null;
     private float maxRespawnLength = 10;
+    public ScreenShake ScreenShake;
 
 
     // Grapple Stuff
@@ -244,6 +245,11 @@ public class PlayerController : MonoBehaviour
 
         HealthbarV2.SetHealth(heartCount);
         
+        //test for screen shake
+        if(Input.GetKeyDown(KeyCode.O))
+        {
+            ScreenShake.GetComponent<ScreenShake>().Shaking();
+        }
         
 
     }
@@ -392,15 +398,13 @@ public class PlayerController : MonoBehaviour
     {
         if (objLayer == 7)
         {
-
+            //calls screen shake 
+            ScreenShake.GetComponent<ScreenShake>().Shaking();
+            
             velocity.x = bounceBack;
             obstacle.layer = 8;
 
-
-
-
             heartCount--;
-
 
             if (heartCount == 0)
             {
