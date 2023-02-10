@@ -7038,6 +7038,18 @@ PrefabInstance:
       propertyPath: m_UiScaleMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1000335769793832857, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000335769793832857, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434196342780081697, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3556132627368546082, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
       propertyPath: m_Name
       value: Player
@@ -7103,6 +7115,10 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3640849608646518678, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4925371431730295985, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
