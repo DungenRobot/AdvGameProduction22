@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     private Transform currentRespawnTarget = null;
     private float maxRespawnLength = 10;
     public ScreenShake ScreenShake;
+    public TMP_Text TutorialText;
 
 
     // Grapple Stuff
@@ -377,6 +378,8 @@ public class PlayerController : MonoBehaviour
 
         playerstate = State.ON_GROUND;
 
+        
+
     }
 
 
@@ -451,6 +454,27 @@ public class PlayerController : MonoBehaviour
 
 
         }
-    
-}
+        else if (objLayer == 12)
+        {
+
+            StartCoroutine(tutPause(TutorialText));
+
+        }
+        else if (objLayer == 13)
+        {
+           
+            TutorialText.GetComponent<TMP_Text>().text = "Press [Q] to Grapple";
+            StartCoroutine(tutPause(TutorialText));
+
+        }
+
+    }
+    IEnumerator tutPause(TMP_Text tutText)
+    {
+        Time.timeScale = 0;
+        tutText.gameObject.SetActive(true);
+        yield return new WaitForSecondsRealtime(2);
+        tutText.gameObject.SetActive(false);
+        Time.timeScale = 1;
+    }
 }
