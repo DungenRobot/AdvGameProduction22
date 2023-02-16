@@ -467,6 +467,10 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(tutPause(TutorialText));
 
         }
+        else if (objLayer == 14)
+        {
+            velocity.x = velocity.x + 3;
+        }
 
     }
     IEnumerator tutPause(TMP_Text tutText)
