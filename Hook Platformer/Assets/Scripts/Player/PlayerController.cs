@@ -458,6 +458,7 @@ public class PlayerController : MonoBehaviour
         {
 
             StartCoroutine(tutPause(TutorialText));
+            obstacle.layer = 8;
 
         }
         else if (objLayer == 13)
@@ -465,11 +466,13 @@ public class PlayerController : MonoBehaviour
            
             TutorialText.GetComponent<TMP_Text>().text = "Press [Q] to Grapple";
             StartCoroutine(tutPause(TutorialText));
+            obstacle.layer = 8;
 
         }
         else if (objLayer == 14)
         {
             velocity.x = velocity.x + 3;
+            
         }
 
     }
