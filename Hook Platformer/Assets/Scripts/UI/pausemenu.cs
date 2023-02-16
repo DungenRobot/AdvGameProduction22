@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using TMPro;
+using UnityEngine.UI;
 public class pausemenu : MonoBehaviour
 {
     public GameObject pausemenuOBJ;
     public GameObject settingmenuOBJ;
     public bool onpaused;
     public bool g0;
+    public Slider TextSlider;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +21,8 @@ public class pausemenu : MonoBehaviour
         g0 = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        TextSlider.onValueChanged.AddListener(delegate {onTextSizeValueChanged();});
     }
 
     // Update is called once per frame
@@ -127,4 +132,23 @@ public class pausemenu : MonoBehaviour
     {
         Screen.SetResolution(640, 480, true);
     }
+//Charlotte things : )
+    //Text Slider Stuff
+
+
+    Dictionary<int, float> PrevFontSizes = new Dictionary<int, float>();
+
+    public void onTextSizeValueChanged()
+    {
+        //Finds all Text Objects that are TextMeshPro
+        TextMeshProUGUI[] textObjs = GameObject.FindObjectsOfType<TextMeshProUGUI>();
+        foreach(TextMeshProUGUI textObj in textObjs){
+            float PrevFontSize = 0;
+            if(!PrevFontSizes.ContainsKey(textObj.gameObject.GetInstanceID())){
+                PrevFontSizes.Add(textObj.gameObject.GetInstanceID(), textObj.fontSize);
+                PrevFontSize = textObj.fontSize;
+            }else PrevFontSize = PrevFontSizes[textObj.gameObject.GetInstanceID()];
+            textObj.fontSize = PrevFontSize * TextSlider.value * 2;
+        }
+   }
 }
