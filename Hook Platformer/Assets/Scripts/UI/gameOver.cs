@@ -7,9 +7,11 @@ public class gameOver : MonoBehaviour
 {
     public pausemenu script;
     public GameObject game0ver;
+    public GameObject Music;
 
     void Start()
     {
+        Music = GameObject.Find("Music");
         game0ver.SetActive(false);
     }
 
@@ -27,11 +29,13 @@ public class gameOver : MonoBehaviour
 
     public void menu()
     {
+        Destroy(Music);
         SceneManager.LoadScene("MainMenu");
     }
     
     public void tryAgain()
     {
+        Destroy(Music);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

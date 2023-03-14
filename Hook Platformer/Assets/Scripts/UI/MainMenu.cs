@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     public GameObject MainM;
     public GameObject LicenceM;
     public GameObject GameSelect;
-
+    public GameObject Music;
 
 
     public void Start()
@@ -28,6 +28,8 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Tutorial Level");
         Time.timeScale = 1;
+        Destroy(Music);
+
     }
 
     public void PlayLevel1()
