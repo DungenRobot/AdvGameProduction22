@@ -141,8 +141,11 @@ public class pausemenu : MonoBehaviour
     public void onTextSizeValueChanged()
     {
         //Finds all Text Objects that are TextMeshPro
-        TextMeshProUGUI[] textObjs = GameObject.FindObjectsOfType<TextMeshProUGUI>();
-        foreach(TextMeshProUGUI textObj in textObjs){
+        TextMeshProUGUI[] textObjs = Resources.FindObjectsOfTypeAll<TextMeshProUGUI>();
+        Debug.Log(textObjs.Length);
+            //This refrences all the Text for the specific objects
+            foreach(TextMeshProUGUI textObj in textObjs){
+                //
             float PrevFontSize = 0;
             if(!PrevFontSizes.ContainsKey(textObj.gameObject.GetInstanceID())){
                 PrevFontSizes.Add(textObj.gameObject.GetInstanceID(), textObj.fontSize);
