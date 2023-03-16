@@ -1993,17 +1993,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: End Zone
       objectReference: {fileID: 0}
+    - target: {fileID: 5339077641590750276, guid: 92159ea5cc62e448aa68c7edfbc46855, type: 3}
+      propertyPath: m_Size.y
+      value: 127.95099
+      objectReference: {fileID: 0}
+    - target: {fileID: 5339077641590750276, guid: 92159ea5cc62e448aa68c7edfbc46855, type: 3}
+      propertyPath: m_Center.y
+      value: 38.975487
+      objectReference: {fileID: 0}
     - target: {fileID: 5339077641590750277, guid: 92159ea5cc62e448aa68c7edfbc46855, type: 3}
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5339077641590750277, guid: 92159ea5cc62e448aa68c7edfbc46855, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 213
+      value: 213.5
       objectReference: {fileID: 0}
     - target: {fileID: 5339077641590750277, guid: 92159ea5cc62e448aa68c7edfbc46855, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1
+      value: 10.5
       objectReference: {fileID: 0}
     - target: {fileID: 5339077641590750277, guid: 92159ea5cc62e448aa68c7edfbc46855, type: 3}
       propertyPath: m_LocalPosition.z
