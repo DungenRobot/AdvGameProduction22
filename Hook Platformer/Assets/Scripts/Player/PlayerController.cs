@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     public pausemenu script;
     public GameObject game0ver;
+    public GameObject Reload;
+    public GameObject Menu;
     
     public Vector3 velocity;
     private enum State { ON_GROUND, JUMPING, FALL_UP, FALLING, CROUCHED, FAILED}
@@ -474,14 +476,21 @@ public class PlayerController : MonoBehaviour
             velocity.x = velocity.x + 3;
             
         }
-
     }
+
     IEnumerator tutPause(TMP_Text tutText)
     {
+        //On the top of Yield Return,
+        //It stops time
         Time.timeScale = 0;
+        Menu.gameObject.SetActive(false);
+        Reload.gameObject.SetActive(false);
         tutText.gameObject.SetActive(true);
         yield return new WaitForSecondsRealtime(2);
         tutText.gameObject.SetActive(false);
         Time.timeScale = 1;
+        Menu.gameObject.SetActive(true); 
+        Reload.gameObject.SetActive(true);
+        
     }
 }
