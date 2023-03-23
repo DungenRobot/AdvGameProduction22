@@ -1485,7 +1485,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 943887752989621870}
         m_TargetAssemblyTypeName: pausemenu, Assembly-CSharp
         m_MethodName: quit
         m_Mode: 1
@@ -2622,7 +2622,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 943887752989621870}
         m_TargetAssemblyTypeName: pausemenu, Assembly-CSharp
         m_MethodName: mainmenu
         m_Mode: 1
@@ -4373,7 +4373,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 943887752989621870}
         m_TargetAssemblyTypeName: pausemenu, Assembly-CSharp
         m_MethodName: settingopen
         m_Mode: 1
@@ -5070,7 +5070,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 943887752989621870}
         m_TargetAssemblyTypeName: pausemenu, Assembly-CSharp
         m_MethodName: resume
         m_Mode: 1
@@ -5859,7 +5859,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 943887752989621870}
         m_TargetAssemblyTypeName: pausemenu, Assembly-CSharp
         m_MethodName: ResetTheLevel
         m_Mode: 1
