@@ -36,12 +36,14 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("First Level Outline");
         Time.timeScale = 1;
+        Destroy(Music);
     }
 
     public void PlayLevel2()
     {
         SceneManager.LoadScene("Second level layout");
         Time.timeScale = 1;
+        Destroy(Music);
     }
 
     public void Lm()

@@ -13,6 +13,8 @@ public class gameOver : MonoBehaviour
     {
         Music = GameObject.Find("Music");
         game0ver.SetActive(false);
+        Destroy(Music);
+
     }
 
     // Start is called before the first frame update
