@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
                 break;
 
             case State.FALLING:
-                if (last_grounded < time_hold_grounded && jumpInput) {
+                if ((last_grounded < time_hold_grounded) && (jumpInput)) {
                     velocity.y = jump_velocity;
                     playerstate = State.JUMPING;
                 }
@@ -149,12 +149,13 @@ public class PlayerController : MonoBehaviour
                     velocity.y = -gravity;
                     break;
                 }
-                velocity.y -= gravity;
+                velocity.y = -13;
     
                 break;
         }
 
         last_jumped += Time.deltaTime;
+        last_grounded += Time.deltaTime;
 
         velocity = velocity + Grapple(); // Add ze grapple force to ze velocity
         controller.Move((velocity) * Time.deltaTime); // MOOOOVE
