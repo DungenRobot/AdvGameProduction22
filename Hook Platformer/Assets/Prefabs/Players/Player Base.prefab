@@ -2891,7 +2891,7 @@ GameObject:
   - component: {fileID: 1325413757892962027}
   - component: {fileID: 189571487}
   m_Layer: 6
-  m_Name: Player
+  m_Name: Player Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2917,6 +2917,7 @@ Transform:
   - {fileID: 6707269237378767923}
   - {fileID: 8593702980647449429}
   - {fileID: 2722995364672821635}
+  - {fileID: 613034833491145901}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3031,7 +3032,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 1.55
   m_Radius: 0.5
-  m_SlopeLimit: 45
+  m_SlopeLimit: 180
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
@@ -6047,6 +6048,53 @@ MonoBehaviour:
   sr: {fileID: 6016115613887727556}
   locationIndicator: {fileID: 7268961236804687787}
   maxGrappleLength: Infinity
+--- !u!1 &7412684204901851295
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 613034833491145901}
+  - component: {fileID: 5462082452457878169}
+  m_Layer: 0
+  m_Name: Language
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &613034833491145901
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7412684204901851295}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.1593213, y: 0.031490915, z: -0.07801777}
+  m_LocalScale: {x: 0.30932933, y: 0.3214194, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3556132627368546093}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5462082452457878169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7412684204901851295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 377227dec8bb14a87bf62d7daaf316ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextDict: {fileID: 4900000, guid: 021575f2c5fcb4745a728f3c80589ffc, type: 3}
+  textObjects: []
+  language: EN
 --- !u!1 &7745649946063886935
 GameObject:
   m_ObjectHideFlags: 0
