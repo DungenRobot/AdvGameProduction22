@@ -12,6 +12,18 @@
            "ES": "Continua"
     
        },
+    "PAUSE": {
+        "EN": "Paused",
+        "ES": ""
+    },
+    "OPTIONS": {
+        "EN": "Options",
+        "ES": ""
+    },
+    "TEXTSIZE": {
+        "EN": "Text Size",
+        "ES": ""
+    },
     "SETTINGS": {
            "EN": "Settings",
            "ES": "Configuración"
@@ -43,5 +55,9 @@
      "BACK": {
                       "EN": "Go Back",
                       "ES": "Regresa"
-                  }
+                  },
+    "LICENSES": {
+        "EN": "Licenses",
+        "ES": ""
+    }
 }

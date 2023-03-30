@@ -1,15 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Newtonsoft.Json;
+using UnityEngine.SceneManagement;
 public class LanguageManager : MonoBehaviour
 {
     private static LanguageManager inst;
     public TextAsset TextDict;
-
-    class TextEntry{
-        
-    }
 
     public static LanguageManager getInstance(){
         return inst;
@@ -19,6 +16,8 @@ public class LanguageManager : MonoBehaviour
 
     public void AddTranslationText(TranslationText text){
         textObjects.Add(text);
+        Debug.Log(texts[text.id]);
+        text.SetText(texts[text.id][language]);
     }
 
     public string language;
@@ -41,9 +40,16 @@ public class LanguageManager : MonoBehaviour
         }
         inst = this;
         DontDestroyOnLoad(this);
-        
+         SceneManager.sceneLoaded += OnSceneLoaded;
+
+        texts = JsonConvert.DeserializeObject<Dictionary<string,Dictionary<string, string>>>(TextDict.text);
         //JsonUtility.FromJson<Texts>(TextDict.text);
     }
+
+     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+     {
+        SetLanguage(this.language); // Reset the language of all the new text in the scene
+     }
 
     // Update is called once per frame
     void Update()
