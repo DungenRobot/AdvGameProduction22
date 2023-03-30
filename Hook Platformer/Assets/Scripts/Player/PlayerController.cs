@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour
                     velocity.y = -gravity;
                     break;
                 }
-                velocity.y -= gravity;
+                velocity.y = -13;
     
                 break;
         }
