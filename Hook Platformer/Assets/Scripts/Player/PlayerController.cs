@@ -299,6 +299,8 @@ public class PlayerController : MonoBehaviour
         
     }
 
+
+    private float timeGrappled = 0; // Shhh this isn't here
     Vector3 Grapple()
     {
         // This Does Grappling!
@@ -323,6 +325,7 @@ public class PlayerController : MonoBehaviour
             // If There Is A Closest Object, And Its Closer Than Max Distance, Connect Grapple
             if(currentObject != null && currentDistance <= maxGrappleLength){
                 currentGrappleTarget = currentObject;
+                timeGrappled = 0;
                 grappleRope.Grapple(currentObject); // make rope appear
             }
         }
@@ -350,8 +353,12 @@ public class PlayerController : MonoBehaviour
                 grappleRelease.source.PlayOneShot(grappleRelease.clip, grappleRelease.volume); 
                 grappleRope.UnGrapple(); // make rope go away
                 }
+               timeGrappled += Time.deltaTime; // Increase the amount of time grappled 
                 // return the force that should be added
-            return new Vector3(Mathf.Cos(angle), Mathf.Sin(angle),0) * grappleStrength * Time.deltaTime;
+
+                float lerpVal = (Mathf.Exp(timeGrappled * 2) - 1) / (Mathf.Exp(timeGrappled * 2) + 1);
+
+            return Vector3.Lerp(Vector3.zero, new Vector3(Mathf.Cos(angle), Mathf.Sin(angle),0) * grappleStrength * Time.deltaTime, lerpVal);
         }  
         // return no force because there shouldn't be grapple force if the player isn't grappling
         return new Vector3(0,0,0);
