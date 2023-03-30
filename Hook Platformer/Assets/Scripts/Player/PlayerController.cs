@@ -8,13 +8,16 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     public pausemenu script;
     public GameObject game0ver;
+    public GameObject Reload;
+    public GameObject Menu;
     
     public Vector3 velocity;
     private enum State { ON_GROUND, JUMPING, FALL_UP, FALLING, CROUCHED, FAILED}
     private State playerstate;
     private bool jumpInput;
     private bool is_on_ground;
-
+    private float last_jumped = 100f;
+    private float last_grounded = 100f;
 
     public float speed = 70.0f;
     public float jump_velocity = 10f;
@@ -23,6 +26,10 @@ public class PlayerController : MonoBehaviour
     public float gravity = 130.0f;
     public float jump_gravity = 50f;
     public float up_gravity = 80f;
+
+    //platforming stuff
+    public float time_hold_jump = 0.2f;
+    public float time_hold_grounded = 0.1f;
 
     //CollisionStuff
     public float raycastRightDistrance = 4.0f;
@@ -83,8 +90,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         jumpInput = Input.GetButton("Jump");
+        if (jumpInput) {last_jumped = 0f;}
 
         is_on_ground = controller.isGrounded;
+        if (is_on_ground) {last_grounded = 0f;}
 
         switch (playerstate)
         {
@@ -95,7 +104,7 @@ public class PlayerController : MonoBehaviour
                 
                 velocity.y = -gravity * Time.deltaTime;
 
-                if (jumpInput) {
+                if (last_jumped < time_hold_jump) {
                     velocity.y = jump_velocity;
                     playerstate = State.JUMPING;
                     
@@ -117,6 +126,10 @@ public class PlayerController : MonoBehaviour
                 break;
 
             case State.FALLING:
+                if (last_grounded < time_hold_grounded && jumpInput) {
+                    velocity.y = jump_velocity;
+                    playerstate = State.JUMPING;
+                }
                 if (controller.isGrounded)
                 {
                     playerstate = State.ON_GROUND;
@@ -140,6 +153,8 @@ public class PlayerController : MonoBehaviour
     
                 break;
         }
+
+        last_jumped += Time.deltaTime;
 
         velocity = velocity + Grapple(); // Add ze grapple force to ze velocity
         controller.Move((velocity) * Time.deltaTime); // MOOOOVE
@@ -474,14 +489,21 @@ public class PlayerController : MonoBehaviour
             velocity.x = velocity.x + 3;
             
         }
-
     }
+
     IEnumerator tutPause(TMP_Text tutText)
     {
+        //On the top of Yield Return,
+        //It stops time
         Time.timeScale = 0;
+        Menu.gameObject.SetActive(false);
+        Reload.gameObject.SetActive(false);
         tutText.gameObject.SetActive(true);
         yield return new WaitForSecondsRealtime(2);
         tutText.gameObject.SetActive(false);
         Time.timeScale = 1;
+        Menu.gameObject.SetActive(true); 
+        Reload.gameObject.SetActive(true);
+        
     }
 }

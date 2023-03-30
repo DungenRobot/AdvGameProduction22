@@ -9,6 +9,7 @@ public class pausemenu : MonoBehaviour
     public GameObject pausemenuOBJ;
     public GameObject settingmenuOBJ;
     public bool onpaused;
+    public GameObject Music;
     public bool g0;
     public Slider TextSlider;
 
@@ -16,6 +17,7 @@ public class pausemenu : MonoBehaviour
     void Start()
     {
         //Starting rules for stuff.
+        Music = GameObject.Find("Music");
         onpaused = false;
         pausemenuOBJ.SetActive(false);
         g0 = true;
@@ -68,6 +70,7 @@ public class pausemenu : MonoBehaviour
 
     public void ResetTheLevel()
     {
+        Destroy(Music);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
     }
@@ -100,14 +103,8 @@ public class pausemenu : MonoBehaviour
 
     public void mainmenu()
     {
+        Destroy(Music);
         SceneManager.LoadScene("MainMenu");
-    }
-
-    //To play the Tutorial
-    public void PlayTutorial()
-    {
-        SceneManager.LoadScene("Tutorial scean");
-        Time.timeScale = 1;
     }
 
     //This is for the options menu
@@ -141,8 +138,11 @@ public class pausemenu : MonoBehaviour
     public void onTextSizeValueChanged()
     {
         //Finds all Text Objects that are TextMeshPro
-        TextMeshProUGUI[] textObjs = GameObject.FindObjectsOfType<TextMeshProUGUI>();
-        foreach(TextMeshProUGUI textObj in textObjs){
+        TextMeshProUGUI[] textObjs = Resources.FindObjectsOfTypeAll<TextMeshProUGUI>();
+        Debug.Log(textObjs.Length);
+            //This refrences all the Text for the specific objects
+            foreach(TextMeshProUGUI textObj in textObjs){
+                //
             float PrevFontSize = 0;
             if(!PrevFontSizes.ContainsKey(textObj.gameObject.GetInstanceID())){
                 PrevFontSizes.Add(textObj.gameObject.GetInstanceID(), textObj.fontSize);
