@@ -5,6 +5,10 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject Music;
+    public AudioSource victoryas;
+    public GameObject victory;
+
     private CharacterController controller;
     public pausemenu script;
     public GameObject game0ver;
@@ -47,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
     // Grapple Stuff
     public float grappleStrength = 1;
-    public float maxGrappleLength = 10000;
+    public float maxGrappleLength = 45;
     public Transform[] grappleables;
     private Transform currentGrappleTarget = null;
     public GrappleRope grappleRope;
@@ -76,6 +80,11 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        victory = GameObject.Find("victory");
+        victoryas = victory.GetComponent<AudioSource>();
+        Music = GameObject.Find("Music");
+
         controller = gameObject.GetComponent<CharacterController>();
         DataHandler = GameObject.Find("DataHandler");
         grappleables = GetGrappleables();
@@ -158,6 +167,7 @@ public class PlayerController : MonoBehaviour
         last_grounded += Time.deltaTime;
 
         velocity = velocity + Grapple(); // Add ze grapple force to ze velocity
+        velocity = Vector2.ClampMagnitude(velocity, speed * 2 + velocity.y); // Clamps magnitude of velocity to double player speed and ignored y velocity
         controller.Move((velocity) * Time.deltaTime); // MOOOOVE
 
         int layerMask = 1 << 6;
@@ -386,6 +396,9 @@ public class PlayerController : MonoBehaviour
         script.g0 = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        Destroy(Music);
+        victoryas.Play();
+        Debug.Log("doo doo fart heeee");
     }
     
     IEnumerator stun(int objectHit)
@@ -453,6 +466,7 @@ public class PlayerController : MonoBehaviour
         {
             playerstate = State.FAILED;
             FinishLevel(currentLevel);
+            obstacle.layer = 8;
 
         }
         else if (objLayer == 10)
