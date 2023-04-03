@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
 
     // Grapple Stuff
     public float grappleStrength = 1;
-    public float maxGrappleLength = 10000;
+    public float maxGrappleLength = 45;
     public Transform[] grappleables;
     private Transform currentGrappleTarget = null;
     public GrappleRope grappleRope;
@@ -158,6 +158,7 @@ public class PlayerController : MonoBehaviour
         last_grounded += Time.deltaTime;
 
         velocity = velocity + Grapple(); // Add ze grapple force to ze velocity
+        velocity = Vector2.ClampMagnitude(velocity, speed * 2 + velocity.y); // Clamps magnitude of velocity to double player speed and ignored y velocity
         controller.Move((velocity) * Time.deltaTime); // MOOOOVE
 
         int layerMask = 1 << 6;
