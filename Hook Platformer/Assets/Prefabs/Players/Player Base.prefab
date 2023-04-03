@@ -1543,6 +1543,8 @@ MonoBehaviour:
   script: {fileID: 943887752989621870}
   game0ver: {fileID: 2263248811389319683}
   Music: {fileID: 0}
+  defeatas: {fileID: 0}
+  defeat: {fileID: 0}
 --- !u!1 &2412778498404738319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1634,7 +1636,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4315244810069246825
 RectTransform:
   m_ObjectHideFlags: 0
