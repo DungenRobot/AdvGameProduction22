@@ -14,15 +14,15 @@
        },
     "PAUSE": {
         "EN": "Paused",
-        "ES": ""
+        "ES": "pausa"
     },
     "OPTIONS": {
         "EN": "Options",
-        "ES": ""
+        "ES": "opciones"
     },
     "TEXTSIZE": {
         "EN": "Text Size",
-        "ES": ""
+        "ES": "tamaño de texto"
     },
     "SETTINGS": {
            "EN": "Settings",
@@ -58,6 +58,6 @@
                   },
     "LICENSES": {
         "EN": "Licenses",
-        "ES": ""
+        "ES": "Licencias"
     }
 }
