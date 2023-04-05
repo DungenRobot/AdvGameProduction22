@@ -114,6 +114,14 @@ public class pausemenu : MonoBehaviour
             Screen.fullScreen = isFullScreen;
     }
 
+    public void English(){
+        LanguageManager.getInstance().SetLanguage("EN");
+    }
+
+    public void Spanish(){
+        LanguageManager.getInstance().SetLanguage("ES");
+    }
+
 
     public void Resolution1920()
     {
