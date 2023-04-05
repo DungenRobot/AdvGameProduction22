@@ -8,13 +8,18 @@ public class gameOver : MonoBehaviour
     public pausemenu script;
     public GameObject game0ver;
     public GameObject Music;
+    public AudioSource defeatas;
+    public GameObject defeat;
+    
 
     void Start()
     {
+        defeat = GameObject.Find("defeat");
+        defeatas = defeat.GetComponent<AudioSource>();
         Music = GameObject.Find("Music");
         game0ver.SetActive(false);
         Destroy(Music);
-
+        defeatas.Play();
     }
 
     // Start is called before the first frame update

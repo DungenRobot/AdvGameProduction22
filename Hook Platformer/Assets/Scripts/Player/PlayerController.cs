@@ -5,6 +5,10 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject Music;
+    public AudioSource victoryas;
+    public GameObject victory;
+
     private CharacterController controller;
     public pausemenu script;
     public GameObject game0ver;
@@ -76,6 +80,11 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        victory = GameObject.Find("victory");
+        victoryas = victory.GetComponent<AudioSource>();
+        Music = GameObject.Find("Music");
+
         controller = gameObject.GetComponent<CharacterController>();
         DataHandler = GameObject.Find("DataHandler");
         grappleables = GetGrappleables();
@@ -387,6 +396,9 @@ public class PlayerController : MonoBehaviour
         script.g0 = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        Destroy(Music);
+        victoryas.Play();
+        Debug.Log("doo doo fart heeee");
     }
     
     IEnumerator stun(int objectHit)
@@ -454,6 +466,7 @@ public class PlayerController : MonoBehaviour
         {
             playerstate = State.FAILED;
             FinishLevel(currentLevel);
+            obstacle.layer = 8;
 
         }
         else if (objLayer == 10)

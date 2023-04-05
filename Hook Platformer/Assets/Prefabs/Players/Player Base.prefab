@@ -746,15 +746,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: WipeOut!!!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2b65d3fd39639ff44acfdae725daa51c, type: 2}
+  m_sharedMaterial: {fileID: 3128570763747634152, guid: 2b65d3fd39639ff44acfdae725daa51c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1543,6 +1543,8 @@ MonoBehaviour:
   script: {fileID: 943887752989621870}
   game0ver: {fileID: 2263248811389319683}
   Music: {fileID: 0}
+  defeatas: {fileID: 0}
+  defeat: {fileID: 0}
 --- !u!1 &2412778498404738319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1634,7 +1636,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4315244810069246825
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2090,8 +2092,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 2410866af16b8bd40b00927c5af38e97, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5249,8 +5251,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 7e3a631904817274688ad3cfeb5c34a4, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
