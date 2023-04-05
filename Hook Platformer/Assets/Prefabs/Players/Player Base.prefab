@@ -2539,6 +2539,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b9550c1a272c408f8c76f7c2704be5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Music: {fileID: 0}
+  victoryas: {fileID: 0}
+  victory: {fileID: 0}
   script: {fileID: 943887752989621870}
   game0ver: {fileID: 2263248811389319683}
   Reload: {fileID: 7866380833441844011}
@@ -4941,7 +4944,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d6a44ab95b0def041a7929981a2c23a1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ff302f698c21645f1b9482807740923b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5098,7 +5101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextDict: {fileID: 4900000, guid: 021575f2c5fcb4745a728f3c80589ffc, type: 3}
   textObjects: []
-  language: EN
+  language: ES
 --- !u!1 &7745649946063886935
 GameObject:
   m_ObjectHideFlags: 0
@@ -5543,6 +5546,7 @@ GameObject:
   - component: {fileID: 7789893066924025393}
   - component: {fileID: 5896212500973565777}
   - component: {fileID: 1009275518320360483}
+  - component: {fileID: 8744965428794425752}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -5669,6 +5673,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8744965428794425752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8231724982098720458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53934d735c6b48ed92ff6d26357b837, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: RESUME
 --- !u!1 &8644094629901898930
 GameObject:
   m_ObjectHideFlags: 0
