@@ -11,11 +11,6 @@ public class ButtonsUpdate : MonoBehaviour
 
     void Start()
     {
-        latestLevel = GameObject.Find("DataHandler").GetComponent<DataHandler>().LatestLevel;   
-    }
-
-    void Update()
-    {
         if(latestLevel >= buttonLevel)
         {
             LevelButton.SetActive(true);
@@ -25,5 +20,7 @@ public class ButtonsUpdate : MonoBehaviour
         {
             LevelButton.SetActive(false);
         }
+
+        latestLevel = GameObject.Find("DataHandler").GetComponent<DataHandler>().LatestLevel;   
     }
 }
