@@ -32,6 +32,11 @@ public class LanguageManager : MonoBehaviour
 
     private Dictionary<string,Dictionary<string, string>> texts; // text title, (language, translated text)
 
+
+    void Awake(){
+        inst = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
