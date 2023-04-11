@@ -378,7 +378,7 @@ public class PlayerController : MonoBehaviour
     void GameOver()
     {
 
-        print("You Failed");
+        
         gameOverText.SetActive(true);
         script.g0 = false;
         Cursor.lockState = CursorLockMode.None;
