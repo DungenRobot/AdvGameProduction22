@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
     private Transform currentRespawnTarget = null;
     private float maxRespawnLength = 10;
     public ScreenShake ScreenShake;
-    public TMP_Text TutorialText;
+   //public TMP_Text TutorialText;
 
 
     // Grapple Stuff
@@ -491,7 +491,7 @@ public class PlayerController : MonoBehaviour
 
 
         }
-        else if (objLayer == 12)
+        /*else if (objLayer == 12)
         {
 
             StartCoroutine(tutPause(TutorialText));
@@ -505,7 +505,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(tutPause(TutorialText));
             obstacle.layer = 8;
 
-        }
+        }*/
         else if (objLayer == 14)
         {
             velocity.x = velocity.x + 3;
@@ -513,7 +513,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    IEnumerator tutPause(TMP_Text tutText)
+    /*IEnumerator tutPause(TMP_Text tutText)
     {
         //On the top of Yield Return,
         //It stops time
@@ -527,5 +527,5 @@ public class PlayerController : MonoBehaviour
         Menu.gameObject.SetActive(true); 
         Reload.gameObject.SetActive(true);
         
-    }
+    }*/
 }
