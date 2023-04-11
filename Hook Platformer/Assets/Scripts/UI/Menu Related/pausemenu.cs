@@ -115,6 +115,12 @@ public class pausemenu : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
         
     }
+    
+    public void nextLevel()
+    {
+        Destroy(Music);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
         
 
     //This is for the options menu
