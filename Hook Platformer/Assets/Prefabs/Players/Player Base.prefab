@@ -5265,7 +5265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextDict: {fileID: 4900000, guid: 021575f2c5fcb4745a728f3c80589ffc, type: 3}
   textObjects: []
-  language: ES
+  language: EN
 --- !u!1 &7745649946063886935
 GameObject:
   m_ObjectHideFlags: 0
