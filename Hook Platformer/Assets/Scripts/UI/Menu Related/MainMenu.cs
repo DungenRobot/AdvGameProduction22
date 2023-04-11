@@ -10,13 +10,28 @@ public class MainMenu : MonoBehaviour
     public GameObject LicenceM;
     public GameObject GameSelect;
     public GameObject Music;
+    public bool ls; 
 
 
     public void Start()
     {
+        latestLevel = GameObject.Find("DataHandler").GetComponent<DataHandler>().LatestLevel;
+        ls = GameObject.Find("DataHandler").GetComponent<DataHandler>().ls;
+        
+        if(ls)
+        {
+            MainM.SetActive(false);
+        LicenceM.SetActive(false);
+        GameSelect.SetActive(true);
+            ls = false;
+        }
+       else
+       {
         MainM.SetActive(true);
         LicenceM.SetActive(false);
         GameSelect.SetActive(false);
+        Debug.Log("Else works for Main Menu");
+       }
         latestLevel = GameObject.Find("DataHandler").GetComponent<DataHandler>().LatestLevel;
     }
     public void quit()

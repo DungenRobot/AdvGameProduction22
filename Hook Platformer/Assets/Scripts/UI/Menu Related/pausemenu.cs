@@ -12,6 +12,7 @@ public class pausemenu : MonoBehaviour
     public GameObject Music;
     public bool g0;
     public Slider TextSlider;
+    public bool ls;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class pausemenu : MonoBehaviour
         g0 = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
+        ls = GameObject.Find("DataHandler").GetComponent<DataHandler>().ls;
         TextSlider.onValueChanged.AddListener(delegate {onTextSizeValueChanged();});
     }
 
@@ -106,6 +107,15 @@ public class pausemenu : MonoBehaviour
         Destroy(Music);
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void LevelSelect()
+    {
+        Destroy(Music);
+        GameObject.Find("DataHandler").GetComponent<DataHandler>().ls = true;
+        SceneManager.LoadScene("MainMenu");
+        
+    }
+        
 
     //This is for the options menu
 

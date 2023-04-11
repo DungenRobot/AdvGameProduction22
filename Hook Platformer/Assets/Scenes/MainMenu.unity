@@ -356,6 +356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonLevel: 1
   LevelButton: {fileID: 111714987}
+  ls: 0
 --- !u!1 &448567761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,6 +1245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonLevel: 0
   LevelButton: {fileID: 1066509005}
+  ls: 0
 --- !u!1 &1305009935
 GameObject:
   m_ObjectHideFlags: 0
@@ -2600,7 +2602,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1587836892
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2663,6 +2665,7 @@ MonoBehaviour:
   LicenceM: {fileID: 2053131488}
   GameSelect: {fileID: 1587836891}
   Music: {fileID: 1959252834}
+  ls: 0
 --- !u!114 &1636006431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2934,7 +2937,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1766105134
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3243,6 +3246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonLevel: 2
   LevelButton: {fileID: 1816923142}
+  ls: 0
 --- !u!1 &1822166627
 GameObject:
   m_ObjectHideFlags: 0
@@ -3859,6 +3863,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3266235881087658904, guid: 9cf58fc954b0b49269aeaf3964c15c0f, type: 3}
+      propertyPath: LatestLevel
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4670743580670852678, guid: 9cf58fc954b0b49269aeaf3964c15c0f, type: 3}
       propertyPath: m_Name
       value: DataHandler
