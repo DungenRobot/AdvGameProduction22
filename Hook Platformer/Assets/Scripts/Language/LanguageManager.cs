@@ -53,6 +53,7 @@ public class LanguageManager : MonoBehaviour
 
      public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
      {
+        textObjects = new List<TranslationText>();
         SetLanguage(this.language); // Reset the language of all the new text in the scene
      }
 
