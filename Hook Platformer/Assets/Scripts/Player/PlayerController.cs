@@ -80,13 +80,12 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        victory = GameObject.Find("victory");
+        
+        //victory = GameObject.Find("victory");
         //victoryas = victory.GetComponent<AudioSource>();
         Music = GameObject.Find("Music");
 
         controller = gameObject.GetComponent<CharacterController>();
-        Debug.Log(controller);
         DataHandler = GameObject.Find("DataHandler");
         grappleables = GetGrappleables();
         audioSource = GetComponent<AudioSource>();
