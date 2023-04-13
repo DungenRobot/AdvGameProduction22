@@ -464,7 +464,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (objLayer == 9)
         {
-            playerstate = State.FAILED;
+            
             FinishLevel(currentLevel);
             obstacle.layer = 8;
 
