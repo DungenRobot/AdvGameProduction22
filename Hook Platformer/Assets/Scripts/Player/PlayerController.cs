@@ -82,10 +82,11 @@ public class PlayerController : MonoBehaviour
     {
 
         victory = GameObject.Find("victory");
-        victoryas = victory.GetComponent<AudioSource>();
+        //victoryas = victory.GetComponent<AudioSource>();
         Music = GameObject.Find("Music");
 
         controller = gameObject.GetComponent<CharacterController>();
+        Debug.Log(controller);
         DataHandler = GameObject.Find("DataHandler");
         grappleables = GetGrappleables();
         audioSource = GetComponent<AudioSource>();
@@ -464,7 +465,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (objLayer == 9)
         {
-            
+            playerstate = State.FAILED;
             FinishLevel(currentLevel);
             obstacle.layer = 8;
 
