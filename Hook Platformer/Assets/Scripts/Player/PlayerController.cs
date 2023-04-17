@@ -82,8 +82,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         
-        //victory = GameObject.Find("victory");
-        //victoryas = victory.GetComponent<AudioSource>();
+        victory = GameObject.Find("victory");
+        victoryas = victory.GetComponent<AudioSource>();
         Music = GameObject.Find("Music");
 
         controller = gameObject.GetComponent<CharacterController>();

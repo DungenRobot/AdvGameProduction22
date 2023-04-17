@@ -9,16 +9,18 @@ public class pausemenu : MonoBehaviour
     public GameObject pausemenuOBJ;
     public GameObject settingmenuOBJ;
     public bool onpaused;
-    public GameObject Music;
     public bool g0;
     public Slider TextSlider;
     public bool ls;
+    public GameObject Music;
+    public AudioSource Musicas;
 
     // Start is called before the first frame update
     void Start()
     {
         //Starting rules for stuff.
         Music = GameObject.Find("Music");
+        Musicas = Music.GetComponent<AudioSource>();
         onpaused = false;
         pausemenuOBJ.SetActive(false);
         g0 = true;
@@ -51,6 +53,7 @@ public class pausemenu : MonoBehaviour
     //To pause Game
     public void pause()
     {
+        Musicas.volume = 0.2f;
         onpaused = true;
         pausemenuOBJ.SetActive(true);
         settingmenuOBJ.SetActive(false);
@@ -61,6 +64,7 @@ public class pausemenu : MonoBehaviour
     //To resume game
     public void resume()
     {
+        Musicas.volume = 1f;
         onpaused = false;
         pausemenuOBJ.SetActive(false);
         settingmenuOBJ.SetActive(false);
