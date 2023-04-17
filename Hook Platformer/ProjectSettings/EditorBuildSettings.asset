@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/dogshit trash (doodoo)/Tutorial scean.unity
     guid: 421663dbb34f74d39bc16d705108cf5b
   - enabled: 1
-    path: Assets/Scenes/Levels/Third Level.unity
+    path: Assets/Scenes/Levels/DEPRECATED lvl 3.unity
     guid: b9ba487615bc34ea6a35712d773e2bca
   - enabled: 1
     path: Assets/Scenes/Levels/Tutorial Level.unity
