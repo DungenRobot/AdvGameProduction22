@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
     private Transform currentRespawnTarget = null;
     private float maxRespawnLength = 10;
     public ScreenShake ScreenShake;
+    public Transform cameraObject;
    //public TMP_Text TutorialText;
 
 
@@ -464,7 +465,8 @@ public class PlayerController : MonoBehaviour
         }
         else if (objLayer == 9)
         {
-            playerstate = State.FAILED;
+            cameraObject.parent = null;
+            
             FinishLevel(currentLevel);
             obstacle.layer = 8;
 

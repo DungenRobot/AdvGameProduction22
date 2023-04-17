@@ -6293,11 +6293,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1074772785 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 155000831939842627, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
-  m_PrefabInstance: {fileID: 3556132627280178868}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1075913252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11082,29 +11077,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3556132627368546094, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
-      propertyPath: Menu
-      value: 
-      objectReference: {fileID: 1074772785}
-    - target: {fileID: 3556132627368546094, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
-      propertyPath: speed
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 3556132627368546094, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
       propertyPath: TutorialText
       value: 
       objectReference: {fileID: 770172277}
-    - target: {fileID: 3556132627368546094, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
-      propertyPath: currentLevel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3556132627368546094, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
-      propertyPath: jump_gravity
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 3556132627368546094, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
-      propertyPath: jump_velocity
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 4147294147872031902, guid: a68bad0451a67442baeebbd9955214c4, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 731

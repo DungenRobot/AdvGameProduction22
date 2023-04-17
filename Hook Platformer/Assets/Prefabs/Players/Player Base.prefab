@@ -2794,6 +2794,7 @@ MonoBehaviour:
   stunTime: 1.5
   respawnPoints: []
   ScreenShake: {fileID: 3820902424599474538}
+  cameraObject: {fileID: 3556132627765900438}
   grappleStrength: 30
   maxGrappleLength: Infinity
   grappleables: []
