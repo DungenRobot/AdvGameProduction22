@@ -1986,6 +1986,7 @@ GameObject:
   - component: {fileID: 311634094}
   - component: {fileID: 311634096}
   - component: {fileID: 311634095}
+  - component: {fileID: 311634097}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2147,6 +2148,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &311634097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311634093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53934d735c6b48ed92ff6d26357b837, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: TO_GRAPPLE
 --- !u!1 &314494447
 GameObject:
   m_ObjectHideFlags: 0
@@ -3163,6 +3177,7 @@ GameObject:
   - component: {fileID: 541811132}
   - component: {fileID: 541811134}
   - component: {fileID: 541811133}
+  - component: {fileID: 541811135}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3324,6 +3339,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &541811135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541811131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53934d735c6b48ed92ff6d26357b837, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: TO_JUMP
 --- !u!1 &559308908
 GameObject:
   m_ObjectHideFlags: 0
