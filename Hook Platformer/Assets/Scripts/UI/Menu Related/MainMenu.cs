@@ -87,6 +87,13 @@ public class MainMenu : MonoBehaviour
         MainM.SetActive(true);
     }
 
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
+        Time.timeScale = 1;
+        Destroy(Music);
+    }
+
 
 
     //Licenses Code for the Menu
