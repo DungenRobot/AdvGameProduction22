@@ -59,5 +59,13 @@
     "LICENSES": {
         "EN": "Licenses",
         "ES": "Licencias"
+    },
+    "TO_GRAPPLE": {
+        "EN": "Press [Q] to Grapple",
+        "ES": "Oprima [Q] para enganchar"
+    },
+    "TO_JUMP": {
+        "EN": "Press [Space] to Jump",
+        "ES": "Oprima [Space] para Saltar"
     }
 }
