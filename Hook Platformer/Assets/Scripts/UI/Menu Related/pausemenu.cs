@@ -53,7 +53,7 @@ public class pausemenu : MonoBehaviour
     //To pause Game
     public void pause()
     {
-        Musicas.volume = 0.2f;
+        Musicas.volume = 0.4f;
         onpaused = true;
         pausemenuOBJ.SetActive(true);
         settingmenuOBJ.SetActive(false);
