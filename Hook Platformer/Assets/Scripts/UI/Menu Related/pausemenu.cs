@@ -14,6 +14,8 @@ public class pausemenu : MonoBehaviour
     public bool ls;
     public GameObject Music;
     public AudioSource Musicas;
+    public Slider Volumeslider;
+    public Slider Musicslider;
 
     // Start is called before the first frame update
     void Start()
@@ -53,7 +55,7 @@ public class pausemenu : MonoBehaviour
     //To pause Game
     public void pause()
     {
-        Musicas.volume = 0.4f;
+        Musicas.volume = 0.4f * Musicas.volume;
         onpaused = true;
         pausemenuOBJ.SetActive(true);
         settingmenuOBJ.SetActive(false);
@@ -64,7 +66,7 @@ public class pausemenu : MonoBehaviour
     //To resume game
     public void resume()
     {
-        Musicas.volume = 1f;
+        Musicas.volume = 1f * Musicas.volume;
         onpaused = false;
         pausemenuOBJ.SetActive(false);
         settingmenuOBJ.SetActive(false);
@@ -85,10 +87,12 @@ public class pausemenu : MonoBehaviour
     {
         settingmenuOBJ.SetActive(true);
         pausemenuOBJ.SetActive(false);
+        Musicas.volume = 1f * Musicas.volume;
     }
 
     public void settingclose()
     {
+        Musicas.volume = 0.4f * Musicas.volume;
         settingmenuOBJ.SetActive(false);
         pausemenuOBJ.SetActive(true);
     }
@@ -170,7 +174,6 @@ public class pausemenu : MonoBehaviour
         Debug.Log(textObjs.Length);
             //This refrences all the Text for the specific objects
             foreach(TextMeshProUGUI textObj in textObjs){
-                //
             float PrevFontSize = 0;
             if(!PrevFontSizes.ContainsKey(textObj.gameObject.GetInstanceID())){
                 PrevFontSizes.Add(textObj.gameObject.GetInstanceID(), textObj.fontSize);
@@ -179,4 +182,17 @@ public class pausemenu : MonoBehaviour
             textObj.fontSize = PrevFontSize * TextSlider.value * 2;
         }
    }
-}
+
+   public void volumeslider()
+   {
+        AudioListener.volume = Volumeslider.value;
+   }
+
+   public void musicslider()
+   {
+    Musicas.volume = Musicslider.value;
+   }
+
+
+
+   }
