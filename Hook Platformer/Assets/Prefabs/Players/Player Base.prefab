@@ -109,7 +109,7 @@ RectTransform:
   - {fileID: 1217880254695029467}
   - {fileID: 8740507810499194878}
   m_Father: {fileID: 8430912310979850633}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1593,7 +1593,7 @@ RectTransform:
   - {fileID: 7312843097723312707}
   - {fileID: 5758798020401406665}
   m_Father: {fileID: 8430912310979850633}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3464,7 +3464,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8430912310979850633}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5217078, y: 0.45072997}
   m_AnchorMax: {x: 0.5217078, y: 0.45072997}
@@ -4048,7 +4048,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8430912310979850633}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5593,7 +5593,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8430912310979850633}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6721,11 +6721,11 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4147294147872031902}
   - {fileID: 8837545085219996459}
   - {fileID: 1142343815956367168}
   - {fileID: 1430172494791749607}
   - {fileID: 3332109689055546789}
+  - {fileID: 4147294147872031902}
   m_Father: {fileID: 3556132627368546093}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7139,6 +7139,18 @@ PrefabInstance:
     - target: {fileID: 8625721709073941306, guid: 67a972854a5ad40c683b88d3eb762c42, type: 3}
       propertyPath: m_SortingOrder
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8625721709073941307, guid: 67a972854a5ad40c683b88d3eb762c42, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8625721709073941307, guid: 67a972854a5ad40c683b88d3eb762c42, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 8625721709073941307, guid: 67a972854a5ad40c683b88d3eb762c42, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 8625721709073941309, guid: 67a972854a5ad40c683b88d3eb762c42, type: 3}
       propertyPath: m_Pivot.x
