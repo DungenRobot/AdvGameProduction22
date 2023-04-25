@@ -66,7 +66,7 @@ public class pausemenu : MonoBehaviour
     //To resume game
     public void resume()
     {
-        Musicas.volume = 1f * Musicas.volume;
+        Musicas.volume = 1/0.4f * Musicas.volume;
         onpaused = false;
         pausemenuOBJ.SetActive(false);
         settingmenuOBJ.SetActive(false);
@@ -87,7 +87,7 @@ public class pausemenu : MonoBehaviour
     {
         settingmenuOBJ.SetActive(true);
         pausemenuOBJ.SetActive(false);
-        Musicas.volume = 1f * Musicas.volume;
+        Musicas.volume = 1/0.4f * Musicas.volume;
     }
 
     public void settingclose()
