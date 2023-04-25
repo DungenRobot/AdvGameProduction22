@@ -16,8 +16,13 @@ public class LanguageManager : MonoBehaviour
 
     public void AddTranslationText(TranslationText text){
         textObjects.Add(text);
-        Debug.Log(texts[text.id]);
-        text.SetText(texts[text.id][language]);
+        Debug.Log("T: " + text + " - L: " + language + " - TS: " + texts);
+        texts = JsonConvert.DeserializeObject<Dictionary<string,Dictionary<string, string>>>(TextDict.text);
+        Debug.Log(texts);
+        text.SetText(
+            texts
+            [text.id]
+            [language]);
     }
 
     public string language;
@@ -30,7 +35,7 @@ public class LanguageManager : MonoBehaviour
         });
     }
 
-    private Dictionary<string,Dictionary<string, string>> texts; // text title, (language, translated text)
+    public Dictionary<string,Dictionary<string, string>> texts; // text title, (language, translated text)
 
 
     void Awake(){
@@ -54,6 +59,7 @@ public class LanguageManager : MonoBehaviour
      public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
      {
         textObjects = new List<TranslationText>();
+        texts = JsonConvert.DeserializeObject<Dictionary<string,Dictionary<string, string>>>(TextDict.text);
         SetLanguage(this.language); // Reset the language of all the new text in the scene
      }
 
