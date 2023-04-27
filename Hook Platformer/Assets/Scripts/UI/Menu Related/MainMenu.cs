@@ -30,7 +30,7 @@ public class MainMenu : MonoBehaviour
         MainM.SetActive(true);
         LicenceM.SetActive(false);
         GameSelect.SetActive(false);
-        Debug.Log("Else works for Main Menu");
+        //Debug.Log("Else works for Main Menu");
        }
         latestLevel = GameObject.Find("DataHandler").GetComponent<DataHandler>().LatestLevel;
     }

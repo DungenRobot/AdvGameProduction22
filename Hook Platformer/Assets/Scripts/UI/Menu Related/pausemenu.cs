@@ -171,7 +171,7 @@ public class pausemenu : MonoBehaviour
     {
         //Finds all Text Objects that are TextMeshPro
         TextMeshProUGUI[] textObjs = Resources.FindObjectsOfTypeAll<TextMeshProUGUI>();
-        Debug.Log(textObjs.Length);
+        //Debug.Log(textObjs.Length);
             //This refrences all the Text for the specific objects
             foreach(TextMeshProUGUI textObj in textObjs){
             float PrevFontSize = 0;

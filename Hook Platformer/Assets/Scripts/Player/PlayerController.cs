@@ -261,7 +261,6 @@ public class PlayerController : MonoBehaviour
         }
 
         
-        Debug.Log(heartCount);
         HealthbarV2.SetHealth(heartCount);
         
         //test for screen shake
@@ -399,7 +398,6 @@ public class PlayerController : MonoBehaviour
         Cursor.visible = true;
         Destroy(Music);
         victoryas.Play();
-        Debug.Log("doo doo fart heeee");
     }
     
     IEnumerator stun(int objectHit)
