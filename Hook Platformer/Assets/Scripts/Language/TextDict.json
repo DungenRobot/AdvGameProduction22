@@ -68,4 +68,14 @@
         "EN": "Press [Space] to Jump",
         "ES": "Oprima [Space] para Saltar"
     }
+    
+    "MUSIC": {
+        "EN": "Music",
+        "ES": "Música",
+    }
+    
+    "VOLUME": {
+        "EN": "Volume",
+        "ES": "Volumen",
+    }
 }

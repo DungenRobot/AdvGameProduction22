@@ -261,7 +261,7 @@ public class PlayerController : MonoBehaviour
         }
 
         
-
+        Debug.Log(heartCount);
         HealthbarV2.SetHealth(heartCount);
         
         //test for screen shake
@@ -449,7 +449,7 @@ public class PlayerController : MonoBehaviour
 
             heartCount--;
 
-            if (heartCount == 0)
+            if (heartCount <= 0)
             {
                 playerstate = State.FAILED;
                 GameOver();

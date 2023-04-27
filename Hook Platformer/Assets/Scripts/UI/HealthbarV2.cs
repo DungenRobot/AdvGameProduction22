@@ -10,10 +10,12 @@ public class HealthbarV2 : MonoBehaviour
     public void SetHealth(int healthValue)
     {
         //get respective sprite to health value
-        gameObject.GetComponent<Image>().sprite = HealthSprites[healthValue];
+       
         if (healthValue < 0)
         {
             gameObject.GetComponent<Image>().sprite = HealthSprites[0];
+        }else{
+             gameObject.GetComponent<Image>().sprite = HealthSprites[healthValue];
         }
     }
 }
