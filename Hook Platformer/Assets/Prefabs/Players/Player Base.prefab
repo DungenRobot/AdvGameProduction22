@@ -742,8 +742,9 @@ RectTransform:
   - {fileID: 4517856015154134873}
   - {fileID: 5478395145605373817}
   - {fileID: 6810121256717706996}
+  - {fileID: 4902570669319015945}
   m_Father: {fileID: 1217880254695029467}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -981,7 +982,7 @@ RectTransform:
   m_Children:
   - {fileID: 2768698572602779871}
   m_Father: {fileID: 1217880254695029467}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1265,7 +1266,7 @@ RectTransform:
   - {fileID: 3808831455011086631}
   - {fileID: 536168179700376765}
   m_Father: {fileID: 1217880254695029467}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2674,7 +2675,7 @@ RectTransform:
   - {fileID: 7937146189110270058}
   - {fileID: 5695359692057125798}
   m_Father: {fileID: 1217880254695029467}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4405,6 +4406,7 @@ GameObject:
   - component: {fileID: 4902570669319015945}
   - component: {fileID: 4904311547099065738}
   - component: {fileID: 4564922267712536441}
+  - component: {fileID: 7235935890550137239}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -4419,13 +4421,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4584808307938898985}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1217880254695029467}
-  m_RootOrder: 1
+  m_Father: {fileID: 7961789056157559800}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4529,6 +4531,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7235935890550137239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4584808307938898985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53934d735c6b48ed92ff6d26357b837, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: VOLUME
 --- !u!1 &4617799498520926913
 GameObject:
   m_ObjectHideFlags: 0
@@ -5260,7 +5275,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2830949959727161901}
-  - {fileID: 4902570669319015945}
   - {fileID: 1688762484597689712}
   - {fileID: 638369984206596175}
   - {fileID: 2314669982238984009}
@@ -6197,7 +6211,7 @@ RectTransform:
   - {fileID: 6277972482925799669}
   - {fileID: 4690141446507842934}
   m_Father: {fileID: 1217880254695029467}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6522,6 +6536,7 @@ GameObject:
   - component: {fileID: 536168179700376765}
   - component: {fileID: 1007436046962965731}
   - component: {fileID: 4649754355416545042}
+  - component: {fileID: 2220793251876037867}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -6646,6 +6661,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2220793251876037867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7084625841606262254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53934d735c6b48ed92ff6d26357b837, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: MUSIC
 --- !u!1 &7160228672897633138
 GameObject:
   m_ObjectHideFlags: 0
