@@ -6254,7 +6254,7 @@ MonoBehaviour:
     source: {fileID: 3340267512134136671}
     volume: 1
   playerJump:
-    clip: {fileID: 8300000, guid: b957852c883ae4a5bbe8a3bb5808f3ca, type: 3}
+    clip: {fileID: 8300000, guid: d980ed0b45e384a4e80ffdcc13ca2638, type: 3}
     source: {fileID: 3340267512134136671}
     volume: 1
   playerInAir:
@@ -6262,15 +6262,15 @@ MonoBehaviour:
     source: {fileID: 3340267512134136671}
     volume: 1
   grappleConnect:
-    clip: {fileID: 8300000, guid: 64e9f33d121c8464e944bcb73fc9bd93, type: 3}
+    clip: {fileID: 8300000, guid: fa323265e5abd446baf19842b62a9e3b, type: 3}
     source: {fileID: 3340267512134136671}
     volume: 1
   grappleMove:
-    clip: {fileID: 8300000, guid: ea38a8c84c4d54fd1a2e6cc2e58752f9, type: 3}
+    clip: {fileID: 8300000, guid: fa323265e5abd446baf19842b62a9e3b, type: 3}
     source: {fileID: 3340267512134136671}
     volume: 1
   grappleRelease:
-    clip: {fileID: 8300000, guid: b957852c883ae4a5bbe8a3bb5808f3ca, type: 3}
+    clip: {fileID: 8300000, guid: fa323265e5abd446baf19842b62a9e3b, type: 3}
     source: {fileID: 3340267512134136671}
     volume: 1
   skateboardCrash:
