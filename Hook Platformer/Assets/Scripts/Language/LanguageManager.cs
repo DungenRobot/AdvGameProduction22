@@ -16,9 +16,9 @@ public class LanguageManager : MonoBehaviour
 
     public void AddTranslationText(TranslationText text){
         textObjects.Add(text);
-        Debug.Log("T: " + text + " - L: " + language + " - TS: " + texts);
+        //Debug.Log("T: " + text + " - L: " + language + " - TS: " + texts);
         texts = JsonConvert.DeserializeObject<Dictionary<string,Dictionary<string, string>>>(TextDict.text);
-        Debug.Log(texts);
+        //Debug.Log(texts);
         text.SetText(
             texts
             [text.id]
