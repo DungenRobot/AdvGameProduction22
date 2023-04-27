@@ -1593,6 +1593,7 @@ GameObject:
   m_Component:
   - component: {fileID: 466845836}
   - component: {fileID: 466845835}
+  - component: {fileID: 466845837}
   m_Layer: 0
   m_Name: Banana
   m_TagString: Untagged
@@ -1667,6 +1668,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &466845837
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466845834}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.191518, y: 21.282259, z: 0.2}
+  m_Center: {x: -1.4181304, y: 0.37544245, z: 0}
 --- !u!1001 &473154074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2499,6 +2513,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2521295031879922913, guid: ec1ab8fa34b02408084df3c00c0a4c30, type: 3}
+      propertyPath: m_Size.y
+      value: 5.2471685
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521295031879922913, guid: ec1ab8fa34b02408084df3c00c0a4c30, type: 3}
+      propertyPath: m_Size.z
+      value: 0.20000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521295031879922913, guid: ec1ab8fa34b02408084df3c00c0a4c30, type: 3}
+      propertyPath: m_Center.x
+      value: 0.08783746
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521295031879922913, guid: ec1ab8fa34b02408084df3c00c0a4c30, type: 3}
+      propertyPath: m_Center.y
+      value: 1.0647696
+      objectReference: {fileID: 0}
     - target: {fileID: 2521295032407823181, guid: ec1ab8fa34b02408084df3c00c0a4c30, type: 3}
       propertyPath: m_Name
       value: Small obstacle (2)
@@ -6318,6 +6348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1874811617}
   - component: {fileID: 1874811616}
+  - component: {fileID: 1874811618}
   m_Layer: 0
   m_Name: Bench
   m_TagString: Untagged
@@ -6392,6 +6423,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1874811618
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874811615}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 3.123262, z: 0.2}
+  m_Center: {x: 0, y: -0.9383693, z: 0}
 --- !u!1 &1879071610
 GameObject:
   m_ObjectHideFlags: 0
