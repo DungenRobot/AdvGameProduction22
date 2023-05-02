@@ -56,7 +56,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayLevel2()
     {
-        SceneManager.LoadScene("Second level layout");
+        SceneManager.LoadScene("Level 2");
         Time.timeScale = 1;
         Destroy(Music);
     }
