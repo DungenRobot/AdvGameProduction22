@@ -385,7 +385,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3486745}
   - component: {fileID: 3486744}
-  m_Layer: 0
+  - component: {fileID: 3486746}
+  m_Layer: 7
   m_Name: purplecar (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,6 +460,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 285
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3486746
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3486743}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.302856, y: 4.4591084, z: 0.2}
+  m_Center: {x: 1.446167, y: -1.3905458, z: 0}
 --- !u!1 &9786838
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,7 +734,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 10417092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 235.59, y: 20.37, z: -2}
+  m_LocalPosition: {x: 235.59, y: 21.3, z: -2}
   m_LocalScale: {x: 0.5085856, y: 0.5085856, z: 0.5085856}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2487,7 +2501,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169634688}
   m_LocalRotation: {x: 0, y: 0, z: 0.14780942, w: 0.9890159}
-  m_LocalPosition: {x: 434.2, y: 50.3, z: -2}
+  m_LocalPosition: {x: 434, y: 50.6, z: -2}
   m_LocalScale: {x: 0.7986, y: 0.7986, z: 0.7986}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3199,7 +3213,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216931056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 598.37, y: 65.38, z: 0}
+  m_LocalPosition: {x: 597.45, y: 64.55, z: 0}
   m_LocalScale: {x: 0.4776, y: 0.4776, z: 0.4776}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5831,7 +5845,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 377110743}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 524.17, y: 69.67, z: 0}
+  m_LocalPosition: {x: 524.17, y: 69.67, z: -1}
   m_LocalScale: {x: 0.3181693, y: 0.3181693, z: 0.3181693}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7106,7 +7120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 462378928}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 559.45404, y: 69.18069, z: -3}
+  m_LocalPosition: {x: 559, y: 69.3, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8003,6 +8017,7 @@ GameObject:
   m_Component:
   - component: {fileID: 541629254}
   - component: {fileID: 541629253}
+  - component: {fileID: 541629255}
   m_Layer: 7
   m_Name: Trash_can_2 (8)
   m_TagString: Untagged
@@ -8077,6 +8092,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 251
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &541629255
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541629252}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.3473873, y: 7.7563944, z: 0.2}
+  m_Center: {x: -0.096368186, y: -0.3855576, z: 0}
 --- !u!1 &543363607
 GameObject:
   m_ObjectHideFlags: 0
@@ -12359,7 +12387,7 @@ GameObject:
   - component: {fileID: 929816957}
   - component: {fileID: 929816956}
   - component: {fileID: 929816958}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trash_can_2 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12775,8 +12803,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976452551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 533.4361, y: 72.68032, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 532.8, y: 73, z: 0}
+  m_LocalScale: {x: 1.2605, y: 1.2605, z: 1.2605}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -14034,7 +14062,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1052706908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 529.44, y: 67.61, z: -2}
+  m_LocalPosition: {x: 526.8, y: 67.7, z: -2}
   m_LocalScale: {x: 0.5085856, y: 0.5085856, z: 0.5085856}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16361,7 +16389,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256674976}
   m_LocalRotation: {x: 0, y: 0, z: 0.14780942, w: 0.9890159}
-  m_LocalPosition: {x: 459.16, y: 58.57, z: -2}
+  m_LocalPosition: {x: 459, y: 59.3, z: -2}
   m_LocalScale: {x: 0.8582, y: 0.8582, z: 0.8582}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22798,7 +22826,7 @@ GameObject:
   - component: {fileID: 1779545506}
   - component: {fileID: 1779545505}
   - component: {fileID: 1779545507}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trash_can_2 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23750,7 +23778,7 @@ GameObject:
   - component: {fileID: 1843154038}
   - component: {fileID: 1843154037}
   - component: {fileID: 1843154036}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trash_can_2 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23945,6 +23973,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1868157669}
   - component: {fileID: 1868157668}
+  - component: {fileID: 1868157670}
   m_Layer: 7
   m_Name: Car_1 (2)
   m_TagString: Untagged
@@ -24019,6 +24048,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 256
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -17}
+--- !u!65 &1868157670
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868157667}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.514528, y: 6.4982786, z: 0.20000002}
+  m_Center: {x: 2.7951734, y: 2.6391757, z: 0}
 --- !u!1 &1877775847
 GameObject:
   m_ObjectHideFlags: 0
@@ -27058,7 +27100,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2120585417}
   - component: {fileID: 2120585416}
-  m_Layer: 0
+  - component: {fileID: 2120585418}
+  m_Layer: 7
   m_Name: Purp Car (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27132,6 +27175,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 271
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -17}
+--- !u!65 &2120585418
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120585415}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15.930601, y: 6.577123, z: 0.20000002}
+  m_Center: {x: 1.0028969, y: 2.189798, z: 0}
 --- !u!1 &2123098286
 GameObject:
   m_ObjectHideFlags: 0
