@@ -523,7 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e796ed671eac47c4b86a02a1b2c5a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 3556132627765900437}
   parallaxEffect: 0.6
 --- !u!1 &818676825260207062
 GameObject:
@@ -624,7 +624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e796ed671eac47c4b86a02a1b2c5a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 3556132627765900437}
   parallaxEffect: 0.7
 --- !u!1 &1041572484598882704
 GameObject:
@@ -725,7 +725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e796ed671eac47c4b86a02a1b2c5a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 3556132627765900437}
   parallaxEffect: 0.8
 --- !u!1 &1097652684346132903
 GameObject:
@@ -3426,7 +3426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e796ed671eac47c4b86a02a1b2c5a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 3556132627765900437}
   parallaxEffect: 0.5
 --- !u!1 &3551741919028389222
 GameObject:
@@ -4130,7 +4130,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 11.911246
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
